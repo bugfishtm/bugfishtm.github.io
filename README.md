@@ -1,8 +1,8 @@
 ![Bugfish](https://img.shields.io/badge/Bugfish-Github_Page-orange)
 ![Status](https://img.shields.io/badge/Status-Finished-green)
-![License](https://img.shields.io/badge/License-MIT-black)
+![License](https://img.shields.io/badge/License-FREE_WITH_ATTRIBUTION-black)
 
-# This is the official Bugfish Github Channel!
+# Bugfishtm.github.io Page
 
 Visit my website on:  
 https://bugfish.eu  
@@ -12,7 +12,5 @@ https://bugfishtm.blogspot.com/
 
 My Personal Github Page with my Projects:  
 https://bugfishtm.github.io
-
-## Help
 
 If you need help visit www.bugfish.eu!
