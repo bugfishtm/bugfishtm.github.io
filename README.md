@@ -1,6 +1,7 @@
 ![Bugfish](https://img.shields.io/badge/Bugfish-Github_Page-orange)
 ![Status](https://img.shields.io/badge/Status-Finished-green)
-![License](https://img.shields.io/badge/License-FREE_WITH_ATTRIBUTION-black)
+![License](https://img.shields.io/badge/License-ATTRIBUTION-black)
+![Version](https://img.shields.io/badge/Version-1.0-white)
 
 # Bugfishtm.github.io Page
 
