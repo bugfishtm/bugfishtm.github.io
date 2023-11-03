@@ -1,11 +1,18 @@
 # LICENSE
 
-This GitHub page template was originally designed with dedication and care by Xiaoying Riley for developers. It has been further enhanced and modified by Bugfish for specific purposes. To ensure a fair and respectful use of this template, please adhere to the following terms and conditions.
+**This GitHub page template was originally designed with dedication and care by Xiaoying Riley for developers. It has been further enhanced and modified by Bugfish for specific purposes.**
 
-In accordance with the original creator's wishes and as a sign of respect for their work, you must include the following attribution in a prominent location on any project or website where you use this template:
+To ensure a fair and respectful use of this template, please adhere to the following terms and conditions:
 
-"Designed with love by Xiaoying Riley (themes.3rdwavemedia.com) for developers" 
+1. **Attribution:** In accordance with the original creator's wishes and as a sign of respect for their work, you must include the following attribution in a prominent location on any project or website where you use this template:
+   - "Designed with love by Xiaoying Riley (themes.3rdwavemedia.com) for developers"
 
-You are not allowed to distribute this template or any modified versions of it as a stand-alone template for others to use without proper attribution. If you wish to share this template with others, you must ensure they are aware of and adhere to these licensing terms.
- 
-You are encouraged to make modifications to this template to suit your specific needs and preferences. However, any changes or customizations you make should not remove or obscure the original attribution mentioned above.
+2. **Distribution:** You are not allowed to distribute this template or any modified versions of it as a stand-alone template for others to use without proper attribution. If you wish to share this template with others, you must ensure they are aware of and adhere to these licensing terms.
+
+3. **Modifications:** You are encouraged to make modifications to this template to suit your specific needs and preferences. However, any changes or customizations you make should not remove or obscure the original attribution mentioned above.
+
+**Regarding Project Licenses:** Each project hosted on this documentation hub may have its own specific license. Please review the individual project's licensing information to ensure compliance with its terms.
+
+**GitHub Page Template:** The GitHub page template used for this documentation hub has been forked and modified from another project, and its licensing terms are covered by the terms mentioned above.
+
+Thank you for respecting these licensing terms and for using this documentation hub as a valuable resource.
