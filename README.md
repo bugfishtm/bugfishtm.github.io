@@ -1,9 +1,4 @@
-![Bugfish](https://img.shields.io/badge/Bugfish-Documentation-orange)
-![Status](https://img.shields.io/badge/Status-Finished-green)
-![License](https://img.shields.io/badge/License-ATTRIBUTION-black)
-![Version](https://img.shields.io/badge/Version-1.0-white)
-
-# Bugfish Documentation Hub
+# Bugfish Documentations
 Welcome to Bugfish's Documentation Hub, your go-to resource for comprehensive documentation on a wide range of projects and topics. This repository serves as the GitHub page for Bugfish's personal documentation hub.
 
 ## Explore the Documentation

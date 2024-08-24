@@ -1,282 +1,831 @@
-<!DOCTYPE html>
-<html lang="en"> 
-<head>
-    <!-- META RELATED -->
-    <meta charset="utf-8">
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Here you can find a list of my projects and related documentation websites. All documentation pages are included in the repositories themselves (docs folder) and are running with HTML/JS/CSS. So they won&#x27;t need PHP or a web server to be executed, and you can view these documentations everywhere in the repository and release files with your phone or desktop/laptop browser. If you find any errors or questions unanswered, do not hesitate to contact us at requests@bugfish.eu!">
+      
+      
+      
+      
+      
+        <link rel="next" href="aboutme.html">
+      
+      
+      <link rel="icon" href="favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.31">
+    
+    
+      
+        <title>Home - Bugfish Documentations</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.3cba04c6.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+      
+      
+    <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "WebSite",
+      "name": "Bugfish Documentations",
+    }
+    </script>
+	<script type="application/ld+json">
+	{
+	  "@context": "http://schema.org",
+	  "@type": "TechArticle",
+	  "headline": "Home",
+	  "description": "Browse comprehensive documentation for all my open-source projects. Explore detailed guides, installation instructions, and development notes for each project. Each project has its own dedicated page with specific license information.",
+	  "articleSection": "Introduction",
+	  "datePublished": "2024-08-19",
+	  "dateModified": "2024-08-19",
+	  "author": {
+		"@type": "Person",
+		"name": "Jan-Maurice Dahlmanns"
+	  },
+	  "publisher": {
+		"@type": "Organization",
+		"name": "Bugfish",
+		"logo": {
+		  "@type": "ImageObject",
+		  "url": "./logo.png"
+		}
+	  }
+	}
+	</script>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">   
-	<meta property="og:image" content="./assets/meta.png" />
 	<meta name="subject" content="documentation">
 	<meta name="copyright" content="bugfish">
 	<meta name='language' content='en'>
 	<meta name='robots' content='index,follow'>
 	<meta name='author' content='bugfish, ynvnzmlzaa@gmail.com'>
-	<!-- LINK RELATED -->
-	<script defer src="assets/fontawesome/js/all.min.js"></script>    
-	<link rel="stylesheet" href="assets/css/atom-one-dark.min.css">
-	<link rel="stylesheet" href="assets/plugins/simplelightbox/simple-lightbox.min.css">
-	<link rel="icon" type="image/x-icon" href="assets/favicon.ico">	
-	<link id="theme-style" rel="stylesheet" href="assets/css/stylesheet.css">
-    <script src="assets/js/jq.3.6.min.js"></script>	
-    <script src="assets/js/jquery.highlight.js"></script>
-    <script src="assets/js/jquery.scrollto.js"></script>
-    <script src="assets/js/jquery.finder.js"></script>
-	<!-- Descriptions -->
-    <title>Bugfish Documentations</title>
-	<meta property="og:title" content="Bugfish Documentations"/>
-	<meta name="description" content="This is the Bugfish Documentation Hub. Here you can find Informations and Documentations about my github projects. Feel free to use my website at www.bugfish.eu for more about my projects! I wish you the best.">
-<script type="application/ld+json">
-{
-  "@context": "http://schema.org",
-  "@type": "TechArticle",
-  "headline": "Bugfish Documentations",
-  "description": "This is the Bugfish Documentation Hub. Here you can find Informations and Documentations about my github projects. Feel free to use my website at www.bugfish.eu for more about my projects! I wish you the best.",
-  "articleSection": "Introduction",
-  "datePublished": "2023-11-03",
-  "dateModified": "2023-11-03",
-  "author": {
-    "@type": "Person",
-    "name": "Jan-Maurice Dahlmanns"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "Bugfish",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "./assets/bugfish.png"
-    }
-  }
-}
-</script>
-</head> 
-<body class="docs-page" data-finder-wrapper>    
-    <header class="header fixed-top">	    
-        <div class="branding docs-branding">
-            <div class="container-fluid position-relative py-2">
-                <div class="docs-logo-wrapper">
-					<button id="docs-sidebar-toggler" class="docs-sidebar-toggler docs-sidebar-visible me-2 d-xl-none" type="button">
-	                    <span></span>
-	                    <span></span>
-	                    <span></span>
-	                </button>
-	                <div class="site-logo"><a class="navbar-brand" href="./index.html"><img class="logo-icon me-2" src="assets/logo.png" alt="logo" width="25"><span class="logo-text">Bugfish <span class="text-alt">Documentations</span></span></a></div>    
-                </div><!--//docs-logo-wrapper-->
-	            <div class="docs-top-utilities d-flex justify-content-end align-items-center">
-
 	
-	            </div><!--//docs-top-utilities-->
-            </div><!--//container-->
-        </div><!--//branding-->
-    </header><!--//header-->
-    <div class="docs-wrapper" >
-	    <div id="docs-sidebar" class="docs-sidebar">
-		    <nav id="docs-nav" class="docs-nav navbar">
-			    <ul class="section-items list-unstyled nav flex-column pb-3">
-				    <li class="nav-item section-title"><a class="nav-link scrollto active" href="#section-1"><span class="theme-icon-holder me-2"><i class="fas fa-map-signs"></i></span>Documentations</a></li>
-				    <li class="nav-item"><a class="nav-link scrollto" href="#item-1-9">bugfishCMS</a></li>
-				    <li class="nav-item"><a class="nav-link scrollto" href="#item-1-912">bugfishHUB</a></li>
-				    <li class="nav-item"><a class="nav-link scrollto" href="#item-1-9121">bugfishAPP</a></li>
-				    <li class="nav-item"><a class="nav-link scrollto" href="#item-1-2">Bugfish Framework</a></li>
-				    <li class="nav-item"><a class="nav-link scrollto" href="#item-1-4">Bind9 Web Manager</a></li>
-				    <li class="nav-item"><a class="nav-link scrollto" href="#item-1-2-2">Dolibarr Framework</a></li>
-				    <li class="nav-item"><a class="nav-link scrollto" href="#item-1-3">Mail Relaying over DNS</a></li>
-				    <li class="nav-item"><a class="nav-link scrollto" href="#item-1-5">Online Book Renting</a></li>
-				    <li class="nav-item"><a class="nav-link scrollto" href="#item-1-1">Android Web App Example</a></li>
-				    <li class="nav-item"><a class="nav-link scrollto" href="#item-1-6">Dovecot Certificate Interface</a></li>
-				    <li class="nav-item"><a class="nav-link scrollto" href="#item-1-7">Image Downloader</a></li>
-				    <li class="nav-item"><a class="nav-link scrollto" href="#item-1-8">jQuery Sortselect</a></li>
-					<!-- Various Informations -->
-				    <li class="nav-item section-title mt-3"><a class="nav-link scrollto" href="#section-9"><span class="theme-icon-holder me-2"><i class="fas fa-hashtag"></i></span>Additional Informations</a></li>
-				    <li class="nav-item"><a class="nav-link scrollto" href="#item-9-1" target="_blank">About me</a></li>
-				    <li class="nav-item"><a class="nav-link scrollto" href="#item-9-2" target="_blank">Support</a></li>
-				    <li class="nav-item"><a class="nav-link scrollto" href="#item-9-3" target="_blank">License</a></li>
-					<!-- Impressum and Bugfish Link -->
-				    <li class="nav-item section-title mt-3"><a class="nav-link"><span class="theme-icon-holder me-2"><i class="fas fa-link"></i></span>Links</a></li>
-				    <li class="nav-item"><a class="nav-link" href="https://www.bugfish.eu" target="_blank">My Website</a></li>
-				    <li class="nav-item"><a class="nav-link" href="https://bugfishtm.github.io" target="_blank">Github Pages</a></li>
-				    <li class="nav-item"><a class="nav-link" href="https://bugfishtm.blogspot.com/2023/05/impressum.html" target="_blank">Impressum</a></li>
-				    <li class="nav-item"><a class="nav-link" href="https://bugfishtm.blogspot.com/2023/05/privacy.html" target="_blank">Privacy</a></li>
-			    </ul>
+	
+	<meta property="og:title" content="Home - Bugfish Documentations"/>
+	<meta name="description" content="Browse comprehensive documentation for all my open-source projects. Explore detailed guides, installation instructions, and development notes for each project. Each project has its own dedicated page with specific license information.">  
+	<meta name="og:description" content="Browse comprehensive documentation for all my open-source projects. Explore detailed guides, installation instructions, and development notes for each project. Each project has its own dedicated page with specific license information.">  
+	<meta property="og:image" content="./meta.png" />
 
-		    </nav><!--//docs-nav-->
-	    </div><!--//docs-sidebar-->
-	    <div class="docs-content" data-finder-content>
-		    <div class="container">
-			    <article class="docs-article" id="section-1">
-				    <header class="docs-header">
-					    <h1 class="docs-heading">Bugfish Documentations <span class="docs-time">Documentations</span></h1>
-					    <section class="docs-intro">
-						    <p>Here you can find a list of my projects and related documentation websites. All documentations pages are included in the repositories itself (docs folder) and are running with HTML/JS/CSS. So they wont need PHP or a webserver to be executed and you can view this documentations everywhere in the repository and release files with your phone or desktop/laptop browser. If you find any errors or questions unanswered, do not hesitate to contact us at requests@bugfish.eu!</p>
-						</section><!--//docs-intro-->
-				    </header><br /><!--//section-->	<hr>	
-					<section class="docs-section" id="item-1-9" style="border-bottom: none;">
-						<h2 class="section-heading">bugfishCMS</h2>
-						<p><b>License:</b> GPLv3<br /><b>Description:</b> The PHP CMS multi-site framework stands as a resilient and adaptable content management system meticulously crafted for swift website deployment. Featuring an intuitive interface and robust functionalities, it empowers web developers to adeptly create and oversee numerous websites within a unified platform. Seamlessly streamlining website setup, customization, and maintenance, this framework proves to be an optimal solution for businesses and developers seeking swift and hassle-free online establishment across a spectrum of web projects.</p>
-						<a href="https://github.com/bugfishtm/bugfish-cms/archive/refs/heads/main.zip" class="btn btn-primary" target="_blank"><i class="fas fa-download me-2"></i> Download</a>
-						<a href="./bugfish-cms/index.html" class="btn btn-secondary"><i class="fas fa-book me-2"></i> Documentation</a>
-						<a href="https://github.com/bugfishtm/bugfish-cms" class="btn btn-info" target="_blank"><i class="fas fa-link me-2"></i> Github</a>				
-						<br />	
-					</section><!--//section-->		<hr >
-					<section class="docs-section" id="item-1-912" style="border-bottom: none;">
-						<h2 class="section-heading">bugfishHUB</h2>
-						<p><b>License:</b> GPLv3<br /><b>Description:</b> bugfishHUB is a versatile software designed for Windows that allows users to access and control features of bugfishCMS. In addition to these CMS functionalities, bugfishHUB provides developers and users with the ability to manage various Windows functionalities and create file checksums, along with other continually evolving features for enhanced system management and development tasks.</p>
-						<a href="https://github.com/bugfishtm/bugfish-hub/archive/refs/heads/main.zip" class="btn btn-primary" target="_blank"><i class="fas fa-download me-2"></i> Download</a>
-						<a href="./bugfish-hub/index.html" class="btn btn-secondary"><i class="fas fa-book me-2"></i> Documentation</a>
-						<a href="https://github.com/bugfishtm/bugfish-hub" class="btn btn-info" target="_blank"><i class="fas fa-link me-2"></i> Github</a>				
-						<br />	
-					</section><!--//section-->		<hr >
-					<section class="docs-section" id="item-1-9121" style="border-bottom: none;">
-						<h2 class="section-heading">bugfishAPP</h2>
-						<p><b>License:</b> GPLv3<br /><b>Description:</b> bugfishAPP is a versatile application designed for Android devices that allows users to access and control the CRM functionalities of bugfishCMS. In addition to CRM features, bugfishAPP provides access to various other bugfishCMS functionalities, enabling efficient management and operation directly from Android devices.</p>
-						<a href="https://github.com/bugfishtm/bugfish-app/archive/refs/heads/main.zip" class="btn btn-primary" target="_blank"><i class="fas fa-download me-2"></i> Download</a>
-						<a href="./bugfish-app/index.html" class="btn btn-secondary"><i class="fas fa-book me-2"></i> Documentation</a>
-						<a href="https://github.com/bugfishtm/bugfish-app" class="btn btn-info" target="_blank"><i class="fas fa-link me-2"></i> Github</a>				
-						<br />	
-					</section><!--//section-->		<hr >
-					<section class="docs-section" id="item-1-2" style="border-bottom: none;">
-						<h2 class="section-heading">Bugfish Framework</h2>
-						<p><b>License:</b> GPLv3<br /><b>Description:</b> The Bugfish Framework is a powerful web development tool that seamlessly integrates PHP, CSS, and JavaScript to empower developers with a robust set of tools and resources. This versatile framework offers a comprehensive collection of meticulously documented PHP classes, enabling developers to streamline their projects and create highly efficient and well-structured web applications. With Bugfish Framework, you can harness the full potential of these technologies, facilitating the development process and ensuring the creation of feature-rich and scalable web solutions.</p>
-						<a href="https://github.com/bugfishtm/bugfish-framework/archive/refs/heads/main.zip" class="btn btn-primary" target="_blank"><i class="fas fa-download me-2"></i> Download</a>
-						<a href="./bugfish-framework/index.html" class="btn btn-secondary"><i class="fas fa-book me-2"></i> Documentation</a>
-						<a href="https://github.com/bugfishtm/bugfish-framework" class="btn btn-info"  target="_blank"><i class="fas fa-link me-2"></i> Github</a>
-					</section><!--//section-->		<hr>	
-					<section class="docs-section" id="item-1-4" style="border-bottom: none;">
-						<h2 class="section-heading">Bind9 Web Manager</h2>						
-						<p><b>License:</b> GPLv3<br /><b>Description:</b> In today's interconnected digital landscape, efficient DNS management is pivotal for uninterrupted online operations. Whether you're an administrator responsible for overseeing DNS records, user access, or seeking a dependable DNS solution, simplicity and functionality are top priorities. Introducing Bind9 Web Manager: the comprehensive solution for effortless DNS management, user administration, and replication functionalities. Featuring an intuitive PHP-based web interface, Bind9 Web Manager empowers administrators to configure DNS servers seamlessly, including replication functionality to collaborate with platforms such as Plesk, ISPConfig, or Virtualmin. Bid farewell to complexity and welcome a system that offers detailed domain oversight, robust debugging tools, and streamlined user management, making DNS management an efficient and straightforward task.</p>
-						<a href="https://github.com/bugfishtm/Bind9-Web-Manager/archive/refs/heads/main.zip" class="btn btn-primary"  target="_blank"><i class="fas fa-download me-2"></i> Download</a>
-						<a href="./Bind9-Web-Manager/index.html" class="btn btn-secondary" ><i class="fas fa-book me-2"></i> Documentation</a>
-						<a href="https://github.com/bugfishtm/Bind9-Web-Manager" class="btn btn-info" target="_blank"><i class="fas fa-link me-2"></i> Github</a>
-					</section><!--//section-->	<hr>	
-					<section class="docs-section" id="item-1-2-2" style="border-bottom: none;">
-						<h2 class="section-heading">Dolibarr Framework</h2>
-						<p><b>License:</b> GPLv3<br /><b>Description:</b> This is a Dolibarr Module to include the Bugfish - Framework into Dolibarr with some additional Functions. A Dolibarr Module to add Development and Other usefull Coding and Logging Features, it can inercept MySQL and Javascript Errors. It has a full functional Changelog for different Internal areas and can serve messages for different modules if you are a developer! Dolibarr External Functions delivered in this project are already included in this Dolibarr Module. But if you want to use this functions without the module, you can include the file dolibarr_functions.php.</p>
-						<a href="https://github.com/bugfishtm/Bugfish-Dolibarr-Module/archive/refs/heads/main.zip" class="btn btn-primary" target="_blank"><i class="fas fa-download me-2"></i> Download</a>
-						<a href="./Bugfish-Dolibarr-Module/" class="btn btn-secondary"><i class="fas fa-book me-2"></i> Documentation</a>
-						<a href="https://github.com/bugfishtm/Bugfish-Dolibarr-Module" class="btn btn-info"  target="_blank"><i class="fas fa-link me-2"></i> Github</a>
-					</section><!--//section-->			<hr>		
-					<section class="docs-section" id="item-1-3" style="border-bottom: none;">
-						<h2 class="section-heading">Mail Relaying over DNS</h2>
-						<p><b>License:</b> GPLv3<br /><b>Description:</b> This web software converts your server into a mail backup relay! It functions independently, allowing users to configure domains for relaying to master mail servers. Additionally, it serves as a panel on a secondary DNS server, fetching registered DNS domains. In essence, if your primary mail server handles mail sending and receiving, this server remains unaffected. However, in the event of the primary server going offline, this secondary server stores incoming mail until the primary server is operational again. The stored mail is subsequently forwarded to the primary server. Users can configure the Master-Mail Server per domain and establish various Relay Servers connected to Mail Domains.</p>
-						<a href="https://github.com/bugfishtm/Mail-Relaying-over-DNS/archive/refs/heads/main.zip" class="btn btn-primary" target="_blank"><i class="fas fa-download me-2"></i> Download</a>
-						<a href="./Mail-Relaying-over-DNS/index.html" class="btn btn-secondary" ><i class="fas fa-book me-2"></i> Documentation</a>
-						<a href="https://github.com/bugfishtm/Mail-Relaying-over-DNS" class="btn btn-info" target="_blank"><i class="fas fa-link me-2"></i> Github</a>
-					</section><!--//section--><hr>				
-					<section class="docs-section" id="item-1-5" style="border-bottom: none;">
-						<h2 class="section-heading">Online Book Renting</h2>
-						<p><b>License:</b> GPLv3<br /><b>Description:</b> Introducing our streamlined web software crafted for effective book rental management. Featuring user-friendly functionalities including robust user management, seamless multi-language support, and efficient book/ISBN handling, our platform, powered by Apache2 and PHP, offers an accessible interface. Whether you're a bookstore streamlining operations or an avid reader seeking easy book renting and ISBN tracking, our software provides a straightforward solution tailored to your needs.</p>
-						<a href="https://github.com/bugfishtm/Online-Book-Renting/archive/refs/heads/master.zip" class="btn btn-primary" target="_blank"><i class="fas fa-download me-2"></i> Download</a>
-						<a href="./Online-Book-Renting/index.html" class="btn btn-secondary"><i class="fas fa-book me-2"></i> Documentation</a>
-						<a href="https://github.com/bugfishtm/Online-Book-Renting" class="btn btn-info" target="_blank"><i class="fas fa-link me-2"></i> Github</a>
-					</section><!--//section--><hr>
-				    <section class="docs-section" id="item-1-1" style="border-bottom: none;">
-						<h2 class="section-heading">Android Web App Example</h2>
-						<p><b>License:</b> GPLv3<br /><b>Description:</b> This is a ready to use Android Studio Project to compile a simple Webapp with some Controls at the bottom (Forward, Back, Home) You can just change the related URL inside the main.java file and compile it - after that you have a finished .apk file. With this project you can easy create your own websites Web-App. You just need to have Android Studio installed on your system, than you can open the project and change the required data! This will give you the possibility to easy deploy apps related to your website, if you need them!</p>	
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="stylesheets/extra.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
 
-						<a href="https://github.com/bugfishtm/Android-Web-App-Example/archive/refs/heads/main.zip" class="btn btn-primary"  target="_blank"><i class="fas fa-download me-2"></i> Download</a>
-						<a href="./Android-Web-App-Example" class="btn btn-secondary"><i class="fas fa-book me-2"></i> Documentation</a>
-						<a href="https://github.com/bugfishtm/Android-Web-App-Example" class="btn btn-info" target="_blank"><i class="fas fa-link me-2" ></i> Github</a>
-					</section><hr>
-					<section class="docs-section" id="item-1-6" style="border-bottom: none;">
-						<h2 class="section-heading">Dovecot Certificate Interface</h2>
-						<p><b>License:</b> GPLv3<br /><b>Description:</b> The software simplifies Dovecot per Domain SSL Certificate setup, enabling seamless login across multiple domains using valid server certificates. It automates ISPConfig Dovecot Configuration File Generation for SSL domains and can function autonomously, managing Dovecot per Domain SSL Certificates without ISPConfig integration. However, caution is advised when applying it alongside existing Dovecot configurations (e.g., Plesk) to prevent possible system malfunctions.</p>
-						<a href="https://github.com/bugfishtm/Dovecot-Certificate-Interface/archive/refs/heads/main.zip" class="btn btn-primary"  target="_blank"><i class="fas fa-download me-2"></i> Download</a>
-						<a href="./Dovecot-Certificate-Interface/index.html" class="btn btn-secondary"><i class="fas fa-book me-2"></i> Documentation</a>
-						<a href="https://github.com/bugfishtm/Dovecot-Certificate-Interface" class="btn btn-info"  target="_blank"><i class="fas fa-link me-2"></i> Github</a>
-					</section><!--//section--><hr>
-					<section class="docs-section" id="item-1-7" style="border-bottom: none;">					
-						<h2 class="section-heading">Image Download Manager</h2>
-						<p><b>License:</b> GPLv3<br /><b>Description:</b> The image downloader software facilitates the retrieval of all images from a designated website by simply entering its URL. The program automatically creates directories within the executable folder to house the downloaded images. Users can configure settings to explore subpages and selectively download High Definition Images (minimum 1000 pixels width). While compatibility may vary across websites, the tool offers a convenient solution for image retrieval.</p>
-						<a href="https://github.com/bugfishtm/bugfish-image-downloader/archive/refs/heads/main.zip" class="btn btn-primary"  target="_blank"><i class="fas fa-download me-2"></i> Download</a>
-						<a href="./bugfish-image-downloader/index.html" class="btn btn-secondary"><i class="fas fa-book me-2"></i> Documentation</a>
-						<a href="https://github.com/bugfishtm/bugfish-image-downloader" class="btn btn-info"  target="_blank"><i class="fas fa-link me-2"></i> Github</a>
-					</section><!--//section--><hr>
-					<section class="docs-section" id="item-1-8" style="">
-						<h2 class="section-heading">jQuery Sortselect</h2>
-						<p><b>License:</b> GPLv3<br /><b>Description:</b> The updated "multiselect-sortable" jQuery plugin enriches the capabilities of multiple select elements by facilitating effortless sorting and administration of selected options within a dual list box. This recent iteration of the plugin introduces a pivotal "rid" (Resource Identifier) parameter, crucial for distinguishing between distinct instances of the script operating within the same webpage. Neglecting to assign a unique "rid" value for each instance may lead to errors or unanticipated behavior.</p>
-						<a href="https://github.com/bugfishtm/bugfish-jquery-sortselect/archive/refs/heads/main.zip" class="btn btn-primary" target="_blank"><i class="fas fa-download me-2"></i> Download</a>
-						<a href="./bugfish-jquery-sortselect/index.html" class="btn btn-secondary"><i class="fas fa-book me-2"></i> Documentation</a>
-						<a href="https://github.com/bugfishtm/bugfish-jquery-sortselect" class="btn btn-info" target="_blank"><i class="fas fa-link me-2"></i> Github</a>
-					</section>			
-			    </article>
-			    <article class="docs-article" id="section-9">
-				    <header class="docs-header">
-					    <h1 class="docs-heading">Additional Informations</h1>
-					    <section class="docs-intro">
-						    <p>In this area you can find help and informations about this products license. In some products are more than one license included, mostly the are listed below each other in the "License" section. If you need help visit the "How to get support?" section.</p>
-						</section><!--//docs-intro-->
-				    </header><br /><hr>
-					<section class="docs-section" id="item-9-1"  style="border-bottom: none;">
-						<h2>About me:</h2>
-						<p>Here you can find some informations about what i do! Feel free to take a look at my <a rel="noopener" target="_blank" href="https://youtube.com/bugfishtm">Youtube Channel</a>, where I have may also uploaded some video documentations and more. If you want to support me, subscribe me on Youtube! </p><br />
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="deep-orange" data-md-color-accent="deep-orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#bugfish-documentations" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
 
-						<h4>Videos:</h4>
-							<p>I always try to improve doing 3D videos out of my created models! <br />	 <video style="width: 400px; max-width: 100%;" controls>
-							  <source src="media/video.mp4" type="video/mp4" >
-							Your browser does not support the audio element.
-							</video> 
-								</p> 
-								
-						<br /><h4>Music:</h4>
-							<p>In my free time I like to create music! <br />	 <audio controls>
-							  <source src="media/audio.mp3" type="audio/mpeg">
-							Your browser does not support the audio element.
-							</audio> 
-								</p> 				
-						<br /><h4>Web and Software Development:</h4>
-							<p>My open source Software projects are listed in the upper "Documentations" section! There you can find Buttons to view different projects documentations, or to download them directly out of Github! This projects are also liste in the Projects are of my website.</p> 
-							
-						
-						<br /><h4>Graphics Design:</h4>
-							<!--<h2 class="section-heading">Page Styling</h2>-->
-						    <h5 class="pt-3"><i class="fas fa-question-circle me-1"></i>Some of my images!</h5>
-							<p>Here are some of my created images, i mostly create them to use them in my own projects!<br />Of course i have much more, you can find my distributions on my website: <a rel="noopener" target="_blank" href="https://bugfish.eu">here</a>!</p>
-						<div class="simplelightbox-gallery row mb-3">
-							<div class="col-12 col-md-4 mb-3">
-						        <a href="media/1.jpg"><img class="figure-img img-fluid shadow rounded" src="media/1.jpg" alt="" title="Example Image"/></a>
-							</div>
-							<div class="col-12 col-md-4 mb-3">
-						        <a href="media/2.png"><img class="figure-img img-fluid shadow rounded" src="media/2.png" alt="" title="Example Image"/></a>
-							</div><!--//col-->
-							<div class="col-12 col-md-4 mb-3">
-						        <a href="media/3.jpg"><img class="figure-img img-fluid shadow rounded" src="media/3.jpg" alt="" title="Example Image"/></a>
-							</div><!--//col-->
-							<div class="col-12 col-md-4 mb-3">
-						        <a href="media/4.jpg"><img class="figure-img img-fluid shadow rounded" src="media/4.jpg" alt="" title="Example Image"/></a>
-							</div><!--//col-->
-							<div class="col-12 col-md-4 mb-3">
-						        <a href="media/5.jpg"><img class="figure-img img-fluid shadow rounded" src="media/5.jpg" alt="" title="Example Image"/></a>
-							</div><!--//col-->
-							<div class="col-12 col-md-4 mb-3">
-						        <a href="media/painting.png"><img class="figure-img img-fluid shadow rounded" src="media/painting.png" alt="" title="Example Image"/></a>
-							</div><!--//col-->
-						</div><!--//gallery-->
-					</section><!--//section--><hr>
-					<section class="docs-section" id="item-9-2" style="padding-top: 0px; border-bottom: none;">
-						<br /><h2 class="section-heading">Support</h2>
-						<p>There are different ways to get support for our products. You can write comments in our specific websites section for the related product, but the best way it to write in our forum, as we are getting notifications about that! So if you need any help, sign in at our forum and we will do what we can to serve you. If you do not want to register at our forum, you are invited to write us for support at requests@bugfish.eu.</p>
-						<a href="https://www.bugfish.eu" class="btn btn-primary" target="_blank"><i class="fas fa-link me-2"></i> My Website</a>
-						<a href="https://bugfish.eu/forum" class="btn btn-warning" target="_blank"><i class="fas fa-bug me-2"></i> My Forum</a>
-					</section><hr>
-					<section class="docs-section" id="item-9-3" style="border-bottom: none;">
-						<h2 class="section-heading">License Informations</h2>
-						<h4>This Github Page Templates License</h4>
-				       <p> <!--/* This template is free as long as you keep the footer attribution link. If you'd like to use the template without the attribution link, you can buy the commercial license via our website: themes.3rdwavemedia.com Thank you for your support. :) */-->
-			            <small class="copyright">Designed with <span class="sr-only">love</span><i class="fas fa-heart" style="color: #fb866a;"></i> by <a class="theme-link" href="http://themes.3rdwavemedia.com" target="_blank" rel="noopener">Xiaoying Riley</a> for developers <br/>(And modified by <a href="https://www.bugfish.eu" target="_blank" rel="noopener">bugfish</a>)<br />You are only allowed to use this template if you include this attribution!</small></p>					
+  
 
-					</section><!--//section-->	
-			    </article><!--//docs-article-->
-			</div> <!--//docs-container--> 
-		</div><!--//docs-content-->   
-    </div><!--//docs-wrapper-->       
-    <!-- Javascript -->          
-    <script src="assets/plugins/popper.min.js"></script>
-    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>  
-    <!-- Page Specific JS -->
-    <script src="assets/plugins/smoothscroll.min.js"></script>
-    <script src="assets/js/highlight.min.js"></script>
-    <script src="assets/js/highlight-custom.js"></script> 
-    <script src="assets/plugins/simplelightbox/simple-lightbox.min.js"></script>      
-    <script src="assets/plugins/gumshoe/gumshoe.polyfills.min.js"></script> 
-    <script src="assets/js/docs.js"></script> 
-</body>
-</html> 
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="Bugfish Documentations" class="md-header__button md-logo" aria-label="Bugfish Documentations" data-md-component="logo">
+      
+  <img src="logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Bugfish Documentations
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Home
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="deep-orange" data-md-color-accent="deep-orange"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/bugfishtm" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    bugfishtm
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="Bugfish Documentations" class="md-nav__button md-logo" aria-label="Bugfish Documentations" data-md-component="logo">
+      
+  <img src="logo.png" alt="logo">
+
+    </a>
+    Bugfish Documentations
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/bugfishtm" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    bugfishtm
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="index.html" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#bugfishcms" class="md-nav__link">
+    <span class="md-ellipsis">
+      bugfishCMS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bugfish-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bugfish Framework
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bind9-web-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bind9 Web Manager
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dolibarr-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dolibarr Framework
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mail-relaying-over-dns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mail Relaying over DNS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#online-book-renting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Online Book Renting
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#android-web-app-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Android Web App Example
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dovecot-certificate-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dovecot Certificate Interface
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#image-download-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      Image Download Manager
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jquery-sortselect" class="md-nav__link">
+    <span class="md-ellipsis">
+      jQuery Sortselect
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proxmox-vma2raw" class="md-nav__link">
+    <span class="md-ellipsis">
+      Proxmox VMA2RAW
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="aboutme.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About Me
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="support.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Support
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="license.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    License
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://bugfishtm.blogspot.com/2023/05/impressum.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Impressum
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://bugfishtm.blogspot.com/2023/05/privacy.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Privacy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#bugfishcms" class="md-nav__link">
+    <span class="md-ellipsis">
+      bugfishCMS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bugfish-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bugfish Framework
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bind9-web-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bind9 Web Manager
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dolibarr-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dolibarr Framework
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mail-relaying-over-dns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mail Relaying over DNS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#online-book-renting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Online Book Renting
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#android-web-app-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Android Web App Example
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dovecot-certificate-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dovecot Certificate Interface
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#image-download-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      Image Download Manager
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jquery-sortselect" class="md-nav__link">
+    <span class="md-ellipsis">
+      jQuery Sortselect
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proxmox-vma2raw" class="md-nav__link">
+    <span class="md-ellipsis">
+      Proxmox VMA2RAW
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<div><h1 id="bugfish-documentations">Bugfish Documentations</h1>
+<p>Here you can find a list of my projects and related documentation websites. All documentation pages are included in the repositories themselves (docs folder) and are running with HTML/JS/CSS. So they won't need PHP or a web server to be executed, and you can view these documentations everywhere in the repository and release files with your phone or desktop/laptop browser. If you find any errors or questions unanswered, do not hesitate to contact us at <a href="mailto:requests@bugfish.eu">requests@bugfish.eu</a>!</p>
+<hr>
+<h2 id="bugfishcms">bugfishCMS</h2>
+<p><strong>License:</strong> GPLv3<br>
+<strong>Description:</strong> The PHP CMS multi-site framework stands as a resilient and adaptable content management system meticulously crafted for swift website deployment. Featuring an intuitive interface and robust functionalities, it empowers web developers to adeptly create and oversee numerous websites within a unified platform. Seamlessly streamlining website setup, customization, and maintenance, this framework proves to be an optimal solution for businesses and developers seeking swift and hassle-free online establishment across a spectrum of web projects.</p>
+<ul>
+<li><a href="https://github.com/bugfishtm/bugfish-cms/archive/refs/heads/main.zip">Download</a></li>
+<li><a href="./bugfish-cms/index.html">Documentation</a></li>
+<li><a href="https://github.com/bugfishtm/bugfish-cms">GitHub</a></li>
+</ul>
+<hr>
+<h2 id="bugfish-framework">Bugfish Framework</h2>
+<p><strong>License:</strong> GPLv3<br>
+<strong>Description:</strong> The Bugfish Framework is a powerful web development tool that seamlessly integrates PHP, CSS, and JavaScript to empower developers with a robust set of tools and resources. This versatile framework offers a comprehensive collection of meticulously documented PHP classes, enabling developers to streamline their projects and create highly efficient and well-structured web applications. With Bugfish Framework, you can harness the full potential of these technologies, facilitating the development process and ensuring the creation of feature-rich and scalable web solutions.</p>
+<ul>
+<li><a href="https://github.com/bugfishtm/bugfish-framework/archive/refs/heads/main.zip">Download</a></li>
+<li><a href="./bugfish-framework/index.html">Documentation</a></li>
+<li><a href="https://github.com/bugfishtm/bugfish-framework">GitHub</a></li>
+</ul>
+<hr>
+<h2 id="bind9-web-manager">Bind9 Web Manager</h2>
+<p><strong>License:</strong> GPLv3<br>
+<strong>Description:</strong> In today's interconnected digital landscape, efficient DNS management is pivotal for uninterrupted online operations. Whether you're an administrator responsible for overseeing DNS records, user access, or seeking a dependable DNS solution, simplicity and functionality are top priorities. Introducing Bind9 Web Manager: the comprehensive solution for effortless DNS management, user administration, and replication functionalities. Featuring an intuitive PHP-based web interface, Bind9 Web Manager empowers administrators to configure DNS servers seamlessly, including replication functionality to collaborate with platforms such as Plesk, ISPConfig, or Virtualmin. Bid farewell to complexity and welcome a system that offers detailed domain oversight, robust debugging tools, and streamlined user management, making DNS management an efficient and straightforward task.</p>
+<ul>
+<li><a href="https://github.com/bugfishtm/Bind9-Web-Manager/archive/refs/heads/main.zip">Download</a></li>
+<li><a href="./Bind9-Web-Manager/index.html">Documentation</a></li>
+<li><a href="https://github.com/bugfishtm/Bind9-Web-Manager">GitHub</a></li>
+</ul>
+<hr>
+<h2 id="dolibarr-framework">Dolibarr Framework</h2>
+<p><strong>License:</strong> GPLv3<br>
+<strong>Description:</strong> This is a Dolibarr Module to include the Bugfish - Framework into Dolibarr with some additional Functions. A Dolibarr Module to add Development and Other useful Coding and Logging Features, it can intercept MySQL and Javascript Errors. It has a full functional Changelog for different Internal areas and can serve messages for different modules if you are a developer! Dolibarr External Functions delivered in this project are already included in this Dolibarr Module. But if you want to use these functions without the module, you can include the file <code>dolibarr_functions.php</code>.</p>
+<ul>
+<li><a href="https://github.com/bugfishtm/Bugfish-Dolibarr-Module/archive/refs/heads/main.zip">Download</a></li>
+<li><a href="./Bugfish-Dolibarr-Module/index.html">Documentation</a></li>
+<li><a href="https://github.com/bugfishtm/Bugfish-Dolibarr-Module">GitHub</a></li>
+</ul>
+<hr>
+<h2 id="mail-relaying-over-dns">Mail Relaying over DNS</h2>
+<p><strong>License:</strong> GPLv3<br>
+<strong>Description:</strong> This web software converts your server into a mail backup relay! It functions independently, allowing users to configure domains for relaying to master mail servers. Additionally, it serves as a panel on a secondary DNS server, fetching registered DNS domains. In essence, if your primary mail server handles mail sending and receiving, this server remains unaffected. However, in the event of the primary server going offline, this secondary server stores incoming mail until the primary server is operational again. The stored mail is subsequently forwarded to the primary server. Users can configure the Master-Mail Server per domain and establish various Relay Servers connected to Mail Domains.</p>
+<ul>
+<li><a href="https://github.com/bugfishtm/Mail-Relaying-over-DNS/archive/refs/heads/main.zip">Download</a></li>
+<li><a href="./Mail-Relaying-over-DNS/index.html">Documentation</a></li>
+<li><a href="https://github.com/bugfishtm/Mail-Relaying-over-DNS">GitHub</a></li>
+</ul>
+<hr>
+<h2 id="online-book-renting">Online Book Renting</h2>
+<p><strong>License:</strong> GPLv3<br>
+<strong>Description:</strong> Introducing our streamlined web software crafted for effective book rental management. Featuring user-friendly functionalities including robust user management, seamless multi-language support, and efficient book/ISBN handling, our platform, powered by Apache2 and PHP, offers an accessible interface. Whether you're a bookstore streamlining operations or an avid reader seeking easy book renting and ISBN tracking, our software provides a straightforward solution tailored to your needs.</p>
+<ul>
+<li><a href="https://github.com/bugfishtm/Online-Book-Renting/archive/refs/heads/master.zip">Download</a></li>
+<li><a href="./Online-Book-Renting/index.html">Documentation</a></li>
+<li><a href="https://github.com/bugfishtm/Online-Book-Renting">GitHub</a></li>
+</ul>
+<hr>
+<h2 id="android-web-app-example">Android Web App Example</h2>
+<p><strong>License:</strong> GPLv3<br>
+<strong>Description:</strong> This is a ready-to-use Android Studio Project to compile a simple Webapp with some controls at the bottom (Forward, Back, Home). You can just change the related URL inside the <code>main.java</code> file and compile it - after that, you have a finished .apk file. With this project, you can easily create your own website's Web-App. You just need to have Android Studio installed on your system, then you can open the project and change the required data! This will give you the possibility to easily deploy apps related to your website if you need them!</p>
+<ul>
+<li><a href="https://github.com/bugfishtm/Android-Web-App-Example/archive/refs/heads/main.zip">Download</a></li>
+<li><a href="./Android-Web-App-Example/index.html">Documentation</a></li>
+<li><a href="https://github.com/bugfishtm/Android-Web-App-Example">GitHub</a></li>
+</ul>
+<hr>
+<h2 id="dovecot-certificate-interface">Dovecot Certificate Interface</h2>
+<p><strong>License:</strong> GPLv3<br>
+<strong>Description:</strong> The software simplifies Dovecot per Domain SSL Certificate setup, enabling seamless login across multiple domains using valid server certificates. It automates ISPConfig Dovecot Configuration File Generation for SSL domains and can function autonomously, managing Dovecot per Domain SSL Certificates without ISPConfig integration. However, caution is advised when applying it alongside existing Dovecot configurations (e.g., Plesk) to prevent possible system malfunctions.</p>
+<ul>
+<li><a href="https://github.com/bugfishtm/Dovecot-Certificate-Interface/archive/refs/heads/main.zip">Download</a></li>
+<li><a href="./Dovecot-Certificate-Interface/index.html">Documentation</a></li>
+<li><a href="https://github.com/bugfishtm/Dovecot-Certificate-Interface">GitHub</a></li>
+</ul>
+<hr>
+<h2 id="image-download-manager">Image Download Manager</h2>
+<p><strong>License:</strong> GPLv3<br>
+<strong>Description:</strong> The image downloader software facilitates the retrieval of all images from a designated website by simply entering its URL. The program automatically creates directories within the executable folder to house the downloaded images. Users can configure settings to explore subpages and selectively download High Definition Images (minimum 1000 pixels width). While compatibility may vary across websites, the tool offers a convenient solution for image retrieval.</p>
+<ul>
+<li><a href="https://github.com/bugfishtm/bugfish-image-downloader/archive/refs/heads/main.zip">Download</a></li>
+<li><a href="./bugfish-image-downloader/index.html">Documentation</a></li>
+<li><a href="https://github.com/bugfishtm/bugfish-image-downloader">GitHub</a></li>
+</ul>
+<hr>
+<h2 id="jquery-sortselect">jQuery Sortselect</h2>
+<p><strong>License:</strong> GPLv3<br>
+<strong>Description:</strong> The updated "multiselect-sortable" jQuery plugin enriches the capabilities of the HTML <code>&lt;select multiple="multiple"&gt;</code> element by introducing dual sortable select boxes, making it an ideal tool for optimizing your web projects. This plugin is equipped with enhanced features that offer developers an expanded toolkit for web project development.</p>
+<ul>
+<li><a href="https://github.com/bugfishtm/bugfish-jquery-sortselect/archive/refs/heads/main.zip">Download</a></li>
+<li><a href="./bugfish-jquery-sortselect/index.html">Documentation</a></li>
+<li><a href="https://github.com/bugfishtm/bugfish-jquery-sortselect">GitHub</a></li>
+</ul>
+<hr>
+<h2 id="proxmox-vma2raw">Proxmox VMA2RAW</h2>
+<p><strong>License:</strong> GPLv3<br>
+<strong>Description:</strong> This repository provides the necessary files and a ready-to-use Docker image to convert Proxmox VMA backup files to raw disk images. These raw images can then be accessed or mounted with Windows software.</p>
+<ul>
+<li><a href="https://github.com/bugfishtm/proxmox-vma2raw/archive/refs/heads/main.zip">Download</a></li>
+<li><a href="./proxmox-vma2raw/index.html">Documentation</a></li>
+<li><a href="https://github.com/bugfishtm/proxmox-vma2raw">GitHub</a></li>
+</ul></div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": ".", "features": [], "search": "assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="assets/javascripts/bundle.fe8b6f2b.min.js"></script>
+      
+        <script src="javascripts/extra.js"></script>
+      
+    
+  </body>
+</html>
