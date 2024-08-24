@@ -20,3 +20,5 @@ If you encounter any issues or have questions, we encourage you to visit [Bugfis
 - Documentations: [Bugfish Documentation Hub](https://bugfishtm.github.io)
 
 Thank you for choosing Bugfish Documentation Hub as your resource for in-depth documentation. We're here to make your journey smoother and more informative.
+
+Have fun coding!
