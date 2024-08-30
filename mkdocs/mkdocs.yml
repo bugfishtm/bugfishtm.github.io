@@ -3,7 +3,7 @@ repo_url: https://github.com/bugfishtm
 repo_name: bugfishtm
 
 nav:
-    - Home: index.md
+    - Documentation: index.md
     - About Me: aboutme.md
     - Support: support.md
     - License: license.md
@@ -18,6 +18,8 @@ theme:
   language: 'en'
   accent: deep orange
   font: false
+  features:
+    - content.code.copy
   palette:
     - scheme: slate
       primary: deep orange
@@ -31,8 +33,10 @@ extra_javascript:
 
 plugins:
     - mkdocstrings
+    - mkdocs-audio
     - search
     - mkdocs-video
+    - glightbox
     - meta-descriptions:
        export_csv: false
        quiet: false
@@ -43,6 +47,13 @@ plugins:
     
 markdown_extensions:
   - attr_list
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
   
 use_directory_urls: false
 

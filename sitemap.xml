@@ -13,9 +13,25 @@
 		<lastmod>2024-08-23T02:31:24Z</lastmod>
 	</url>
 	<url>
-		<loc>https://bugfishtm.github.io/aboutme.html</loc>
+		<loc>https://bugfishtm.github.io/aboutme.html</loc>  
 		<lastmod>2024-08-23T02:31:24Z</lastmod>
 	</url>
+	<url>
+		<loc>https://bugfishtm.github.io/Amnesia-Cavelight/index.html</loc>
+		<lastmod>2024-08-23T02:31:24Z</lastmod>
+	</url>
+	<url>
+		<loc>https://bugfishtm.github.io/Amnesia-Cavelight/support.html</loc>
+		<lastmod>2024-08-23T02:31:24Z</lastmod>
+	</url>
+	<url>
+		<loc>https://bugfishtm.github.io/Amnesia-Cavelight/license.html</loc>
+		<lastmod>2024-08-23T02:31:24Z</lastmod>
+	</url>	
+	<url>
+		<loc>https://bugfishtm.github.io/Amnesia-Cavelight/download.html</loc>
+		<lastmod>2024-08-23T02:31:24Z</lastmod>
+	</url>	
 	<url>
 		<loc>https://bugfishtm.github.io/Android-Web-App-Example/index.html</loc>
 		<lastmod>2024-08-23T02:31:24Z</lastmod>
@@ -26,6 +42,10 @@
 	</url>
 	<url>
 		<loc>https://bugfishtm.github.io/Android-Web-App-Example/license.html</loc>
+		<lastmod>2024-08-23T02:31:24Z</lastmod>
+	</url>	
+	<url>
+		<loc>https://bugfishtm.github.io/Android-Web-App-Example/download.html</loc>
 		<lastmod>2024-08-23T02:31:24Z</lastmod>
 	</url>	
 	<url>
@@ -43,7 +63,11 @@
 	<url>
 		<loc>https://bugfishtm.github.io/bugfish-jquery-sortselect/license.html</loc>
 		<lastmod>2024-08-23T02:31:24Z</lastmod>
-	</url>		
+	</url>	
+	<url>
+		<loc>https://bugfishtm.github.io/bugfish-jquery-sortselect/download.html</loc>
+		<lastmod>2024-08-23T02:31:24Z</lastmod>
+	</url>	
 	<url>
 		<loc>https://bugfishtm.github.io/bugfish-image-downloader/index.html</loc>
 		<lastmod>2024-08-23T02:31:24Z</lastmod>
@@ -54,6 +78,10 @@
 	</url>	
 	<url>
 		<loc>https://bugfishtm.github.io/bugfish-image-downloader/license.html</loc>
+		<lastmod>2024-08-23T02:31:24Z</lastmod>
+	</url>
+	<url>
+		<loc>https://bugfishtm.github.io/bugfish-image-downloader/download.html</loc>
 		<lastmod>2024-08-23T02:31:24Z</lastmod>
 	</url>
 	<url>
@@ -101,6 +129,10 @@
 		<lastmod>2024-08-23T02:31:24Z</lastmod>
 	</url>
 	<url>
+		<loc>https://bugfishtm.github.io/Dovecot-Certificate-Interface/download.html</loc>
+		<lastmod>2024-08-23T02:31:24Z</lastmod>
+	</url>
+	<url>
 		<loc>https://bugfishtm.github.io/Mail-Relaying-over-DNS/index.html</loc>
 		<lastmod>2024-08-23T02:31:24Z</lastmod>
 	</url>
@@ -117,6 +149,10 @@
 		<lastmod>2024-08-23T02:31:24Z</lastmod>
 	</url>
 	<url>
+		<loc>https://bugfishtm.github.io/Mail-Relaying-over-DNS/download.html</loc>
+		<lastmod>2024-08-23T02:31:24Z</lastmod>
+	</url>
+	<url>
 		<loc>https://bugfishtm.github.io/Online-Book-Renting/index.html</loc>
 		<lastmod>2024-08-23T02:31:24Z</lastmod>
 	</url>
@@ -130,6 +166,10 @@
 	</url>
 	<url>
 		<loc>https://bugfishtm.github.io/Online-Book-Renting/installation.html</loc>
+		<lastmod>2024-08-23T02:31:24Z</lastmod>
+	</url>
+	<url>
+		<loc>https://bugfishtm.github.io/Online-Book-Renting/download.html</loc>
 		<lastmod>2024-08-23T02:31:24Z</lastmod>
 	</url>
 	<url>
@@ -161,6 +201,10 @@
 		<lastmod>2024-08-23T02:31:24Z</lastmod>
 	</url>
 	<url>
+		<loc>https://bugfishtm.github.io/Bugfish-Dolibarr-Module/download.html</loc>
+		<lastmod>2024-08-23T02:31:24Z</lastmod>
+	</url>
+	<url>
 		<loc>https://bugfishtm.github.io/proxmox-vma2raw/index.html</loc>
 		<lastmod>2024-08-23T02:31:24Z</lastmod>
 	</url>
@@ -170,6 +214,10 @@
 	</url>
 	<url>
 		<loc>https://bugfishtm.github.io/proxmox-vma2raw/support.html</loc>
+		<lastmod>2024-08-23T02:31:24Z</lastmod>
+	</url>
+	<url>
+		<loc>https://bugfishtm.github.io/proxmox-vma2raw/download.html</loc>
 		<lastmod>2024-08-23T02:31:24Z</lastmod>
 	</url>
 	<url>
@@ -213,6 +261,10 @@
 		<lastmod>2024-08-23T02:31:24Z</lastmod>
 	</url>	
 	<url>
+		<loc>https://bugfishtm.github.io/bugfish-cms/download.html</loc>
+		<lastmod>2024-08-23T02:31:24Z</lastmod>
+	</url>	
+	<url>
 		<loc>https://bugfishtm.github.io/bugfish-cms/image.html</loc>
 		<lastmod>2024-08-23T02:31:24Z</lastmod>
 	</url>	
@@ -246,6 +298,10 @@
 	</url>	
 	<url>
 		<loc>https://bugfishtm.github.io/bugfish-framework/index.html</loc>
+		<lastmod>2024-08-23T02:31:24Z</lastmod>
+	</url>
+	<url>
+		<loc>https://bugfishtm.github.io/bugfish-framework/download.html</loc>
 		<lastmod>2024-08-23T02:31:24Z</lastmod>
 	</url>
 	<url>
