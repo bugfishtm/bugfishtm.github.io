@@ -15,7 +15,7 @@ Here you can find some information about what I do! Feel free to take a look at 
  - [Blog](https://bugfishtm.blogspot.com)
  - [Twitter](https://x.com/bugfishx658)
  - [TikTok](https://www.tiktok.com/@bugfish_tm)
- - [Discord](https://discord.com/invite/BdBHPyBU)
+ - [Discord](https://discord.com/invite/kNg6duDMWy)
  - [AllPoetry](https://allpoetry.com/Bugfish)
  
 ## Media Channels
