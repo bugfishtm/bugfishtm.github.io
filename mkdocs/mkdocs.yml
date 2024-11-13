@@ -3,7 +3,10 @@ repo_url: https://github.com/bugfishtm
 repo_name: bugfishtm
 
 nav:
-    - Documentation: index.md
+    - Projects: index.md
+    - Services: serv.md
+    - Websites: web.md
+    - Infrastructure: infr.md
     - About Me: aboutme.md
     - Support: support.md
     - License: license.md
