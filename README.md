@@ -1,4 +1,5 @@
 # Bugfish Documentations
+
 Welcome to Bugfish's Documentation Hub, your go-to resource for comprehensive documentation on a wide range of projects and topics. This repository serves as the GitHub page for Bugfish's personal documentation hub.
 
 ## Explore the Documentation
@@ -16,9 +17,10 @@ If you encounter any issues or have questions, we encourage you to visit [Bugfis
 ## Bugfish Online Presence
 
 - Website: [Bugfish](https://bugfish.eu)
+- CMS: [Bugfish](https://suitefish.com)
 - Blog: [Bugfish Blog](https://bugfishtm.blogspot.com/)
 - Documentations: [Bugfish Documentation Hub](https://bugfishtm.github.io)
 
 Thank you for choosing Bugfish Documentation Hub as your resource for in-depth documentation. We're here to make your journey smoother and more informative.
 
-Have fun coding!
+🐟 Bugfish <3

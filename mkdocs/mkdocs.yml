@@ -4,15 +4,13 @@ repo_name: bugfishtm
 
 nav:
     - Projects: index.md
-    - Services: serv.md
-    - Websites: web.md
     - Infrastructure: infr.md
     - About Me: aboutme.md
     - Support: support.md
     - License: license.md
     - Impressum: https://bugfishtm.blogspot.com/2023/05/impressum.html
     - Privacy: https://bugfishtm.blogspot.com/2023/05/privacy.html
- 
+
 theme:
   name: material
   logo: ./logo.png
@@ -24,7 +22,7 @@ theme:
   features:
     - content.code.copy
   palette:
-    - scheme: slate
+    - scheme: default
       primary: deep orange
       accent: deep orange
 
@@ -40,26 +38,19 @@ plugins:
     - search
     - mkdocs-video
     - glightbox
-    - meta-descriptions:
-       export_csv: false
-       quiet: false
-       enable_checks: false
-       min_length: 50
-       max_length: 160
-       trim: false
     
 markdown_extensions:
-  - admonition
-  - pymdownx.details
-  - pymdownx.superfences
-  - attr_list
-  - pymdownx.highlight:
-      anchor_linenums: true
-      line_spans: __span
-      pygments_lang_class: true
-  - pymdownx.inlinehilite
-  - pymdownx.snippets
-  - pymdownx.superfences
+    - admonition
+    - pymdownx.details
+    - pymdownx.superfences
+    - attr_list
+    - pymdownx.highlight:
+        anchor_linenums: true
+        line_spans: __span
+        pygments_lang_class: true
+    - pymdownx.inlinehilite
+    - pymdownx.snippets
+    - pymdownx.superfences
   
 use_directory_urls: false
 

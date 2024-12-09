@@ -16,7 +16,6 @@ Here you can find some information about what I do! Feel free to take a look at 
  - [Twitter](https://x.com/bugfishx658)
  - [TikTok](https://www.tiktok.com/@bugfish_tm)
  - [Discord](https://discord.com/invite/kNg6duDMWy)
- - [AllPoetry](https://allpoetry.com/Bugfish)
  
 ## Media Channels
 !!! note "You can find images and stock videos for projects i made and reuse them if you want."

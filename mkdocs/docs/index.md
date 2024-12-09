@@ -3,12 +3,12 @@ Access documentation for all my projects. These are included in the respective r
 
 ---
 
-### bugfishCMS
+### SuitefishCMS
 
 **License:** GPLv3  
 A multi-site PHP CMS for quick website deployment. It simplifies setup, customization, and maintenance, ideal for managing multiple sites on a single platform.
 
-[Download](https://github.com/bugfishtm/bugfish-cms/archive/refs/heads/main.zip){.md-button} [Documentation](./bugfish-cms/index.html){.md-button} [GitHub](https://github.com/bugfishtm/bugfish-cms){.md-button}
+[Download](https://github.com/bugfishtm/suitefish-cms/archive/refs/heads/main.zip){.md-button} [Documentation](./suitefish-cms/index.html){.md-button} [GitHub](https://github.com/bugfishtm/suitefish-cms){.md-button}
 
 ---
 
@@ -25,6 +25,8 @@ A robust framework integrating PHP, CSS, and JavaScript to streamline web applic
 
 **License:** GPLv3  
 A PHP-based DNS management tool with user administration and replication features, compatible with Plesk, ISPConfig, and Virtualmin.
+
+!!! warning "A privileged server user is required to run this software."
 
 [Download](https://github.com/bugfishtm/Bind9-Web-Manager/archive/refs/heads/main.zip){.md-button} [Documentation](./Bind9-Web-Manager/index.html){.md-button} [GitHub](https://github.com/bugfishtm/Bind9-Web-Manager){.md-button}
 
@@ -44,6 +46,8 @@ A Dolibarr module that integrates the Bugfish Framework, adding development tool
 **License:** GPLv3  
 Transforms your server into a mail backup relay, storing and forwarding mail when the primary server is offline.
 
+!!! warning "A privileged server user is required to run this software."
+
 [Download](https://github.com/bugfishtm/Mail-Relaying-over-DNS/archive/refs/heads/main.zip){.md-button} [Documentation](./Mail-Relaying-over-DNS/index.html){.md-button} [GitHub](https://github.com/bugfishtm/Mail-Relaying-over-DNS){.md-button}
 
 ---
@@ -53,7 +57,7 @@ Transforms your server into a mail backup relay, storing and forwarding mail whe
 **License:** GPLv3  
 A web-based platform for managing book rentals, featuring user management, multi-language support, and ISBN handling.
 
-[Download](https://github.com/bugfishtm/Online-Book-Renting/archive/refs/heads/master.zip){.md-button} [Documentation](./Online-Book-Renting/index.html){.md-button}   [GitHub](https://github.com/bugfishtm/Online-Book-Renting){.md-button}
+[Download](https://github.com/bugfishtm/Online-Book-Renting/archive/refs/heads/main.zip){.md-button} [Documentation](./Online-Book-Renting/index.html){.md-button}   [GitHub](https://github.com/bugfishtm/Online-Book-Renting){.md-button}
 
 ---
 
@@ -70,6 +74,8 @@ An Android Studio project to create a simple web app with navigation controls, e
 
 **License:** GPLv3  
 Automates Dovecot per-domain SSL certificate setup, managing ISPConfig configurations or working independently.
+
+!!! warning "A privileged server user is required to run this software."
 
 [Download](https://github.com/bugfishtm/Dovecot-Certificate-Interface/archive/refs/heads/main.zip){.md-button} [Documentation](./Dovecot-Certificate-Interface/index.html){.md-button} [GitHub](https://github.com/bugfishtm/Dovecot-Certificate-Interface){.md-button}
 

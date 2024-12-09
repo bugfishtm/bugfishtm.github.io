@@ -6,12 +6,10 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="We use an internal infrastructure to test our projects on.">
       
       
       
-      
-        <link rel="prev" href="web.html">
+        <link rel="prev" href="index.html">
       
       
         <link rel="next" href="aboutme.html">
@@ -30,6 +28,7 @@
       
         
         <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+      
       
       
 
@@ -77,6 +76,7 @@
 	<meta property="og:image" content="./meta.png" />
 
 
+
     
     
       
@@ -115,7 +115,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="deep-orange" data-md-color-accent="deep-orange">
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="deep-orange">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -172,7 +172,7 @@
     
     
     
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="deep-orange" data-md-color-accent="deep-orange"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="deep-orange"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
     
   
 </form>
@@ -292,46 +292,6 @@
   
   <span class="md-ellipsis">
     Projects
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="serv.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Services
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="web.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Websites
   </span>
   
 
@@ -621,6 +581,14 @@
 <hr>
 <h3 id="hivehv-infde">hive.hv-inf.de</h3>
 <p>Hypervisor to host Shadow, Thunder and Sunrise KVM.</p>
+<ul>
+<li>Hypervisor</li>
+<li>AMD Ryzen 7 1700X</li>
+<li>2x SSD SATA 512 GB</li>
+<li>4x RAM 16384 MB DDR4</li>
+<li>IPv4: 144.76.119.80</li>
+<li>IPv6: 2a01:4f8:192:7442::2</li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -648,6 +616,13 @@
 <hr>
 <h3 id="thunderhv-infde">thunder.hv-inf.de</h3>
 <p>Primary hosting server for all kind of services and websites.</p>
+<ul>
+<li>Hosting &amp; Mail Server</li>
+<li>Primary DNS Server</li>
+<li>VPN Server</li>
+<li>IPv4: 148.251.169.98</li>
+<li>IPv6: 2a01:4f8:192:7442::3</li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -661,21 +636,52 @@
 <tr>
 <td>Administration</td>
 <td>Webmin</td>
-<td>Server Manager Interface</td>
+<td>Server Manager Interface for Hosting Users</td>
 <td><a href="https://thunder.hv-inf.de:10000">Visit</a></td>
 </tr>
 <tr>
-<td>DNS Server</td>
-<td>DNSHTTP / Bind9</td>
-<td>Secondary DNS Server</td>
-<td><a href="https://hv-inf.de/dnshttp">Visit</a></td>
+<td>Webmail</td>
+<td>Usermin</td>
+<td>Webmail Interface for Hosting Users</td>
+<td><a href="https://thunder.hv-inf.de:20000">Visit</a></td>
+</tr>
+<tr>
+<td>Cloud</td>
+<td>Nextcloud</td>
+<td>Cloud Interface for Hosting Users</td>
+<td><a href="https://files.bugfish.eu">Visit</a></td>
+</tr>
+<tr>
+<td>Bugfish Website</td>
+<td>Suitefish</td>
+<td>Website for Bugfish.eu</td>
+<td><a href="https://bugfish.eu">Visit</a></td>
+</tr>
+<tr>
+<td>Suitefish Website</td>
+<td>Suitefish</td>
+<td>Website for Suitefish.com</td>
+<td><a href="https://suitefish.com">Visit</a></td>
 </tr>
 </tbody>
 </table>
-<p>Useable services on this server "thunder" are explained at the upper section "Services".</p>
+<p><strong>Email - Login Information</strong>  </p>
+<p><strong>IMAP/SMTP Hostname:</strong> mail.bugfish.eu <br>
+<strong>IMAP/SMTP Username:</strong> Your Full E-Mail Address <br>
+<strong>IMAP/SMTP Password:</strong> Your E-Mail Password<br>
+<strong>IMAP Port:</strong> 993 <br>
+<strong>SMTP Port:</strong> 587 <br>
+<strong>IMAP Port:</strong> SSL <br>
+<strong>SMTP Method:</strong> STARTLS <br>
+<strong>IMAP/SMTP Auth:</strong> Normal Password  </p>
 <hr>
 <h3 id="shadowhv-infde">shadow.hv-inf.de</h3>
 <p>Backup Server for primary services hosted on thunder.</p>
+<ul>
+<li>Secondary DNS Server</li>
+<li>IPv4: 144.76.119.77</li>
+<li>IPv6: 2a01:4f8:192:7442::4</li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -692,32 +698,22 @@
 <td>Server Manager Interface</td>
 <td><a href="https://shadow.hv-inf.de:10000">Visit</a></td>
 </tr>
-<tr>
-<td>DNS Server</td>
-<td>DNSHTTP / Bind9</td>
-<td>Secondary DNS Server</td>
-<td><a href="https://shadow.hv-inf.de/dnshttp">Visit</a></td>
-</tr>
-<tr>
-<td>Mail Backup Relay</td>
-<td>MROD / Postfix</td>
-<td>Secondary Incoming Backup Relay</td>
-<td><a href="https://shadow.hv-inf.de/mrod">Visit</a></td>
-</tr>
 </tbody>
 </table>
 <hr>
 <h3 id="sunrisehv-infde">sunrise.hv-inf.de</h3>
-<p>Just an internal testing server.</p></div>
+<p>Just an internal testing server.</p>
+<ul>
+<li>IPv4: 144.76.119.2</li>
+<li>IPv6: 2a01:4f8:192:7442::5</li>
+<li>Testing Dummy Server</li>
+</ul></div>
 
 
 
 
 
 
-
-  
-  
 
 
 
