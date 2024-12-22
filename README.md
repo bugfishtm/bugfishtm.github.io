@@ -8,7 +8,7 @@ You can access our documentation online at [Bugfish Documentation Hub](https://b
 
 ## License Information
 
-For licensing details, please refer to the [License.md](License.md) file in this repository.
+For licensing details, please refer to the [LICENSE.md](LICENSE.md) file in this repository.
 
 ## Get Help and Connect
 
