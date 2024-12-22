@@ -16,10 +16,10 @@ If you encounter any issues or have questions, we encourage you to visit [Bugfis
 
 ## Bugfish Online Presence
 
-- Website: [Bugfish](https://bugfish.eu)
-- CMS: [Bugfish](https://suitefish.com)
-- Blog: [Bugfish Blog](https://bugfishtm.blogspot.com/)
-- Documentations: [Bugfish Documentation Hub](https://bugfishtm.github.io)
+- Website: [https://bugfish.eu](https://bugfish.eu)
+- CMS: [https://suitefish.com](https://suitefish.com)
+- Blog: [https://bugfishtm.blogspot.com/](https://bugfishtm.blogspot.com/)
+- Documentations: [https://bugfishtm.github.io](https://bugfishtm.github.io)
 
 Thank you for choosing Bugfish Documentation Hub as your resource for in-depth documentation. We're here to make your journey smoother and more informative.
 
