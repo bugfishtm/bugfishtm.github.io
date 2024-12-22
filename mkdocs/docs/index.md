@@ -1,5 +1,5 @@
 # Projects
-Access documentation for all my projects. These are included in the respective repositories (`docs` folder) and work with HTML/JS/CSS, making them accessible on any device without requiring a web server. For any issues or questions, contact us at [requests@bugfish.eu](mailto:requests@bugfish.eu).
+Access documentation for all my projects. These are included in the respective repositories (`docs` folder) and work with HTML/JS/CSS, making them accessible on any device without requiring a web server. 
 
 ---
 
@@ -7,6 +7,8 @@ Access documentation for all my projects. These are included in the respective r
 
 **License:** GPLv3  
 A multi-site PHP CMS for quick website deployment. It simplifies setup, customization, and maintenance, ideal for managing multiple sites on a single platform.
+
+![Product Banner](./suitefish-banner.jpg)
 
 [Download](https://github.com/bugfishtm/suitefish-cms/archive/refs/heads/main.zip){.md-button} [Documentation](./suitefish-cms/index.html){.md-button} [GitHub](https://github.com/bugfishtm/suitefish-cms){.md-button}
 
@@ -17,6 +19,8 @@ A multi-site PHP CMS for quick website deployment. It simplifies setup, customiz
 **License:** GPLv3  
 A robust framework integrating PHP, CSS, and JavaScript to streamline web application development.
 
+![Product Banner](./bugfish-framework-banner.jpg)
+
 [Download](https://github.com/bugfishtm/bugfish-framework/archive/refs/heads/main.zip){.md-button}  [Documentation](./bugfish-framework/index.html){.md-button}   [GitHub](https://github.com/bugfishtm/bugfish-framework){.md-button}
 
 ---
@@ -25,6 +29,8 @@ A robust framework integrating PHP, CSS, and JavaScript to streamline web applic
 
 **License:** GPLv3  
 A PHP-based DNS management tool with user administration and replication features, compatible with Plesk, ISPConfig, and Virtualmin.
+
+![Product Banner](./dnshttp-banner.jpg)
 
 !!! warning "A privileged server user is required to run this software."
 
@@ -37,6 +43,8 @@ A PHP-based DNS management tool with user administration and replication feature
 **License:** GPLv3  
 A Dolibarr module that integrates the Bugfish Framework, adding development tools and logging features.
 
+![Product Banner](./bugfish-framework-banner.jpg)
+
 [Download](https://github.com/bugfishtm/Bugfish-Dolibarr-Module/archive/refs/heads/main.zip){.md-button} [Documentation](./Bugfish-Dolibarr-Module/index.html){.md-button} [GitHub](https://github.com/bugfishtm/Bugfish-Dolibarr-Module){.md-button}
 
 ---
@@ -45,6 +53,8 @@ A Dolibarr module that integrates the Bugfish Framework, adding development tool
 
 **License:** GPLv3  
 Transforms your server into a mail backup relay, storing and forwarding mail when the primary server is offline.
+
+![Product Banner](./mrod-banner.jpg)
 
 !!! warning "A privileged server user is required to run this software."
 
@@ -56,6 +66,8 @@ Transforms your server into a mail backup relay, storing and forwarding mail whe
 
 **License:** GPLv3  
 A web-based platform for managing book rentals, featuring user management, multi-language support, and ISBN handling.
+
+![Product Banner](./obr-banner.jpg)
 
 [Download](https://github.com/bugfishtm/Online-Book-Renting/archive/refs/heads/main.zip){.md-button} [Documentation](./Online-Book-Renting/index.html){.md-button}   [GitHub](https://github.com/bugfishtm/Online-Book-Renting){.md-button}
 
@@ -74,6 +86,8 @@ An Android Studio project to create a simple web app with navigation controls, e
 
 **License:** GPLv3  
 Automates Dovecot per-domain SSL certificate setup, managing ISPConfig configurations or working independently.
+
+![Product Banner](./dci-banner.jpg)
 
 !!! warning "A privileged server user is required to run this software."
 
