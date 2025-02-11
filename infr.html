@@ -32,6 +32,7 @@
       
 
 
+ 
     <script type="application/ld+json">
     {
       "@context": "http://schema.org",
@@ -75,9 +76,7 @@
 	<meta name="og:description" content="Browse comprehensive documentation for all my servers. Explore detailed guides, installation instructions, and development notes for each server. Each server has its own dedicated page with specific information.">  
 	<meta property="og:image" content="./meta.png" />
 
-    
-
-    
+       
     
       
     
@@ -353,36 +352,45 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#hivehv-infde" class="md-nav__link">
+  <a href="#services" class="md-nav__link">
     <span class="md-ellipsis">
-      hive.hv-inf.de
+      Services
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#thunderhv-infde" class="md-nav__link">
+  <a href="#e-mail-setup" class="md-nav__link">
     <span class="md-ellipsis">
-      thunder.hv-inf.de
+      E-Mail Setup
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#shadowhv-infde" class="md-nav__link">
+  <a href="#mx-servers" class="md-nav__link">
     <span class="md-ellipsis">
-      shadow.hv-inf.de
+      MX Servers
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#sunrisehv-infde" class="md-nav__link">
+  <a href="#dns-servers" class="md-nav__link">
     <span class="md-ellipsis">
-      sunrise.hv-inf.de
+      DNS Servers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ip-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      IP Information
     </span>
   </a>
   
@@ -523,36 +531,45 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#hivehv-infde" class="md-nav__link">
+  <a href="#services" class="md-nav__link">
     <span class="md-ellipsis">
-      hive.hv-inf.de
+      Services
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#thunderhv-infde" class="md-nav__link">
+  <a href="#e-mail-setup" class="md-nav__link">
     <span class="md-ellipsis">
-      thunder.hv-inf.de
+      E-Mail Setup
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#shadowhv-infde" class="md-nav__link">
+  <a href="#mx-servers" class="md-nav__link">
     <span class="md-ellipsis">
-      shadow.hv-inf.de
+      MX Servers
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#sunrisehv-infde" class="md-nav__link">
+  <a href="#dns-servers" class="md-nav__link">
     <span class="md-ellipsis">
-      sunrise.hv-inf.de
+      DNS Servers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ip-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      IP Information
     </span>
   </a>
   
@@ -577,100 +594,15 @@
 
 
 <div><h1 id="infrastructure">Infrastructure</h1>
-<p>We use an internal infrastructure to test our projects on.</p>
-<hr>
-<h3 id="hivehv-infde">hive.hv-inf.de</h3>
-<p>Hypervisor to host Shadow, Thunder and Sunrise KVM.</p>
-<table>
-<thead>
-<tr>
-<th>Hardware</th>
-<th>Details</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Physical CPU</td>
-<td>AMD Ryzen 7 1700X</td>
-</tr>
-<tr>
-<td>Available RAM</td>
-<td>4x 16384 MB DDR4</td>
-</tr>
-<tr>
-<td>SDD Storage</td>
-<td>2x SSD SATA 512 GB</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>IP</th>
-<th>Reverse/Hostname</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>144.76.119.80</td>
-<td>hive.hv-inf.de</td>
-</tr>
-<tr>
-<td>2a01:4f8:192:7442::2</td>
-<td>hive.hv-inf.de</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Service</th>
-<th>Technology</th>
-<th>Details</th>
-<th>URL</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Administration</td>
-<td>Webmin</td>
-<td>Server Manager Interface</td>
-<td><a href="https://hive.hv-inf.de:10000">Visit</a></td>
-</tr>
-<tr>
-<td>KVM Manager</td>
-<td>Proxmox</td>
-<td>Hypervisor Manager</td>
-<td><a href="https://hive.hv-inf.de:8006">Visit</a></td>
-</tr>
-</tbody>
-</table>
-<hr>
-<h3 id="thunderhv-infde">thunder.hv-inf.de</h3>
-<p>Primary hosting server for all kind of services and websites.</p>
+<h2 id="services">Services</h2>
 <ul>
-<li>Hosting &amp; Mail Server</li>
-<li>Primary DNS Server</li>
-<li>VPN Server</li>
+<li>I have a Softether VPN Server Running on hv-inf.de:5555.</li>
+<li>Webmailer: <a href="https://thunder.hv-inf.de:20000">Click here</a></li>
+<li>Cloud: <a href="https://files.bugfish.eu">Click here</a></li>
+<li>Bugfish: <a href="https://bugfish.eu">Click here</a></li>
+<li>Suitefish: <a href="https://suitefish.com">Click here</a></li>
 </ul>
-<table>
-<thead>
-<tr>
-<th>IP</th>
-<th>Reverse/Hostname</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>148.251.169.98</td>
-<td>thunder.hv-inf.de</td>
-</tr>
-<tr>
-<td>2a01:4f8:192:7442::3</td>
-<td>thunder.hv-inf.de</td>
-</tr>
-</tbody>
-</table>
+<h2 id="e-mail-setup">E-Mail Setup</h2>
 <table>
 <thead>
 <tr>
@@ -705,63 +637,45 @@
 </tr>
 </tbody>
 </table>
+<h2 id="mx-servers">MX Servers</h2>
 <table>
 <thead>
 <tr>
-<th>Service</th>
-<th>Technology</th>
-<th>Details</th>
-<th>URL</th>
+<th>Priority</th>
+<th>Reverse/Hostname</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Administration</td>
-<td>Webmin</td>
-<td>Server Manager Interface for Hosting Users</td>
-<td><a href="https://thunder.hv-inf.de:10000">Visit</a></td>
+<td>1</td>
+<td>thunder.hv-inf.de</td>
 </tr>
 <tr>
-<td>Webmail</td>
-<td>Usermin</td>
-<td>Webmail Interface for Hosting Users</td>
-<td><a href="https://thunder.hv-inf.de:20000">Visit</a></td>
-</tr>
-<tr>
-<td>Cloud</td>
-<td>Nextcloud</td>
-<td>Cloud Interface for Hosting Users</td>
-<td><a href="https://files.bugfish.eu">Visit</a></td>
-</tr>
-<tr>
-<td>Bugfish Website</td>
-<td>Suitefish</td>
-<td>Website for Bugfish.eu</td>
-<td><a href="https://bugfish.eu">Visit</a></td>
-</tr>
-<tr>
-<td>Suitefish Website</td>
-<td>Suitefish</td>
-<td>Website for Suitefish.com</td>
-<td><a href="https://suitefish.com">Visit</a></td>
-</tr>
-<tr>
-<td>DNS Server</td>
-<td>DNSHTTP</td>
-<td>DNS Manager</td>
-<td><a href="https://hv-inf.de/dnshttp">Visit</a></td>
-</tr>
-<tr>
-<td>VPN Server</td>
-<td>Softether</td>
-<td>VPN Manager</td>
-<td><a href="https://hv-inf.de:5555">Visit</a></td>
+<td>2</td>
+<td>shadow.hv-inf.de</td>
 </tr>
 </tbody>
 </table>
-<hr>
-<h3 id="shadowhv-infde">shadow.hv-inf.de</h3>
-<p>Backup Server for primary services hosted on thunder.</p>
+<h2 id="dns-servers">DNS Servers</h2>
+<table>
+<thead>
+<tr>
+<th>Priority</th>
+<th>Reverse/Hostname</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>thunder.hv-inf.de</td>
+</tr>
+<tr>
+<td>2</td>
+<td>shadow.hv-inf.de</td>
+</tr>
+</tbody>
+</table>
+<h2 id="ip-information">IP Information</h2>
 <table>
 <thead>
 <tr>
@@ -770,6 +684,22 @@
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>144.76.119.80</td>
+<td>hive.hv-inf.de</td>
+</tr>
+<tr>
+<td>2a01:4f8:192:7442::2</td>
+<td>hive.hv-inf.de</td>
+</tr>
+<tr>
+<td>148.251.169.98</td>
+<td>thunder.hv-inf.de</td>
+</tr>
+<tr>
+<td>2a01:4f8:192:7442::3</td>
+<td>thunder.hv-inf.de</td>
+</tr>
 <tr>
 <td>144.76.119.77</td>
 <td>shadow.hv-inf.de</td>
@@ -778,49 +708,6 @@
 <td>2a01:4f8:192:7442::4</td>
 <td>shadow.hv-inf.de</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Service</th>
-<th>Technology</th>
-<th>Details</th>
-<th>URL</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Administration</td>
-<td>Webmin</td>
-<td>Server Manager</td>
-<td><a href="https://shadow.hv-inf.de:10000">Visit</a></td>
-</tr>
-<tr>
-<td>Secondary DNS Server</td>
-<td>DNSHTTP</td>
-<td>DNS Manager</td>
-<td><a href="https://shadow.hv-inf.de/dnshttp">Visit</a></td>
-</tr>
-<tr>
-<td>Secondary Mail Server</td>
-<td>MROD</td>
-<td>Mail Relay Manager</td>
-<td><a href="https://shadow.hv-inf.de/mrod">Visit</a></td>
-</tr>
-</tbody>
-</table>
-<hr>
-<h3 id="sunrisehv-infde">sunrise.hv-inf.de</h3>
-<p>Just an internal testing server.</p>
-<table>
-<thead>
-<tr>
-<th>IP</th>
-<th>Reverse/Hostname</th>
-</tr>
-</thead>
-<tbody>
 <tr>
 <td>144.76.119.2</td>
 <td>sunrise.hv-inf.de</td>

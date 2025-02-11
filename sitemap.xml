@@ -43,10 +43,6 @@
 	<url>
 		<loc>https://bugfishtm.github.io/suitefish-cms/developer/mod-software.html</loc>
 		<lastmod>2024-12-12T02:31:24Z</lastmod>
-	</url>	
-	<url>
-		<loc>https://bugfishtm.github.io/suitefish-cms/developer/vendor.html</loc>
-		<lastmod>2024-12-12T02:31:24Z</lastmod>
 	</url>		
 	<url>
 		<loc>https://bugfishtm.github.io/suitefish-cms/developer/mod-docker.html</loc>
@@ -57,9 +53,9 @@
 		<lastmod>2024-12-12T02:31:24Z</lastmod>
 	</url>			
 	<url>
-		<loc>https://bugfishtm.github.io/suitefish-cms/enduser/general.html</loc>
+		<loc>https://bugfishtm.github.io/suitefish-cms/developer/vendor.html</loc>
 		<lastmod>2024-12-12T02:31:24Z</lastmod>
-	</url>	
+	</url>			
 	<url>
 		<loc>https://bugfishtm.github.io/suitefish-cms/index.html</loc>
 		<lastmod>2024-12-12T02:31:24Z</lastmod>
@@ -71,14 +67,6 @@
 	<url>
 		<loc>https://bugfishtm.github.io/suitefish-cms/tutorials.html</loc>
 		<lastmod>2024-12-12T02:31:24Z</lastmod>
-	</url>	
-	<url>
-		<loc>https://bugfishtm.github.io/suitefish-cms/support.html</loc>
-		<lastmod>2024-12-12T02:31:24Z</lastmod>
-	</url>	
-	<url>
-		<loc>https://bugfishtm.github.io/suitefish-cms/license.html</loc>
-		<lastmod>2024-12-12T02:31:24Z</lastmod>
 	</url>		
 	<url>
 		<loc>https://bugfishtm.github.io/suitefish-cms/download.html</loc>
@@ -87,13 +75,45 @@
 	<url>
 		<loc>https://bugfishtm.github.io/suitefish-cms/screenshots.html</loc>
 		<lastmod>2024-12-12T02:31:24Z</lastmod>
-	</url>		
+	</url>	
 	<url>
-		<loc>https://bugfishtm.github.io/Bind9-Web-Manager/index.html</loc>
+		<loc>https://bugfishtm.github.io/suitefish-cms/support.html</loc>
 		<lastmod>2024-12-12T02:31:24Z</lastmod>
 	</url>	
 	<url>
-		<loc>https://bugfishtm.github.io/Bind9-Web-Manager/download.html</loc>
+		<loc>https://bugfishtm.github.io/suitefish-cms/license.html</loc>
+		<lastmod>2024-12-12T02:31:24Z</lastmod>
+	</url>	
+	<url>
+		<loc>https://bugfishtm.github.io/Docker-Server-Manager/index.html</loc>
+		<lastmod>2024-12-12T02:31:24Z</lastmod>
+	</url>	
+	<url>
+		<loc>https://bugfishtm.github.io/Docker-Server-Manager/tutorials.html</loc>
+		<lastmod>2024-12-12T02:31:24Z</lastmod>
+	</url>	
+	<url>
+		<loc>https://bugfishtm.github.io/Docker-Server-Manager/installation.html</loc>
+		<lastmod>2024-12-12T02:31:24Z</lastmod>
+	</url>
+	<url>
+		<loc>https://bugfishtm.github.io/Docker-Server-Manager/download.html</loc>
+		<lastmod>2024-12-12T02:31:24Z</lastmod>
+	</url>	
+	<url>
+		<loc>https://bugfishtm.github.io/Docker-Server-Manager/screenshots.html</loc>
+		<lastmod>2024-12-12T02:31:24Z</lastmod>
+	</url>		
+	<url>
+		<loc>https://bugfishtm.github.io/Docker-Server-Manager/license.html</loc>
+		<lastmod>2024-12-12T02:31:24Z</lastmod>
+	</url>
+	<url>
+		<loc>https://bugfishtm.github.io/Docker-Server-Manager/support.html</loc>
+		<lastmod>2024-12-12T02:31:24Z</lastmod>
+	</url>		
+	<url>
+		<loc>https://bugfishtm.github.io/Bind9-Web-Manager/index.html</loc>
 		<lastmod>2024-12-12T02:31:24Z</lastmod>
 	</url>	
 	<url>
@@ -103,13 +123,9 @@
 	<url>
 		<loc>https://bugfishtm.github.io/Bind9-Web-Manager/installation.html</loc>
 		<lastmod>2024-12-12T02:31:24Z</lastmod>
-	</url>	
-	<url>
-		<loc>https://bugfishtm.github.io/Bind9-Web-Manager/license.html</loc>
-		<lastmod>2024-12-12T02:31:24Z</lastmod>
 	</url>
 	<url>
-		<loc>https://bugfishtm.github.io/Bind9-Web-Manager/support.html</loc>
+		<loc>https://bugfishtm.github.io/Bind9-Web-Manager/download.html</loc>
 		<lastmod>2024-12-12T02:31:24Z</lastmod>
 	</url>	
 	<url>
@@ -117,15 +133,15 @@
 		<lastmod>2024-12-12T02:31:24Z</lastmod>
 	</url>		
 	<url>
+		<loc>https://bugfishtm.github.io/Bind9-Web-Manager/license.html</loc>
+		<lastmod>2024-12-12T02:31:24Z</lastmod>
+	</url>
+	<url>
+		<loc>https://bugfishtm.github.io/Bind9-Web-Manager/support.html</loc>
+		<lastmod>2024-12-12T02:31:24Z</lastmod>
+	</url>		
+	<url>
 		<loc>https://bugfishtm.github.io/Online-Book-Renting/index.html</loc>
-		<lastmod>2024-12-12T02:31:24Z</lastmod>
-	</url>
-	<url>
-		<loc>https://bugfishtm.github.io/Online-Book-Renting/license.html</loc>
-		<lastmod>2024-12-12T02:31:24Z</lastmod>
-	</url>
-	<url>
-		<loc>https://bugfishtm.github.io/Online-Book-Renting/support.html</loc>
 		<lastmod>2024-12-12T02:31:24Z</lastmod>
 	</url>
 	<url>
@@ -145,15 +161,15 @@
 		<lastmod>2024-12-12T02:31:24Z</lastmod>
 	</url>	
 	<url>
+		<loc>https://bugfishtm.github.io/Online-Book-Renting/license.html</loc>
+		<lastmod>2024-12-12T02:31:24Z</lastmod>
+	</url>
+	<url>
+		<loc>https://bugfishtm.github.io/Online-Book-Renting/support.html</loc>
+		<lastmod>2024-12-12T02:31:24Z</lastmod>
+	</url>	
+	<url>
 		<loc>https://bugfishtm.github.io/Mail-Relaying-over-DNS/index.html</loc>
-		<lastmod>2024-12-12T02:31:24Z</lastmod>
-	</url>
-	<url>
-		<loc>https://bugfishtm.github.io/Mail-Relaying-over-DNS/support.html</loc>
-		<lastmod>2024-12-12T02:31:24Z</lastmod>
-	</url>
-	<url>
-		<loc>https://bugfishtm.github.io/Mail-Relaying-over-DNS/license.html</loc>
 		<lastmod>2024-12-12T02:31:24Z</lastmod>
 	</url>
 	<url>
@@ -168,6 +184,14 @@
 		<loc>https://bugfishtm.github.io/Mail-Relaying-over-DNS/video.html</loc>
 		<lastmod>2024-12-12T02:31:24Z</lastmod>
 	</url>	
+	<url>
+		<loc>https://bugfishtm.github.io/Mail-Relaying-over-DNS/support.html</loc>
+		<lastmod>2024-12-12T02:31:24Z</lastmod>
+	</url>
+	<url>
+		<loc>https://bugfishtm.github.io/Mail-Relaying-over-DNS/license.html</loc>
+		<lastmod>2024-12-12T02:31:24Z</lastmod>
+	</url>
 	<url>
 		<loc>https://bugfishtm.github.io/Android-Web-App-Example/index.html</loc>
 		<lastmod>2024-12-12T02:31:24Z</lastmod>
@@ -225,19 +249,15 @@
 		<lastmod>2024-12-12T02:31:24Z</lastmod>
 	</url>
 	<url>
-		<loc>https://bugfishtm.github.io/Dovecot-Certificate-Interface/support.html</loc>
-		<lastmod>2024-12-12T02:31:24Z</lastmod>
-	</url>
-	<url>
-		<loc>https://bugfishtm.github.io/Dovecot-Certificate-Interface/license.html</loc>
-		<lastmod>2024-12-12T02:31:24Z</lastmod>
-	</url>
-	<url>
 		<loc>https://bugfishtm.github.io/Dovecot-Certificate-Interface/installation.html</loc>
 		<lastmod>2024-12-12T02:31:24Z</lastmod>
 	</url>
 	<url>
 		<loc>https://bugfishtm.github.io/Dovecot-Certificate-Interface/download.html</loc>
+		<lastmod>2024-12-12T02:31:24Z</lastmod>
+	</url>
+	<url>
+		<loc>https://bugfishtm.github.io/Dovecot-Certificate-Interface/requirements.html</loc>
 		<lastmod>2024-12-12T02:31:24Z</lastmod>
 	</url>
 	<url>
@@ -249,11 +269,23 @@
 		<lastmod>2024-12-12T02:31:24Z</lastmod>
 	</url>
 	<url>
-		<loc>https://bugfishtm.github.io/Dovecot-Certificate-Interface/requirements.html</loc>
+		<loc>https://bugfishtm.github.io/Dovecot-Certificate-Interface/support.html</loc>
+		<lastmod>2024-12-12T02:31:24Z</lastmod>
+	</url>
+	<url>
+		<loc>https://bugfishtm.github.io/Dovecot-Certificate-Interface/license.html</loc>
 		<lastmod>2024-12-12T02:31:24Z</lastmod>
 	</url>
 	<url>
 		<loc>https://bugfishtm.github.io/Bugfish-Dolibarr-Module/index.html</loc>
+		<lastmod>2024-12-12T02:31:24Z</lastmod>
+	</url>
+	<url>
+		<loc>https://bugfishtm.github.io/Bugfish-Dolibarr-Module/installation.html</loc>
+		<lastmod>2024-12-12T02:31:24Z</lastmod>
+	</url>
+	<url>
+		<loc>https://bugfishtm.github.io/Bugfish-Dolibarr-Module/download.html</loc>
 		<lastmod>2024-12-12T02:31:24Z</lastmod>
 	</url>
 	<url>
@@ -275,15 +307,7 @@
 	<url>
 		<loc>https://bugfishtm.github.io/Bugfish-Dolibarr-Module/permissions.html</loc>
 		<lastmod>2024-12-12T02:31:24Z</lastmod>
-	</url>
-	<url>
-		<loc>https://bugfishtm.github.io/Bugfish-Dolibarr-Module/installation.html</loc>
-		<lastmod>2024-12-12T02:31:24Z</lastmod>
-	</url>
-	<url>
-		<loc>https://bugfishtm.github.io/Bugfish-Dolibarr-Module/download.html</loc>
-		<lastmod>2024-12-12T02:31:24Z</lastmod>
-	</url>
+	</url>	
 	<url>
 		<loc>https://bugfishtm.github.io/proxmox-vma2raw/index.html</loc>
 		<lastmod>2024-12-12T02:31:24Z</lastmod>
@@ -299,7 +323,7 @@
 	<url>
 		<loc>https://bugfishtm.github.io/proxmox-vma2raw/download.html</loc>
 		<lastmod>2024-12-12T02:31:24Z</lastmod>
-	</url>	
+	</url>		
 	<url>
 		<loc>https://bugfishtm.github.io/bugfish-framework/index.html</loc>
 		<lastmod>2024-12-12T02:31:24Z</lastmod>
