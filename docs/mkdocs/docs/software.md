@@ -2,7 +2,6 @@
 
 Below you'll find an overview of my software projects, along with a link to my GitHub profile where you can explore the code, contributions, and additional work in more detail.
 
-
 <div class="product-grid">
 
   <div class="product-card" onclick="window.location.href='./index.html';">
@@ -101,15 +100,21 @@ Below you'll find an overview of my software projects, along with a link to my G
     </div>
   </div>
 
-
-  <div class="product-card" onclick="window.open('https://bugfishtm.github.io/bugfish-winclean/', '_blank');">
-    <img src="./software/winclean.png" alt="Product Image" class="off-glb">
+  <div class="product-card" onclick="window.open('https://bugfishtm.github.io/TrajectorX/', '_blank');">
+    <img src="./software/trajectorx.png" alt="Product Image" class="off-glb">
     <div class="product-card-content">
-      <h3>Bugfish WinClean</h3>
-      <p style="font-size: 16px;">WinClean is a lightweight Windows optimization tool that safely cleans system clutter, removes unnecessary files, and clears privacy traces.</p>
+      <h3>TrajectorX</h3>
+      <p style="font-size: 16px;">A physics engine that simulates space trajectories and orbits using real-world physics equations.</p>
     </div>
   </div>
 
+  <div class="product-card" onclick="window.open('https://bugfishtm.github.io/windows-hash-cracker/', '_blank');">
+    <img src="./software/hashcracker.png" alt="Product Image" class="off-glb">
+    <div class="product-card-content">
+      <h3>Hash Cracker</h3>
+      <p style="font-size: 16px;">A tool that recovers hashes using brute-force attacks, or decoding common hash types.</p>
+    </div>
+  </div>
 
   <div class="product-card" onclick="window.open('https://bugfishtm.github.io/bugfish-nuke/', '_blank');">
     <img src="./software/nuke.png" alt="Product Image" class="off-glb">

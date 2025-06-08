@@ -1397,3 +1397,8 @@ details .nt-timeline.vertical.center:not(.alternate) .nt-timeline-item .nt-timel
   box-shadow: 0 0.05rem 0 var(--md-default-bg-color) inset;
   transition: background-color 125ms;
 }
+@media screen and (max-width: 450px) {
+  .product-card {
+    width: 100%;
+  }
+}

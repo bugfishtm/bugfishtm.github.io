@@ -16,7 +16,7 @@ Below, you can return to the start page or visit the pages where I share my musi
     <img src="./music/youtube.png" alt="Product Image" class="off-glb">
     <div class="product-card-content">
       <h3>Youtube Music</h3>
-      <p style="font-size: 16px;">Media distribution page.</p>
+      <p style="font-size: 16px;">Music distribution page.</p>
     </div>
   </div>
   <div class="product-card" onclick="window.open('https://open.spotify.com/artist/22t8XUzb2rVqKywyCaS36k', '_blank');">

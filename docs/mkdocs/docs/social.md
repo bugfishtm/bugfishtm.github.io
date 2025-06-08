@@ -11,20 +11,13 @@ Below, you'll find links to my social media profiles where I share updates, crea
       <p style="font-size: 16px;">Go back to the start page.</p>
     </div>
   </div>
-  
-  <div class="product-card" onclick="window.open('https://lemmy.bugfish.eu/', '_blank');">
-    <img src="./social/lemmy.png" alt="Product Image" class="off-glb">
-    <div class="product-card-content">
-      <h3>Lemmy</h3>
-      <p style="font-size: 16px;">Bugfish lemmy instance.</p>
-    </div>
-  </div>
+
   
   <div class="product-card" onclick="window.open('https://www.facebook.com/officialbugfish/', '_blank');">
     <img src="./social/fb.png" alt="Product Image" class="off-glb">
     <div class="product-card-content">
       <h3>Facebook</h3>
-      <p style="font-size: 16px;">Bugfish facebook page.</p>
+      <p style="font-size: 16px;">Facebook page.</p>
     </div>
   </div>
   
@@ -32,7 +25,7 @@ Below, you'll find links to my social media profiles where I share updates, crea
     <img src="./social/blogger.png" alt="Product Image" class="off-glb">
     <div class="product-card-content">
       <h3>Blogger</h3>
-      <p style="font-size: 16px;">Bugfish blogger page.</p>
+      <p style="font-size: 16px;">Blogger page.</p>
     </div>
   </div>
   
@@ -40,7 +33,7 @@ Below, you'll find links to my social media profiles where I share updates, crea
     <img src="./social/insta.png" alt="Product Image" class="off-glb">
     <div class="product-card-content">
       <h3>Instagram</h3>
-      <p style="font-size: 16px;">Bugfish instagram page.</p>
+      <p style="font-size: 16px;">Instagram page.</p>
     </div>
   </div>
   
@@ -48,7 +41,7 @@ Below, you'll find links to my social media profiles where I share updates, crea
     <img src="./social/twitter.png" alt="Product Image" class="off-glb">
     <div class="product-card-content">
       <h3>X (Twitter)</h3>
-      <p style="font-size: 16px;">Bugfish twitter page.</p>
+      <p style="font-size: 16px;">Twitter(X) page.</p>
     </div>
   </div>
   
@@ -56,7 +49,7 @@ Below, you'll find links to my social media profiles where I share updates, crea
     <img src="./social/tiktok.png" alt="Product Image" class="off-glb">
     <div class="product-card-content">
       <h3>TikTok</h3>
-      <p style="font-size: 16px;">View the Bugfish TikTok Account.</p>
+      <p style="font-size: 16px;">View the TikTok Account.</p>
     </div>
   </div>
   
@@ -72,7 +65,7 @@ Below, you'll find links to my social media profiles where I share updates, crea
     <img src="./social/steam.png" alt="Product Image" class="off-glb">
     <div class="product-card-content">
       <h3>Steam Group</h3>
-      <p style="font-size: 16px;">View the Bugfish steam group.</p>
+      <p style="font-size: 16px;">View the Steam group.</p>
     </div>
   </div>
 
@@ -80,7 +73,7 @@ Below, you'll find links to my social media profiles where I share updates, crea
     <img src="./social/discord.jpg" alt="Product Image" class="off-glb">
     <div class="product-card-content">
       <h3>Discord</h3>
-      <p style="font-size: 16px;">Invite to the Bugfish discord server.</p>
+      <p style="font-size: 16px;">Invite to the Discord server.</p>
     </div>
   </div>
 
