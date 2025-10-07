@@ -1,0 +1,5 @@
+# This is just an internal File to ignore Files during git operations
+
+# Ignore all htaccess & htpasswd Files
+**/.htaccess*
+**/.htpasswd*
