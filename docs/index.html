@@ -1,0 +1,1136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Bugfish — software developer since 2008. Code, music, digital art and more.">
+<title>Bugfish</title>
+
+<!-- META INJECTION START -->
+<!-- META INJECTION START -->
+<!-- META INJECTION START -->
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="subject" content="documentation">
+<meta name="copyright" content="bugfish">
+<meta name="language" content="en">
+<meta name="robots" content="index,follow">
+<meta name="author" content="bugfish, ynvnzmlzaa@gmail.com">
+<meta property="og:image" content="./meta.jpg">    
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "WebSite",
+  "name": "Bugfish Documentations",
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "TechArticle",
+  "headline": "Bugfish",
+  "description": "A central index of my work — music, code, videos, and more — with links to everything I do.",
+  "articleSection": "Introduction",
+  "datePublished": "2025-06-04",
+  "dateModified": "2025-06-04",
+  "author": {
+	"@type": "Person",
+	"name": "Jan-Maurice Dahlmanns"
+  },
+  "publisher": {
+	"@type": "Organization",
+	"name": "Bugfish",
+	"logo": {
+	  "@type": "ImageObject",
+	  "url": "./logo.png"
+	}
+  }
+}
+</script> 
+<meta property="og:title" content="Bugfish">
+<meta name="description" content="A central index of my work — music, code, videos, and more — with links to everything I do.">  
+<meta name="og:description" content="A central index of my work — music, code, videos, and more — with links to everything I do.">  
+<!-- META INJECTION END -->  
+<!-- META INJECTION END -->  
+<!-- META INJECTION END -->  
+
+<style>
+	/* ══════════════════════════════════════════
+	   TOKENS
+	══════════════════════════════════════════ */
+	:root {
+	  --a:   #FF5707;
+	  --a2:  #ff7c3a;
+	  --bg:  #0e0e0e;
+	  --s1:  #141414;
+	  --s2:  #1a1a1a;
+	  --s3:  #222;
+	  --b:   #2c2c2c;
+	  --b2:  #3a3a3a;
+	  --t:   #c8c8c8;
+	  --t2:  #888;
+	  --t3:  #555;
+	  --mono: 'IBM Plex Mono', monospace;
+	  --disp: 'Bebas Neue', sans-serif;
+	  --sw: 240px;
+	}
+
+	*,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
+	html { scroll-behavior:smooth; }
+	body {
+	  background: var(--bg);
+	  color: var(--t);
+	  font-family: var(--mono);
+	  font-size: 13px;
+	  line-height: 1.7;
+	  overflow-x: hidden;
+	  /* */
+	}
+	a { color: var(--a); text-decoration:none; /* */ }
+	a:hover { color: var(--a2); }
+	img,video { max-width:100%; display:block; }
+	::selection { background: var(--a); color: #000; }
+
+	/* CRT scanlines */
+	body::after {
+	  content:'';
+	  position:fixed; inset:0;
+	  background: repeating-linear-gradient(
+		0deg, transparent, transparent 3px,
+		rgba(0,0,0,.05) 3px, rgba(0,0,0,.05) 4px
+	  );
+	  pointer-events:none;
+	  z-index:9999;
+	}
+
+	/* ══════════════════════════════════════════
+	   LAYOUT
+	══════════════════════════════════════════ */
+	.layout { display:flex; min-height:100vh; }
+
+	/* ── SIDEBAR ── */
+	.sidebar {
+	  width: var(--sw);
+	  min-height: 100vh;
+	  background: var(--s1);
+	  border-right: 1px solid var(--b);
+	  position: fixed;
+	  top:0; left:0; bottom:0;
+	  display: flex;
+	  flex-direction: column;
+	  z-index: 50;
+	  overflow: hidden;
+	}
+	.sb-top {
+	  padding: 1.8rem 1.4rem 1.4rem;
+	  border-bottom: 1px solid var(--b);
+	}
+	.sb-logo {
+	  font-family: var(--disp);
+	  font-size: 2.2rem;
+	  letter-spacing:.05em;
+	  line-height:1;
+	  color:#fff;
+	}
+	.sb-logo span { color: var(--a); }
+	.sb-status {
+	  display:flex; align-items:center; gap:.5rem;
+	  margin-top:.7rem;
+	  font-size:.62rem; color:var(--t2); letter-spacing:.12em;
+	}
+	.sb-dot {
+	  width:6px; height:6px; border-radius:50%;
+	  background:var(--a); box-shadow:0 0 6px var(--a);
+	  flex-shrink:0;
+	  animation: pulse 2s ease-in-out infinite;
+	}
+	@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.3} }
+
+	.sb-nav { flex:1; padding:1.2rem 0; overflow-y:auto; }
+	.sb-nav-label {
+	  font-size:.58rem; letter-spacing:.2em; text-transform:uppercase;
+	  color:var(--t3); padding:.6rem 1.4rem .4rem;
+	}
+	.sb-nav a {
+	  display:flex; align-items:center; gap:.8rem;
+	  padding:.52rem 1.4rem;
+	  color:var(--t2); font-size:.73rem; letter-spacing:.07em;
+	  transition: color .15s, background .15s;
+	  position:relative;
+	}
+	.sb-nav a::before {
+	  content: attr(data-sym);
+	  color:var(--t3); font-size:.7rem; width:1em; flex-shrink:0;
+	  transition: color .15s;
+	}
+	.sb-nav a:hover, .sb-nav a.active { color:var(--a); background:rgba(255,87,7,.05); }
+	.sb-nav a:hover::before, .sb-nav a.active::before { color:var(--a); }
+	.sb-nav a.active::after {
+	  content:''; position:absolute; right:0; top:0; bottom:0;
+	  width:2px; background:var(--a);
+	}
+	.sb-nav .div { height:1px; background:var(--b); margin:.6rem 1.4rem; }
+
+	.sb-bottom {
+	  padding:1rem 1.4rem; border-top:1px solid var(--b);
+	  font-size:.62rem; color:var(--t3); line-height:1.9;
+	}
+	.sb-bottom a { color:var(--t3); }
+	.sb-bottom a:hover { color:var(--t2); }
+
+	/* ── MAIN ── */
+	main { margin-left:var(--sw); flex:1; min-width:0; }
+
+	/* ── MOBILE TOPBAR ── */
+	.topbar {
+	  display:none; position:fixed; top:0; left:0; right:0;
+	  height:48px; background:var(--s1); border-bottom:1px solid var(--b);
+	  align-items:center; justify-content:space-between;
+	  padding:0 1.2rem; z-index:60;
+	}
+	.topbar-logo { font-family:var(--disp); font-size:1.6rem; color:#fff; letter-spacing:.05em; }
+	.topbar-logo span { color:var(--a); }
+	.burger {
+	  background:none; border:1px solid var(--b);
+	  padding:.4rem .6rem; /* */
+	  display:flex; flex-direction:column; gap:4px;
+	}
+	.burger i { display:block; width:18px; height:1px; background:var(--t); }
+	.mobile-nav {
+	  display:none; position:fixed; top:48px; left:0; right:0;
+	  background:var(--s1); border-bottom:1px solid var(--b);
+	  z-index:59; padding:.8rem 0;
+	}
+	.mobile-nav.open { display:block; }
+	.mobile-nav a { display:block; padding:.6rem 1.4rem; color:var(--t2); font-size:.8rem; }
+	.mobile-nav a:hover { color:var(--a); }
+
+	/* ══════════════════════════════════════════
+	   WINDOW CHROME
+	══════════════════════════════════════════ */
+	.win {
+	  margin:2rem; border:1px solid var(--b);
+	  background:var(--s1); position:relative;
+	}
+	.win-bar {
+	  display:flex; align-items:center; gap:.8rem;
+	  padding:.55rem 1rem; border-bottom:1px solid var(--b);
+	  background:var(--s2);
+	}
+	.win-dots { display:flex; gap:.4rem; }
+	.win-dot { width:9px; height:9px; border-radius:50%; background:var(--b2); }
+	.win-dot:nth-child(1) { background:#ff5f57; }
+	.win-dot:nth-child(2) { background:#febc2e; }
+	.win-dot:nth-child(3) { background:#28c840; }
+	.win-title { font-size:.65rem; letter-spacing:.18em; text-transform:uppercase; color:var(--t2); flex:1; }
+	.win-num { font-size:.6rem; color:var(--t3); letter-spacing:.1em; }
+	.win-body { padding:2rem; }
+	.prompt-row {
+	  font-size:.72rem; color:var(--t3); padding:.5rem 2rem;
+	  border-top:1px solid var(--b); letter-spacing:.06em;
+	}
+	.prompt-row span { color:var(--a); }
+
+	/* ══════════════════════════════════════════
+	   HERO
+	══════════════════════════════════════════ */
+	#hero {
+	  min-height:100vh; display:flex; align-items:flex-end;
+	  position:relative; overflow:hidden; padding:0;
+	}
+	.hero-bg-grid {
+	  position:absolute; inset:0;
+	  background-image:
+		linear-gradient(rgba(255,87,7,.06) 1px,transparent 1px),
+		linear-gradient(90deg,rgba(255,87,7,.06) 1px,transparent 1px);
+	  background-size:48px 48px;
+	}
+	.hero-bg-radial {
+	  position:absolute; inset:0;
+	  background:radial-gradient(ellipse 80% 60% at 60% 50%,rgba(255,87,7,.09) 0%,transparent 70%);
+	}
+	.hero-corner {
+	  position:absolute; font-family:var(--mono); color:var(--a);
+	  font-size:.78rem; opacity:.45;
+	}
+	.hero-corner.tl { top:2rem; left:2rem; }
+	.hero-corner.tr { top:2rem; right:2rem; text-align:right; }
+	.hero-corner.bl { bottom:2rem; left:2rem; }
+	.hero-corner.br { bottom:2rem; right:2rem; text-align:right; }
+
+	.hero-inner { position:relative; z-index:1; padding:8rem 3rem 4rem; width:100%; }
+	.hero-pre {
+	  display:flex; align-items:center; gap:.8rem;
+	  font-size:.7rem; letter-spacing:.2em; color:var(--a); margin-bottom:1.2rem;
+	}
+	.hero-pre::before { content:''; display:block; width:28px; height:1px; background:var(--a); }
+
+	.hero-name {
+	  font-family:var(--disp);
+	  font-size:clamp(5rem,15vw,11rem);
+	  line-height:.88; color:#fff; position:relative;
+	  display:inline-block; letter-spacing:.02em;
+	}
+	.hero-name::before {
+	  content:'BUGFISH'; position:absolute; top:0; left:0;
+	  color:var(--a); clip-path:polygon(0 28%,100% 28%,100% 44%,0 44%);
+	  animation: gl-a 5s infinite;
+	}
+	.hero-name::after {
+	  content:'BUGFISH'; position:absolute; top:0; left:0;
+	  color:#00fff0; clip-path:polygon(0 62%,100% 62%,100% 74%,0 74%);
+	  animation: gl-b 5s infinite;
+	}
+	@keyframes gl-a {
+	  0%,86%,100%{transform:translateX(0);opacity:0}
+	  87%{transform:translateX(-5px);opacity:.7}
+	  88%{transform:translateX(3px);opacity:.5}
+	  89%{transform:translateX(0);opacity:0}
+	}
+	@keyframes gl-b {
+	  0%,87%,100%{transform:translateX(0);opacity:0}
+	  87.5%{transform:translateX(6px);opacity:.6}
+	  88.5%{transform:translateX(-2px);opacity:.4}
+	  89%{transform:translateX(0);opacity:0}
+	}
+
+	.hero-tagline { margin-top:2rem; display:flex; align-items:flex-start; gap:1.2rem; max-width:560px; }
+	.hero-tagline-bar { width:3px; min-height:56px; background:var(--a); flex-shrink:0; margin-top:.1rem; }
+	.hero-tagline-text { color:var(--t2); font-size:.84rem; line-height:1.9; }
+	.hero-tagline-text strong { color:var(--t); font-weight:500; }
+
+	.hero-row { display:flex; gap:2rem; margin-top:3rem; flex-wrap:wrap; align-items:center; }
+	.hero-stat { display:flex; flex-direction:column; position:relative; padding-right:2rem; }
+	.hero-stat::after {
+	  content:'/'; position:absolute; right:0; top:50%;
+	  transform:translateY(-50%); color:var(--b2); font-size:1.5rem;
+	}
+	.hero-stat:last-child::after { display:none; }
+	.hero-stat-n { font-family:var(--disp); font-size:2.8rem; line-height:1; color:var(--a); }
+	.hero-stat-l { font-size:.62rem; letter-spacing:.15em; text-transform:uppercase; color:var(--t3); }
+
+	.hero-btns { display:flex; gap:.8rem; flex-wrap:wrap; margin-top:2.8rem; }
+	.btn {
+	  display:inline-flex; align-items:center; gap:.5rem;
+	  padding:.6rem 1.4rem; font-family:var(--mono); font-size:.7rem;
+	  letter-spacing:.12em; text-transform:uppercase;
+	  border:1px solid var(--a); color:var(--a);
+	  /* */ position:relative; overflow:hidden; transition:color .2s;
+	}
+	.btn::before {
+	  content:''; position:absolute; inset:0; background:var(--a);
+	  transform:translateX(-101%); transition:transform .22s ease; z-index:0;
+	}
+	.btn:hover::before { transform:translateX(0); }
+	.btn span { position:relative; z-index:1; }
+	.btn:hover { color:#000; }
+	.btn-ghost { border-color:var(--b); color:var(--t2); }
+	.btn-ghost::before { background:var(--b); }
+	.btn-ghost:hover { color:var(--t); }
+
+	/* ══════════════════════════════════════════
+	   ABOUT
+	══════════════════════════════════════════ */
+	.about-grid { display:grid; grid-template-columns:200px 1fr; gap:2.5rem; align-items:start; }
+	.about-img-frame { position:relative; }
+	.about-img-frame::after {
+	  content:''; position:absolute; inset:-6px;
+	  border:1px dashed var(--a); opacity:.3;
+	  transform:translate(6px,6px);
+	}
+	.about-img-frame img {
+	  width:100%; object-fit:cover; display:block;
+	  filter:grayscale(25%) contrast(1.1);
+	}
+	.about-text p { color:var(--t2); font-size:.82rem; line-height:1.95; margin-bottom:.9rem; }
+	.about-text p strong { color:var(--t); font-weight:500; }
+	.tags { display:flex; flex-wrap:wrap; gap:.4rem; margin-top:1.2rem; }
+	.tag { font-size:.6rem; letter-spacing:.14em; text-transform:uppercase; padding:.25rem .7rem; border:1px solid var(--b); color:var(--t3); }
+	.tag.lit { border-color:var(--a); color:var(--a); }
+
+	/* ══════════════════════════════════════════
+	   PROJECT CARDS
+	══════════════════════════════════════════ */
+	.projects-grid {
+	  display:grid;
+	  grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
+	  gap:1px; background:var(--b);
+	}
+	.p-card {
+	  background:var(--s1); display:flex; flex-direction:column;
+	  position:relative; overflow:hidden; transition:background .2s;
+	}
+	.p-card:hover { background:var(--s2); }
+	.p-card:hover .p-img { transform:scale(1.04); filter:grayscale(0%) brightness(1.05); }
+	.p-card:hover .p-accent { width:100%; }
+	.p-card:hover .p-num { color:rgba(255,87,7,.12); }
+	.p-num {
+	  position:absolute; top:.8rem; right:.9rem;
+	  font-family:var(--disp); font-size:3.5rem;
+	  color:var(--b); line-height:1; pointer-events:none; z-index:0;
+	  transition:color .3s;
+	}
+	.p-img-wrap { overflow:hidden; height:190px; background:var(--s3); position:relative; flex-shrink:0; }
+	.p-img { width:100%; height:100%; object-fit:cover; display:block; filter:grayscale(30%); transition:transform .5s, filter .4s; }
+	.p-noimg {
+	  width:100%; height:100%; display:flex; align-items:center; justify-content:center;
+	  font-family:var(--disp); font-size:4rem; color:var(--b2);
+	}
+	.p-accent { height:2px; width:0; background:var(--a); transition:width .4s ease; flex-shrink:0; }
+	.p-body { padding:1.2rem 1.3rem 1.4rem; display:flex; flex-direction:column; gap:.35rem; position:relative; z-index:1; flex:1; }
+	.p-title { font-family:var(--disp); font-size:1.4rem; color:#fff; letter-spacing:.03em; line-height:1.1; }
+	.p-desc { font-size:.77rem; color:var(--t2); line-height:1.8; flex:1; }
+	.p-link {
+	  display:inline-flex; align-items:center; gap:.3rem;
+	  font-size:.65rem; letter-spacing:.14em; text-transform:uppercase;
+	  color:var(--a); margin-top:.6rem; border-bottom:1px solid transparent;
+	  width:fit-content; transition:border-color .2s;
+	}
+	.p-link:hover { border-color:var(--a); color:var(--a2); }
+	.p-link::after { content:'→'; }
+
+	/* ══════════════════════════════════════════
+	   RELEASES LIST  (with thumbnail)
+	══════════════════════════════════════════ */
+	.releases-list { display:flex; flex-direction:column; gap:1px; background:var(--b); }
+	.r-item {
+	  background:var(--s1);
+	  display:grid;
+	  grid-template-columns:56px 1fr auto;
+	  gap:1.2rem; align-items:center;
+	  padding:.85rem 1.3rem;
+	  transition:background .2s; position:relative; overflow:hidden;
+	}
+	.r-item::before {
+	  content:''; position:absolute; left:0; top:0; bottom:0;
+	  width:0; background:var(--a); transition:width .25s;
+	}
+	.r-item:hover { background:var(--s2); }
+	.r-item:hover::before { width:2px; }
+	.r-thumb {
+	  width:48px; height:48px; object-fit:cover;
+	  border:1px solid var(--b); display:block;
+	  flex-shrink:0; background:var(--s3);
+	  filter:grayscale(40%); transition:filter .3s;
+	}
+	.r-item:hover .r-thumb { filter:grayscale(0%); }
+	.r-name { font-family:var(--disp); font-size:1.1rem; color:#fff; letter-spacing:.03em; }
+	.r-desc { font-size:.74rem; color:var(--t2); margin-top:.1rem; line-height:1.5; }
+	.r-link { font-size:.65rem; letter-spacing:.12em; text-transform:uppercase; color:var(--a); white-space:nowrap; flex-shrink:0; }
+	.r-link:hover { color:var(--a2); }
+
+	/* ══════════════════════════════════════════
+	   MEDIA TABS
+	══════════════════════════════════════════ */
+	.tab-bar { display:flex; border-bottom:1px solid var(--b); margin-bottom:1.5rem; }
+	.t-btn {
+	  background:none; border:none; font-family:var(--mono);
+	  font-size:.68rem; letter-spacing:.16em; text-transform:uppercase;
+	  color:var(--t3); /* */ padding:.65rem 1.2rem;
+	  border-bottom:2px solid transparent; margin-bottom:-1px;
+	  transition:color .15s, border-color .15s;
+	}
+	.t-btn:hover { color:var(--t); }
+	.t-btn.on { color:var(--a); border-bottom-color:var(--a); }
+	.tab { display:none; }
+	.tab.on { display:block; }
+
+	/* Platform grid (music/art streaming cards) */
+	.platform-grid {
+	  display:grid;
+	  grid-template-columns:repeat(auto-fill,minmax(200px,1fr));
+	  gap:1px; background:var(--b);
+	}
+	.plat-card {
+	  background:var(--s1); overflow:hidden; position:relative;
+	  transition:background .2s; display:flex; flex-direction:column;
+	}
+	.plat-card:hover { background:var(--s2); }
+	.plat-card:hover .plat-img { transform:scale(1.06); filter:brightness(1.1) grayscale(0%); }
+	.plat-thumb { overflow:hidden; height:140px; background:var(--s3); flex-shrink:0; }
+	.plat-img {
+	  width:100%; height:100%; object-fit:cover; display:block;
+	  filter:grayscale(20%); transition:transform .4s, filter .4s;
+	}
+	.plat-info { padding:.8rem 1rem; }
+	.plat-name { font-family:var(--disp); font-size:1.1rem; color:#fff; letter-spacing:.03em; }
+	.plat-link { font-size:.68rem; color:var(--a); margin-top:.2rem; display:block; }
+
+	/* ══════════════════════════════════════════
+	   SOCIAL CARDS  (with image)
+	══════════════════════════════════════════ */
+	.social-grid {
+	  display:grid;
+	  grid-template-columns:repeat(auto-fill,minmax(180px,1fr));
+	  gap:1px; background:var(--b);
+	}
+	.s-card {
+	  background:var(--s1); overflow:hidden; display:flex;
+	  flex-direction:column; position:relative; transition:background .2s;
+	}
+	.s-card:hover { background:var(--s2); }
+	.s-card:hover .s-img { transform:scale(1.06); filter:brightness(1.1) grayscale(0%); }
+	.s-card:hover .s-bar { width:100%; }
+	.s-thumb { overflow:hidden; height:130px; background:var(--s3); position:relative; flex-shrink:0; }
+	.s-img {
+	  width:100%; height:100%; object-fit:cover; display:block;
+	  filter:grayscale(30%); transition:transform .4s, filter .4s;
+	}
+	.s-bar {
+	  height:2px; width:0; background:var(--a);
+	  transition:width .35s ease; flex-shrink:0;
+	}
+	.s-info { padding:.85rem 1rem; flex:1; }
+	.s-name { font-family:var(--disp); font-size:1.1rem; color:#fff; letter-spacing:.03em; }
+	.s-handle { font-size:.72rem; color:var(--t2); margin-top:.15rem; }
+
+	/* ══════════════════════════════════════════
+	   SCROLL REVEAL
+	══════════════════════════════════════════ */
+	.reveal { opacity:0; transform:translateY(20px); transition:opacity .55s ease, transform .55s ease; }
+	.reveal.in { opacity:1; transform:translateY(0); }
+
+	/* ══════════════════════════════════════════
+	   FOOTER
+	══════════════════════════════════════════ */
+	footer {
+	  margin:2rem; margin-top:0;
+	  border:1px solid var(--b); border-top:none;
+	  padding:1.2rem 1.8rem;
+	  display:flex; align-items:center; justify-content:space-between;
+	  flex-wrap:wrap; gap:.8rem;
+	  font-size:.65rem; color:var(--t3); letter-spacing:.1em;
+	  background:var(--s1);
+	}
+	footer span { color:var(--a); }
+	footer a { color:var(--t3); }
+	footer a:hover { color:var(--t2); }
+	.blink { display:inline-block; width:.5em; height:.85em; background:var(--a); vertical-align:text-bottom; margin-left:2px; animation:blink 1s step-end infinite; }
+	@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+
+	/* ══════════════════════════════════════════
+	   RESPONSIVE
+	══════════════════════════════════════════ */
+	@media (max-width:860px) {
+	  .sidebar { display:none; }
+	  .topbar { display:flex; }
+	  main { margin-left:0; margin-top:48px; }
+	  .win { margin:1rem; }
+	  .win-body { padding:1.2rem; }
+	  .about-grid { grid-template-columns:1fr; }
+	  .about-img-frame { max-width:180px; }
+	  .hero-inner { padding:5rem 1.4rem 3rem; }
+	  .r-item { grid-template-columns:48px 1fr; }
+	  .r-link { display:none; }
+	  footer { margin:1rem; }
+	}
+
+	/* ══════════════════════════════════════════
+	   CUSTOM
+	══════════════════════════════════════════ */
+	s-card .s-thumb {
+		filter: grayscale(80%);
+	}
+
+	s-card:hover .s-thumb {
+		filter: grayscale(20%);
+	}
+
+</style>
+</head>
+<body>
+
+<!-- MOBILE TOPBAR -->
+<div class="topbar">
+  <div class="topbar-logo">BUG<span>FISH</span></div>
+  <button class="burger" id="burgerBtn" aria-label="menu"><i></i><i></i><i></i></button>
+</div>
+<nav class="mobile-nav" id="mobileNav">
+  <a href="#about">About</a>
+  <a href="#projects">Projects</a>
+  <a href="#releases">Releases</a>
+  <a href="#media">Media</a>
+  <a href="#social">Social</a>
+  <a href="https://bugfishtm.blogspot.com/2023/05/impressum.html"  rel="noopener" target="_blank">Impressum</a>
+  <a href="https://bugfishtm.blogspot.com/2023/05/privacy.html"   rel="noopener"  target="_blank">Privacy</a>
+</nav>
+
+<div class="layout">
+
+<!-- ═══════════ SIDEBAR ═══════════ -->
+<aside class="sidebar">
+  <div class="sb-top">
+    <div class="sb-logo">BUG<span>FISH</span></div>
+    <div class="sb-status"><div class="sb-dot"></div>ONLINE / DEV SINCE 2008</div>
+  </div>
+  <nav class="sb-nav">
+    <div class="sb-nav-label">Navigation</div>
+    <a href="#hero"     data-sym="⬡">Home</a>
+    <a href="#about"    data-sym="⬡">About</a>
+    <a href="#projects" data-sym="⬡">Projects</a>
+    <a href="#releases" data-sym="⬡">Releases</a>
+    <a href="#media"    data-sym="⬡">Media</a>
+    <a href="#social"   data-sym="⬡">Social</a>
+    <a href="https://bugfishtm.blogspot.com/2023/05/impressum.html" target="_blank"  rel="noopener" data-sym="⬡">Impressum</a>
+    <a href="https://bugfishtm.blogspot.com/2023/05/privacy.html"   target="_blank"  rel="noopener" data-sym="⬡">Privacy</a>
+  </nav>
+  <div class="sb-bottom">
+    bugfish © <span id="yr"></span><br>
+    <a href="https://bugfishtm.blogspot.com/2023/05/impressum.html" target="_blank"  rel="noopener">Impressum</a> ·
+    <a href="https://bugfishtm.blogspot.com/2023/05/privacy.html"   target="_blank"  rel="noopener">Privacy</a>
+  </div>
+</aside>
+
+<!-- ═══════════ MAIN ═══════════ -->
+<main>
+
+<!-- ── HERO ── -->
+<section id="hero">
+  <div class="hero-bg-grid"></div>
+  <div class="hero-bg-radial"></div>
+  <div class="hero-corner tl">┌─ ROOT@BUGFISH ─────┐</div>
+  <div class="hero-corner tr">STATUS: <span style="color:var(--a)">ACTIVE</span><br>LOC: INTERNET</div>
+  <div class="hero-corner bl">└────────────────────┘</div>
+  <div class="hero-corner br">UPTIME: <span style="color:var(--a)" id="uptime">--:--:--</span></div>
+  <div class="hero-inner">
+    <div class="hero-pre">DEVELOPER / MUSICIAN / ARTIST</div>
+    <h1 class="hero-name">BUGFISH</h1>
+    <div class="hero-tagline">
+      <div class="hero-tagline-bar"></div>
+      <div class="hero-tagline-text">
+        <strong>Software developer since 2008.</strong> Code, music, digital art — building real things that ship. Currently navigating the anti-corruption space while pushing commits daily.
+      </div>
+    </div>
+    <div class="hero-row">
+      <div class="hero-stat">
+        <span class="hero-stat-n" id="yrStat">X</span>
+        <span class="hero-stat-l">Years Experience</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-n">10</span>
+        <span class="hero-stat-l">Years Resistance</span>
+      </div>
+    </div>
+    <div class="hero-btns">
+      <a class="btn" href="https://bugfish.eu" rel="noopener" target="_blank"><span>// Website</span></a>
+      <a class="btn btn-ghost" href="#projects"><span>// Projects</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ── ABOUT ── -->
+<div class="win reveal" id="about">
+  <div class="win-bar">
+    <div class="win-dots"><div class="win-dot"></div><div class="win-dot"></div><div class="win-dot"></div></div>
+    <div class="win-title">about.md</div>
+    <div class="win-num">[ 01 ]</div>
+  </div>
+  <div class="win-body">
+    <div class="about-grid">
+      <div class="" style="border: none !important; padding: 0px 0px 0px 0px; ">
+        <img src="./overview/bugfish.jpg" alt="Bugfish"  style="border: none !important; max-height: 200px;">
+      </div>
+      <div class="about-text">
+        <p><strong>Welcome.</strong> I'm Bugfish — software developer, tinkerer, and builder with a habit of shipping things that actually work.</p>
+        <p>I've been writing code since <strong>2008</strong>. My work spans system tools, web platforms, games, music production, and digital art.</p>
+        <p>Currently part of the <strong>anti-corruption space</strong> — navigating red tape and bureaucracy while still pushing commits every day.</p>
+        <div class="tags">
+          <span class="tag lit">Hacker</span>
+          <span class="tag lit">Developer</span>
+          <span class="tag">Open Source</span>
+          <span class="tag">Music</span>
+          <span class="tag">Digital Art</span>
+          <span class="tag">Since 2008</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="prompt-row"><span>$</span> cat about.md | rendered</div>
+</div>
+
+<!-- ── PROJECTS (featured) ── -->
+<div class="win reveal" id="projects">
+  <div class="win-bar">
+    <div class="win-dots"><div class="win-dot"></div><div class="win-dot"></div><div class="win-dot"></div></div>
+    <div class="win-title">projects/</div>
+    <div class="win-num">[ 02 ]</div>
+  </div>
+  <div class="win-body" style="padding:0">
+    <!--
+      ADD A PROJECT: copy one .p-card block.
+      Swap image src (or use .p-noimg for placeholder), update title, desc, link, number.
+    -->
+    <div class="projects-grid">
+
+      <div class="p-card">
+        <div class="p-num">01</div>
+        <div class="p-img-wrap">
+          <img class="p-img" src="./overview/suitefish.png" alt="Suitefish">
+        </div>
+        <div class="p-accent"></div>
+        <div class="p-body">
+          <div class="p-title">Suitefish CMS</div>
+          <div class="p-desc">Suitefish-CMS is a powerful and versatile content management system designed to empower both end-users and developers alike. Whether you're a business owner looking to streamline your online presence or a developer seeking robust backend functionalities, Suitefish-CMS has you covered.</div>
+          <a class="p-link" href="https://github.com/bugfishtm/suitefish-cms" target="_blank" rel="noopener">View on GitHub</a>
+        </div>
+      </div>
+
+      <div class="p-card">
+        <div class="p-num">03</div>
+        <div class="p-img-wrap">
+          <img class="p-img" src="./overview/delayed.png" alt="Delayed">
+        </div>
+        <div class="p-accent"></div>
+        <div class="p-body">
+          <div class="p-title">Delayed (Game)</div>
+          <div class="p-desc">"Delayed" is the debut horror puzzle game from Bugfish Studios, born out of countless setbacks and slow progress—just like its name. With eerie puzzles and a haunting atmosphere, it marks our first step into game development and possibly the beginning of much more to come.</div>
+          <a class="p-link" href="https://bugfishtm.itch.io/delayed" target="_blank" rel="noopener">View on Itch.io</a>
+        </div>
+      </div>
+
+      <!-- DUPLICATE A .p-card TO ADD MORE FEATURED PROJECTS -->
+
+    </div>
+  </div>
+  <div class="prompt-row"><span>$</span> ls projects/ | <span>2</span> featured</div>
+</div>
+
+<!-- ── RELEASES (all software) ── -->
+<div class="win reveal" id="releases">
+  <div class="win-bar">
+    <div class="win-dots"><div class="win-dot"></div><div class="win-dot"></div><div class="win-dot"></div></div>
+    <div class="win-title">releases/</div>
+    <div class="win-num">[ 03 ]</div>
+  </div>
+  <div class="win-body" style="padding:0">
+    <!--
+      ADD A RELEASE: copy one .r-item block.
+      Update image src, name, desc, and link href.
+    -->
+    <div class="releases-list">
+	
+      <div class="r-item">
+        <img class="r-thumb" src="./software/github1.png">
+        <div>
+          <a class="r-name" href="https://github.com/bugfishtm" rel="noopener" target="_blank">GitHub Profile</a>
+          <div class="r-desc">Here you'll find an overview of my software projects, along with a link to my GitHub profile where you can explore the code, contributions, and additional work in more detail.</div>
+       </div>
+      </div>
+
+      <div class="r-item">
+        <img class="r-thumb" src="./software/docker.png">
+        <div>
+          <a class="r-name" href="https://hub.docker.com/u/bugfishtm" rel="noopener" target="_blank">DockerHub Profile</a>
+          <div class="r-desc">I build and share Docker images for self-hosted tools, dev utilities, and automation scripts. My containers are lightweight, easy to deploy, and ready to run with a simple docker command.</div>
+       </div>
+      </div>
+
+      <div class="r-item">
+        <img class="r-thumb" src="./software/suitefish.png">
+        <div>
+          <a class="r-name" href="https://bugfishtm.github.io/suitefish-cms" rel="noopener" target="_blank">Suitefish CMS</a>
+          <div class="r-desc">The Bugfish Framework, meticulously designed for web developers, prioritizes security, flexibility, and performance. Its architecture streamlines development processes, enhancing efficiency and scalability, while a dedicated community provides support and resources for developers to maximize their projects' potential.</div>
+       </div>
+      </div>	
+
+      <div class="r-item">
+        <img class="r-thumb" src="./software/dnshttp.png">
+        <div>
+          <a class="r-name" href="https://bugfishtm.github.io/Bind9-Web-Manager" rel="noopener" target="_blank">Bind9 Web Manager</a>
+          <div class="r-desc">Your All-in-One DNS Solution for Effortless Management, Replication, and User Administration. Bid farewell to complexity and welcome simplicity and efficiency. Gain control over the replication process between your Slave and Master Servers. This feature provides real-time status updates and allows you to manage replication effectively.</div>
+       </div>
+      </div>		  
+	  
+      <div class="r-item">
+        <img class="r-thumb" src="./software/bugfish.jpg">
+        <div>
+          <a class="r-name" href="https://bugfishtm.github.io/bugfish-framework" rel="noopener" target="_blank">Bugfish Framework</a>
+          <div class="r-desc">The Bugfish Framework, meticulously designed for web developers, prioritizes security, flexibility, and performance. Its architecture streamlines development processes, enhancing efficiency and scalability, while a dedicated community provides support and resources for developers to maximize their projects' potential.</div>
+       </div>
+      </div>	  
+
+      <div class="r-item">
+        <img class="r-thumb" src="./software/dolibarr.jpg">
+        <div>
+          <a class="r-name" href="https://bugfishtm.github.io/Bugfish-Dolibarr-Module" rel="noopener" target="_blank">Dolibarr Module</a>
+          <div class="r-desc">The Bugfish Dolibarr Module integrates the Bugfish Framework into Dolibarr, offering advanced features for development and debugging.</div>
+       </div>
+      </div>	 
+	  
+      <div class="r-item">
+        <img class="r-thumb" src="./software/obr.png">
+        <div>
+          <a class="r-name" href="https://bugfishtm.github.io/Online-Book-Renting" rel="noopener" target="_blank">Online Book Renting</a>
+          <div class="r-desc">The Online-Book-Renting (obr) system allows you to manage books, display them on a public page, and enable users to rent or donate books. The software includes a powerful user management system, allowing administrators to create, manage, and organize users efficiently. This system helps ensure that user-related tasks are streamlined and secure.</div>
+       </div>
+      </div>	  
+
+      <div class="r-item">
+        <img class="r-thumb" src="./software/mrod.png">
+        <div>
+          <a class="r-name" href="https://bugfishtm.github.io/Mail-Relaying-over-DNS" rel="noopener" target="_blank">Mail Relaying over DNS</a>
+          <div class="r-desc">This software is designed to set up a backup MX (Mail Exchange) server for incoming emails. It acts as a mail backup relay, storing emails temporarily if the primary mail server goes offline, and forwarding them once the primary server is back online. </div>
+       </div>
+      </div>
+
+      <div class="r-item">
+        <img class="r-thumb" src="./software/android.png">
+        <div>
+          <a class="r-name" href="https://bugfishtm.github.io/Android-Web-App-Example" rel="noopener" target="_blank">Android Web App</a>
+          <div class="r-desc">The Android WebApp Example is a ready-to-use Android Studio project designed to create a simple web app with built-in controls at the bottom, including forward, back, and home buttons.</div>
+       </div>
+      </div>
+
+      <div class="r-item">
+        <img class="r-thumb" src="./software/dci.png">
+        <div>
+          <a class="r-name" href="https://bugfishtm.github.io/Dovecot-Certificate-Interface" rel="noopener" target="_blank">Dovecot Certificate Interface</a>
+          <div class="r-desc">DCI is a software tool designed to enable and manage per-domain SSL certificates for Dovecot, seamlessly integrating with ISPConfig. This interface offers automation, user management, logging, and other features to simplify the administration of secure email services.</div>
+       </div>
+      </div>
+
+      <div class="r-item">
+        <img class="r-thumb" src="./software/imgdl.png">
+        <div>
+          <a class="r-name" href="https://bugfishtm.github.io/bugfish-image-downloader" rel="noopener" target="_blank">Image Downloader</a>
+          <div class="r-desc">Welcome to Bugfish Image Downloader, a versatile software tool designed for downloading images from websites. This utility enables you to input a URL, upon which it will retrieve and save all images found on the specified website.</div>
+       </div>
+      </div>
+
+      <div class="r-item">
+        <img class="r-thumb" src="./software/hashcracker.png">
+        <div>
+          <a class="r-name" href="https://bugfishtm.github.io/windows-hash-cracker" rel="noopener" target="_blank">Hash Cracker</a>
+          <div class="r-desc">A fast and flexible Windows tool for encoding and brute-forcing password hashes across multiple algorithms.</div>
+       </div>
+      </div>
+
+      <div class="r-item">
+        <img class="r-thumb" src="./software/nuke.png">
+        <div>
+          <a class="r-name" href="https://bugfishtm.github.io/bugfish-nuke" rel="noopener" target="_blank">Bugfish Nuke</a>
+          <div class="r-desc">Bugfish Nuke is a powerful emergency data deletion tool for Windows, designed to help you quickly and securely erase sensitive files, user data, and system traces. Whether you need to protect your privacy or respond to a critical situation, Bugfish Nuke offers fast, configurable, and reliable data destruction.</div>
+       </div>
+      </div>
+
+      <div class="r-item">
+        <img class="r-thumb" src="./software/jquery.png">
+        <div>
+          <a class="r-name" href="https://bugfishtm.github.io/bugfish-jquery-sortselect" rel="noopener" target="_blank">jQuery Sortselect</a>
+          <div class="r-desc">The "multiselect-sortable" jQuery plugin enhances the functionality of multiple select elements by allowing you to easily sort and manage selected options in a dual list box. This revised version of the plugin now includes a "rid" (Resource Identifier) parameter, which helps in distinguishing between different instances of the script when used on the same webpage.</div>
+       </div>
+      </div>
+
+      <div class="r-item">
+        <img class="r-thumb" src="./software/proxmox.png">
+        <div>
+          <a class="r-name" href="https://bugfishtm.github.io/proxmox-vma2raw" rel="noopener" target="_blank">Proxmox VMA2RAW</a>
+          <div class="r-desc">This repository provides the necessary files and a ready-to-use Docker image to convert Proxmox VMA backup files to raw disk images. These raw images can then be accessed or mounted with Windows and Linux software. This Docker image converts Proxmox VMA backup files to raw disk images. These raw images can then be accessed or mounted.</div>
+       </div>
+      </div>
+
+      <!-- DUPLICATE A .r-item TO ADD MORE -->
+
+    </div>
+  </div>
+  <div class="prompt-row"><span>$</span> ls releases/ | <span>15</span> entries</div>
+</div>
+
+<!-- ── MEDIA ── -->
+<div class="win reveal" id="media">
+  <div class="win-bar">
+    <div class="win-dots"><div class="win-dot"></div><div class="win-dot"></div><div class="win-dot"></div></div>
+    <div class="win-title">media/</div>
+    <div class="win-num">[ 04 ]</div>
+  </div>
+  <div class="win-body" style="padding:0">
+    <!--
+      ADD SOCIAL: duplicate one .s-card, update href, image src, name, handle.
+      Replace href="#" with your actual profile URLs.
+    -->
+    <div class="social-grid">
+
+      <a class="s-card" href="https://www.deviantart.com/bxgfxsh" rel="noopener" target="_blank">
+        <div class="s-thumb"><img class="s-img" src="./video/deviantart.png" alt="Facebook"></div>
+        <div class="s-bar"></div>
+        <div class="s-info">
+          <div class="s-name">DeviantArt</div>
+          <div class="plat-link">→ Gallery</div>
+        </div>
+      </a>
+	  
+      <a class="s-card" href="https://www.youtube.com/bugfishtm" rel="noopener" target="_blank">
+        <div class="s-thumb"><img class="s-img" src="./video/youtube.png" alt="Facebook"></div>
+        <div class="s-bar"></div>
+        <div class="s-info">
+          <div class="s-name">YouTube</div>
+          <div class="plat-link">→ Gallery</div>
+        </div>
+      </a>
+	  
+      <a class="s-card" href="https://www.dailymotion.com/user/bugfish" rel="noopener" target="_blank">
+        <div class="s-thumb"><img class="s-img" src="./video/dailymotion.png" alt="Facebook"></div>
+        <div class="s-bar"></div>
+        <div class="s-info">
+          <div class="s-name">Dailymotion</div>
+          <div class="plat-link">→ Gallery</div>
+        </div>
+      </a>
+	  
+      <a class="s-card" href="https://pixabay.com/de/users/bugfish-15886987/" rel="noopener" target="_blank">
+        <div class="s-thumb"><img class="s-img" src="./video/pixabay.png" alt="Facebook"></div>
+        <div class="s-bar"></div>
+        <div class="s-info">
+          <div class="s-name">Pixabay</div>
+          <div class="plat-link">→ Gallery</div>
+        </div>
+      </a>
+
+      <a class="s-card" href="https://open.spotify.com/artist/22t8XUzb2rVqKywyCaS36k" rel="noopener" target="_blank">
+        <div class="s-thumb"><img class="s-img" src="./music/spotify.png" alt="Facebook"></div>
+        <div class="s-bar"></div>
+        <div class="s-info">
+          <div class="s-name">Spotify</div>
+          <div class="plat-link">→ Music</div>
+        </div>
+      </a>
+	  
+      <a class="s-card" href="https://www.youtube.com/channel/UC3ikaOiJwdKRfzsKDiFUSyA" rel="noopener" target="_blank">
+        <div class="s-thumb"><img class="s-img" src="./video/youtube.png" alt="Facebook"></div>
+        <div class="s-bar"></div>
+        <div class="s-info">
+          <div class="s-name">YouTube Artist</div>
+          <div class="plat-link">→ Music</div>
+        </div>
+      </a>
+	  
+      <a class="s-card" href="https://bugfish.bandcamp.com/" rel="noopener" target="_blank">
+        <div class="s-thumb"><img class="s-img" src="./music/bandcamp1.png" alt="Facebook"></div>
+        <div class="s-bar"></div>
+        <div class="s-info">
+          <div class="s-name">Bandcamp</div>
+          <div class="plat-link">→ Music</div>
+        </div>
+      </a>
+	  
+      <a class="s-card" href="https://www.deezer.com/de/artist/83478992" rel="noopener" target="_blank">
+        <div class="s-thumb"><img class="s-img" src="./music/deezer.png" alt="Facebook"></div>
+        <div class="s-bar"></div>
+        <div class="s-info">
+          <div class="s-name">Deezer</div>
+          <div class="plat-link">→ Music</div>
+        </div>
+      </a>
+	  
+      <a class="s-card" href="https://soundcloud.com/bugfishtm" rel="noopener" target="_blank">
+        <div class="s-thumb"><img class="s-img" src="./music/soundcloud.png" alt="Facebook"></div>
+        <div class="s-bar"></div>
+        <div class="s-info">
+          <div class="s-name">Soundcloud</div>
+          <div class="plat-link">→ Music</div>
+        </div>
+      </a>
+	  
+      <a class="s-card" href="https://music.apple.com/us/artist/bugfish/1494881158" rel="noopener" target="_blank">
+        <div class="s-thumb"><img class="s-img" src="./music/apple1.png" alt="Facebook"></div>
+        <div class="s-bar"></div>
+        <div class="s-info">
+          <div class="s-name">Apple Music</div>
+          <div class="plat-link">→ Music</div>
+        </div>
+      </a>
+	  
+      <a class="s-card" href="https://music.amazon.de/artists/B083XPXNFM" rel="noopener" target="_blank">
+        <div class="s-thumb"><img class="s-img" src="./music/amazon1.png" alt="Facebook"></div>
+        <div class="s-bar"></div>
+        <div class="s-info">
+          <div class="s-name">Amazon Music</div>
+          <div class="plat-link">→ Music</div>
+        </div>
+      </a>
+	  
+	  
+      <!-- DUPLICATE A .s-card TO ADD MORE -->
+
+    </div>
+  </div>
+  <div class="prompt-row"><span>$</span> ls media/ | <span>11</span> entries</div>
+</div>
+
+<!-- ── SOCIAL ── -->
+<div class="win reveal" id="social">
+  <div class="win-bar">
+    <div class="win-dots"><div class="win-dot"></div><div class="win-dot"></div><div class="win-dot"></div></div>
+    <div class="win-title">social/</div>
+    <div class="win-num">[ 05 ]</div>
+  </div>
+  <div class="win-body" style="padding:0">
+    <!--
+      ADD SOCIAL: duplicate one .s-card, update href, image src, name, handle.
+      Replace href="#" with your actual profile URLs.
+    -->
+    <div class="social-grid">
+
+      <a class="s-card" href="https://www.facebook.com/officialbugfish/" rel="noopener" target="_blank">
+        <div class="s-thumb"><img class="s-img" src="./social/fb.png" alt="Facebook"></div>
+        <div class="s-bar"></div>
+        <div class="s-info">
+          <div class="s-name">Facebook</div>
+          <div class="s-handle">→ Profile</div>
+        </div>
+      </a>
+
+      <a class="s-card" href="https://bugfishtm.blogspot.com" rel="noopener" target="_blank">
+        <div class="s-thumb"><img class="s-img" src="./social/blogger.png" alt="Blogger"></div>
+        <div class="s-bar"></div>
+        <div class="s-info">
+          <div class="s-name">Blogger</div>
+          <div class="s-handle">→ Blog</div>
+        </div>
+      </a>
+
+      <a class="s-card" href="https://www.instagram.com/bugfish_tm/" rel="noopener" target="_blank">
+        <div class="s-thumb"><img class="s-img" src="./social/insta.png" alt="Instagram"></div>
+        <div class="s-bar"></div>
+        <div class="s-info">
+          <div class="s-name">Instagram</div>
+          <div class="s-handle">→ Profile</div>
+        </div>
+      </a>
+
+      <a class="s-card" href="https://x.com/bugfishx658" rel="noopener" target="_blank">
+        <div class="s-thumb"><img class="s-img" src="./social/twitter1.png" alt="X / Twitter"></div>
+        <div class="s-bar"></div>
+        <div class="s-info">
+          <div class="s-name">X / Twitter</div>
+          <div class="s-handle">→ Profile</div>
+        </div>
+      </a>
+
+      <a class="s-card" href="https://www.tiktok.com/@bugfish_tm" rel="noopener" target="_blank">
+        <div class="s-thumb"><img class="s-img" src="./social/tiktok1.png" alt="TikTok"></div>
+        <div class="s-bar"></div>
+        <div class="s-info">
+          <div class="s-name">TikTok</div>
+          <div class="s-handle">→ Profile</div>
+        </div>
+      </a>
+
+      <a class="s-card" href="https://www.patreon.com/c/Bugfish" rel="noopener" target="_blank">
+        <div class="s-thumb"><img class="s-img" src="./social/patreon.png" alt="Patreon"></div>
+        <div class="s-bar"></div>
+        <div class="s-info">
+          <div class="s-name">Patreon</div>
+          <div class="s-handle">→ Support me</div>
+        </div>
+      </a>
+
+      <a class="s-card" href="https://steamcommunity.com/groups/team-bugfish" rel="noopener" target="_blank">
+        <div class="s-thumb"><img class="s-img" src="./social/steam1.png" alt="Steam Group"></div>
+        <div class="s-bar"></div>
+        <div class="s-info">
+          <div class="s-name">Steam</div>
+          <div class="s-handle">→ Group</div>
+        </div>
+      </a>
+
+      <a class="s-card" href="https://discord.com/invite/xCj7AEMmye" rel="noopener" target="_blank">
+        <div class="s-thumb"><img class="s-img" src="./social/discord.jpg" alt="Discord"></div>
+        <div class="s-bar"></div>
+        <div class="s-info">
+          <div class="s-name">Discord</div>
+          <div class="s-handle">→ server</div>
+        </div>
+      </a>
+
+      <a class="s-card" hreF="https://www.openpetition.de/organisation/team-bugfish" rel="noopener" target="_blank">
+        <div class="s-thumb"><img class="s-img" src="./social/openpetition.png" alt="OpenPetition"></div>
+        <div class="s-bar"></div>
+        <div class="s-info">
+          <div class="s-name">OpenPetition</div>
+          <div class="s-handle">→ Sign</div>
+        </div>
+      </a>
+
+      <a class="s-card" href="https://t.me/bugfishofficial" rel="noopener" target="_blank">
+        <div class="s-thumb"><img class="s-img" src="./social/telegram.png" alt="Telegram"></div>
+        <div class="s-bar"></div>
+        <div class="s-info">
+          <div class="s-name">Telegram</div>
+          <div class="s-handle">→ Channel</div>
+        </div>
+      </a>
+
+      <!-- DUPLICATE A .s-card TO ADD MORE -->
+
+    </div>
+  </div>
+  <div class="prompt-row"><span>$</span> ls social/ | <span>10</span> entries</div>
+</div>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div><span>BUGFISH</span> — SOFTWARE DEVELOPER SINCE 2008<span class="blink"></span></div>
+  <div>
+    <a href="https://bugfishtm.blogspot.com/2023/05/impressum.html" target="_blank"  rel="noopener">IMPRESSUM</a>
+    &nbsp;·&nbsp;
+    <a href="https://bugfishtm.blogspot.com/2023/05/privacy.html" target="_blank"  rel="noopener">PRIVACY</a>
+  </div>
+</footer>
+
+</main>
+</div><!-- /layout -->
+
+<script>
+	// Year
+	const Y = new Date().getFullYear();
+	document.getElementById('yr').textContent = Y;
+	document.getElementById('yrStat').textContent = Y - 2008;
+	document.getElementById('yrStat').textContent = document.getElementById('yrStat').textContent + "+";
+
+	// Live uptime
+	const t0 = Date.now();
+	function tick() {
+	  const s = Math.floor((Date.now()-t0)/1000);
+	  const h = String(Math.floor(s/3600)).padStart(2,'0');
+	  const m = String(Math.floor((s%3600)/60)).padStart(2,'0');
+	  const ss = String(s%60).padStart(2,'0');
+	  document.getElementById('uptime').textContent = h+':'+m+':'+ss;
+	}
+	setInterval(tick,1000); tick();
+
+	// Tab switcher
+	function tab(btn, id) {
+	  document.querySelectorAll('.t-btn').forEach(b=>b.classList.remove('on'));
+	  document.querySelectorAll('.tab').forEach(p=>p.classList.remove('on'));
+	  btn.classList.add('on');
+	  document.getElementById(id).classList.add('on');
+	}
+
+	// Scroll reveal
+	const obs = new IntersectionObserver(entries=>{
+	  entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('in'); });
+	}, { threshold:0.05 });
+	document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+	// Mobile burger
+	document.getElementById('burgerBtn').addEventListener('click',()=>{
+	  document.getElementById('mobileNav').classList.toggle('open');
+	});
+
+	// Sidebar active link
+	const secs = ['hero','about','projects','releases','media','social'];
+	const navLinks = document.querySelectorAll('.sb-nav a');
+	const io = new IntersectionObserver(entries=>{
+	  entries.forEach(e=>{
+		if(e.isIntersecting){
+		  navLinks.forEach(l=>l.classList.remove('active'));
+		  const a = document.querySelector(`.sb-nav a[href="#${e.target.id}"]`);
+		  if(a) a.classList.add('active');
+		}
+	  });
+	},{ rootMargin:'-40% 0px -55% 0px' });
+	secs.forEach(id=>{ const el=document.getElementById(id); if(el) io.observe(el); });
+</script>
+</body>
+</html>
