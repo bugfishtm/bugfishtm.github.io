@@ -549,6 +549,7 @@
   <a href="#about">About</a>
   <a href="#projects">Projects</a>
   <a href="#releases">Releases</a>
+  <a href="#apps">Apps</a>
   <a href="#media">Media</a>
   <a href="#social">Social</a>
   <a href="https://bugfishtm.blogspot.com/2023/05/impressum.html"  rel="noopener" target="_blank">Impressum</a>
@@ -569,6 +570,7 @@
     <a href="#about"    data-sym="⬡">About</a>
     <a href="#projects" data-sym="⬡">Projects</a>
     <a href="#releases" data-sym="⬡">Releases</a>
+    <a href="#apps" data-sym="⬡">Apps</a>
     <a href="#media"    data-sym="⬡">Media</a>
     <a href="#social"   data-sym="⬡">Social</a>
     <a href="https://bugfishtm.blogspot.com/2023/05/impressum.html" target="_blank"  rel="noopener" data-sym="⬡">Impressum</a>
@@ -836,12 +838,76 @@
   <div class="prompt-row"><span>$</span> ls releases/ | <span>15</span> entries</div>
 </div>
 
+
+<!-- ── RELEASES (all software) ── -->
+<div class="win reveal" id="apps">
+  <div class="win-bar">
+    <div class="win-dots"><div class="win-dot"></div><div class="win-dot"></div><div class="win-dot"></div></div>
+    <div class="win-title">apps/</div>
+    <div class="win-num">[ 04 ]</div>
+  </div>
+  <div class="win-body" style="padding:0">
+    <!--
+      ADD A RELEASE: copy one .r-item block.
+      Update image src, name, desc, and link href.
+    -->
+    <div class="releases-list">
+	
+      <div class="r-item">
+        <img class="r-thumb" src="./software/nbd.png">
+        <div>
+          <a class="r-name" href="https://bugfishtm.github.io/nbody-simulator" rel="noopener" target="_blank">N-Body Simulator</a>
+          <div class="r-desc">Interactive 2D JavaScript N-body simulator with real-time gravity, orbital motion, and adjustable parameters for exploring complex particle systems. ⚠️ This project was developed using AI; please exercise caution when using it and proceed at your own risk.</div>
+       </div>
+      </div>	
+
+      <div class="r-item">
+        <img class="r-thumb" src="./software/jme.png">
+        <div>
+          <a class="r-name" href="https://bugfishtm.github.io/js-markdown-editor" rel="noopener" target="_blank">Markdown Editor</a>
+          <div class="r-desc">A private single-file Markdown editor. Write and preview Markdown live, navigate headings via sidebar, open/save files. No backend, no login. ⚠️ This project was developed using AI; please exercise caution when using it and proceed at your own risk.</div>
+       </div>
+      </div>	
+
+      <div class="r-item">
+        <img class="r-thumb" src="./software/pf.png">
+        <div>
+          <a class="r-name" href="https://bugfishtm.github.io/js-personal-finances" rel="noopener" target="_blank">Personal Accounting</a>
+          <div class="r-desc">Private browser-based personal finance dashboard. Track income, expenses, debts and irregular payments with live charts. Single HTML file, no backend, JSON import/export. ⚠️ This project was developed using AI; please exercise caution when using it and proceed at your own risk.</div>
+       </div>
+      </div>	
+
+      <div class="r-item">
+        <img class="r-thumb" src="./software/apiml.png">
+        <div>
+          <a class="r-name" href="https://bugfishtm.github.io/simple-aiml-api-interface" rel="noopener" target="_blank">AI/ML API Interface</a>
+          <div class="r-desc">Single-file browser UI for the AIML API — chat, image, TTS, STT, music & video generation across 15+ AI models. No server, no login, no dependencies. ⚠️ This project was developed using AI; please exercise caution when using it and proceed at your own risk.</div>
+       </div>
+      </div>		  
+	  
+      <div class="r-item">
+        <img class="r-thumb" src="./software/fbr.jpg">
+        <div>
+          <a class="r-name" href="https://bugfishtm.github.io/floor-plan-designer" rel="noopener" target="_blank">Floor Plan Designer</a>
+          <div class="r-desc">A browser-based 2D floor plan designer. Draw rooms, place doors, windows and furniture. Annotate with notes and labels. Export as JSON or PNG. ⚠️ This project was developed using AI; please exercise caution when using it and proceed at your own risk.</div>
+       </div>
+      </div>	  
+
+      <!-- DUPLICATE A .r-item TO ADD MORE -->
+
+    </div>
+  </div>
+  <div class="prompt-row"><span>$</span> ls apps/ | <span>5</span> entries</div>
+</div>
+
+
+
 <!-- ── MEDIA ── -->
 <div class="win reveal" id="media">
   <div class="win-bar">
     <div class="win-dots"><div class="win-dot"></div><div class="win-dot"></div><div class="win-dot"></div></div>
     <div class="win-title">media/</div>
-    <div class="win-num">[ 04 ]</div>
+    <div class="win-num">[ 05 ]</div>
   </div>
   <div class="win-body" style="padding:0">
     <!--
@@ -962,7 +1028,7 @@
   <div class="win-bar">
     <div class="win-dots"><div class="win-dot"></div><div class="win-dot"></div><div class="win-dot"></div></div>
     <div class="win-title">social/</div>
-    <div class="win-num">[ 05 ]</div>
+    <div class="win-num">[ 06 ]</div>
   </div>
   <div class="win-body" style="padding:0">
     <!--
@@ -1119,7 +1185,7 @@
 	});
 
 	// Sidebar active link
-	const secs = ['hero','about','projects','releases','media','social'];
+	const secs = ['hero','about','projects','releases','apps','media','social'];
 	const navLinks = document.querySelectorAll('.sb-nav a');
 	const io = new IntersectionObserver(entries=>{
 	  entries.forEach(e=>{
