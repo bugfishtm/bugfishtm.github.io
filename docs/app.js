@@ -30,7 +30,7 @@ const CONFIG = {
     { key: "WEB",       val: "PHP, JavaScript, jQuery, XHTML, CSS, Bash" },
     { key: "SOFTWARE",     val: "C#, C++, Java, ASM, Python" },
     { key: "AREAS",     val: "CMS, DNS, Mail, Games, Music, Administration" },
-    { key: "OS",        val: "Linux / Windows" },
+    { key: "OS",        val: "Linux / Windows / Android" },
   ],
 
   // ---- Distribution accounts ----
@@ -45,8 +45,14 @@ const CONFIG = {
     {
       icon: "./overview/suitefish.png",
       name: "Suitefish",
-      url:  "https://suitefish.com",
+      url:  "https://bugfishtm.github.io/suitefish-cms",
       desc: "Official website of the suitefish project"
+    },
+    {
+      icon: "./overview/trainfish.png",
+      name: "Trainfish",
+      url:  "https://trainfish.com",
+      desc: "External distributor website"
     },
     {
       icon: "./video/youtube.png",
@@ -81,31 +87,8 @@ I've been writing code since 2008. My work spans system tools, web platforms, ga
 <br /><br />
 Currently part of the anti-corruption space — navigating red tape and bureaucracy while still pushing commits every day.
 <br /><br />
-I have a lot of troubel with local authorities, if something unexpected occurs - feel free to download my insurance files with exclusive german torture documentation!
-<br /><br />
-<b>Download Mirror 1</b><br />
-https://files.bugfish.eu/index.php/s/xkKdnaHoEeScnSn<br />
+I have a lot of troubel with local authorities, if something unexpected occurs - feel free to download my insurance files with exclusive german torture documentation at: <a style="color: yellow;" href="https://docs.google.com/document/d/1Z-a2x8dGWfZBm0SEcKlggye2VUWBEI4OYnKNuTD2hTo/edit?usp=sharing">https://docs.google.com/document/d/1Z-a2x8dGWfZBm0SEcKlggye2VUWBEI4OYnKNuTD2hTo/edit?usp=sharing</a><br />
 <br />
-<b>Download Mirror 2</b><br />
-Part 1 - https://1024terabox.com/s/1axQ8Q6By_B2hMpuTitXt3g<br />
-Part 2 - https://1024terabox.com/s/18v7lmjlRr2ySpng51AqXDg<br />
-Part 3 - https://1024terabox.com/s/1P5C8_gme9K2IptGQH--qzw<br />
-Part 4 - https://1024terabox.com/s/1ac1hBq5wxSc7tDvjzOsWOw<br />
-Part 5 - https://1024terabox.com/s/1BwKw0Vh9zFhiSu4xlMH-8g<br />
-Part 6 - https://1024terabox.com/s/13v6znu40XWrliYama-QNyg<br />
-Part 7 - https://1024terabox.com/s/10Q_G71rjf9cJySigrrtqKA<br />
-Part 8 - https://1024terabox.com/s/1_hcysXTvPQlHbxVbHeXC-Q<br />
-Part 9 - https://1024terabox.com/s/1vUdomsHR8Nf0asW25se-bw<br />
-Part 10 - https://1024terabox.com/s/1Yq3uoi4EoVQu-osPh3xRRg<br />
-Part 11 - https://1024terabox.com/s/1bDW1tSGsLXYT2Tsl8n55Lw<br />
-Part 12 - https://1024terabox.com/s/1RaNqMZ8VyZX1P2C-p-k5wg<br />
-Part 13 - https://1024terabox.com/s/1Yd5ulYTV470YZIv6jKAlug<br />
-<br />
-<b>Password List</b><br />
-Password 0 Will be published in case I am MIA.<br />
-Password 1 2D78CE8A1D741§3D4r8C958081E01F60!9312BAE91ECc1D81A23C1DFC3A1D89f<br />
-Password 2 biPxSpByfQfJg2pCWkeMZleHsyC01KNjmgPB<br />
-Password 3 5PQjLa7HcjjRU68ugwNERi3m52EmKLD6wV98<br />
 `,
 
   // ---- Projects ----
@@ -714,21 +697,6 @@ function initCounters() {
           <div class="counter-num" id="c-d-${idx}">0000</div>
           <div class="counter-unit">DAYS</div>
         </div>
-        <div class="counter-sep">:</div>
-        <div class="counter-seg">
-          <div class="counter-num" id="c-h-${idx}">00</div>
-          <div class="counter-unit">HRS</div>
-        </div>
-        <div class="counter-sep">:</div>
-        <div class="counter-seg">
-          <div class="counter-num" id="c-m-${idx}">00</div>
-          <div class="counter-unit">MIN</div>
-        </div>
-        <div class="counter-sep">:</div>
-        <div class="counter-seg">
-          <div class="counter-num" id="c-s-${idx}">00</div>
-          <div class="counter-unit">SEC</div>
-        </div>
       </div>
       <div class="counter-card-desc">${c.description}</div>
     `;
@@ -743,9 +711,9 @@ function initCounters() {
       if (diff < 0) return;
       const s = Math.floor(diff / 1000);
       document.getElementById(`c-d-${idx}`).textContent = pad(Math.floor(s / 86400), 4);
-      document.getElementById(`c-h-${idx}`).textContent = pad(Math.floor(s / 3600) % 24);
-      document.getElementById(`c-m-${idx}`).textContent = pad(Math.floor(s / 60) % 60);
-      document.getElementById(`c-s-${idx}`).textContent = pad(s % 60);
+      //document.getElementById(`c-h-${idx}`).textContent = pad(Math.floor(s / 3600) % 24);
+      //document.getElementById(`c-m-${idx}`).textContent = pad(Math.floor(s / 60) % 60);
+      //document.getElementById(`c-s-${idx}`).textContent = pad(s % 60);
     });
   }
 
