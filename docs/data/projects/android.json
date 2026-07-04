@@ -1,0 +1,13 @@
+[
+  {
+    "name": "Android Web App",
+    "image": "assets/img/software/android.png",
+    "description": "Ready-to-use Android Studio project for a simple web app with built-in forward, back, and home controls.",
+    "license": "See GitHub",
+    "documentation": "https://bugfishtm.github.io/Android-Web-App-Example",
+    "website": "",
+    "github": "https://github.com/bugfishtm/Android-Web-App-Example",
+    "video": "",
+    "contact": "mailto:requests@bugfish.eu"
+  }
+]

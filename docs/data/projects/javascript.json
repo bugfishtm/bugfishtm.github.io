@@ -1,0 +1,101 @@
+[
+  {
+    "name": "jQuery Sortselect",
+    "image": "assets/img/software/jquery.png",
+    "description": "jQuery plugin adding sortable dual list box functionality to multiple select elements, with multi-instance support.",
+    "license": "See GitHub",
+    "documentation": "https://bugfishtm.github.io/bugfish-jquery-sortselect",
+    "website": "",
+    "github": "https://github.com/bugfishtm/bugfish-jquery-sortselect",
+    "video": "",
+    "contact": "mailto:requests@bugfish.eu"
+  },
+  {
+    "name": "N-Body Simulator",
+    "image": "assets/img/software/nbd.png",
+    "description": "Interactive 2D JavaScript N-body simulator with real-time gravity and orbital motion. Developed using AI; proceed at your own risk.",
+    "license": "See GitHub",
+    "documentation": "https://bugfishtm.github.io/nbody-simulator",
+    "website": "",
+    "github": "https://github.com/bugfishtm/nbody-simulator",
+    "video": "",
+    "contact": "mailto:requests@bugfish.eu"
+  },
+  {
+    "name": "Markdown Editor",
+    "image": "assets/img/software/jme.png",
+    "description": "Single-file Markdown editor with live preview, heading sidebar, and open/save support. No backend. Developed using AI; proceed at your own risk.",
+    "license": "See GitHub",
+    "documentation": "https://bugfishtm.github.io/js-markdown-editor",
+    "website": "",
+    "github": "https://github.com/bugfishtm/js-markdown-editor",
+    "video": "",
+    "contact": "mailto:requests@bugfish.eu"
+  },
+  {
+    "name": "Personal Accounting",
+    "image": "assets/img/software/pf.png",
+    "description": "Browser-based finance dashboard for income, expenses, and debts with live charts and JSON import/export. Developed using AI; proceed at your own risk.",
+    "license": "See GitHub",
+    "documentation": "https://bugfishtm.github.io/js-personal-finances",
+    "website": "",
+    "github": "https://github.com/bugfishtm/js-personal-finances",
+    "video": "",
+    "contact": "mailto:requests@bugfish.eu"
+  },
+  {
+    "name": "AI/ML API Interface",
+    "image": "assets/img/software/apiml.png",
+    "description": "Single-file browser UI for the AIML API covering chat, image, TTS, STT, and more across 15+ models. Developed using AI; proceed at your own risk.",
+    "license": "See GitHub",
+    "documentation": "https://bugfishtm.github.io/simple-aiml-api-interface",
+    "website": "",
+    "github": "https://github.com/bugfishtm/simple-aiml-api-interface",
+    "video": "",
+    "contact": "mailto:requests@bugfish.eu"
+  },
+  {
+    "name": "Floor Plan Designer",
+    "image": "assets/img/software/fbr.png",
+    "description": "Browser-based 2D floor plan designer with furniture placement, annotations, and JSON/PNG export. Developed using AI; proceed at your own risk.",
+    "license": "See GitHub",
+    "documentation": "https://bugfishtm.github.io/floor-plan-designer",
+    "website": "",
+    "github": "https://github.com/bugfishtm/floor-plan-designer",
+    "video": "",
+    "contact": "mailto:requests@bugfish.eu"
+  },
+  {
+    "name": "Image Converter",
+    "image": "assets/img/overview/imgcovert.png",
+    "description": "Browser-based image format conversion tool built as a single self-contained HTML file. Developed using AI; proceed at your own risk.",
+    "license": "See GitHub",
+    "documentation": "https://bugfishtm.github.io/js-image-converter",
+    "website": "",
+    "github": "https://github.com/bugfishtm/js-image-converter",
+    "video": "",
+    "contact": "mailto:requests@bugfish.eu"
+  },
+  {
+    "name": "Audio Converter",
+    "image": "assets/img/overview/audi.png",
+    "description": "Browser-based audio format conversion tool built as a single self-contained HTML file. Developed using AI; proceed at your own risk.",
+    "license": "See GitHub",
+    "documentation": "https://bugfishtm.github.io/js-audio-converter",
+    "website": "",
+    "github": "https://github.com/bugfishtm/js-audio-converter",
+    "video": "",
+    "contact": "mailto:requests@bugfish.eu"
+  },
+  {
+    "name": "API Request Tool",
+    "image": "assets/img/overview/apiforge.png",
+    "description": "APIForge is a browser-based HTTP request tool built as a single self-contained HTML file. Developed using AI; proceed at your own risk.",
+    "license": "See GitHub",
+    "documentation": "https://bugfishtm.github.io/js-api-request-tool",
+    "website": "",
+    "github": "https://github.com/bugfishtm/js-api-request-tool",
+    "video": "",
+    "contact": "mailto:requests@bugfish.eu"
+  }
+]

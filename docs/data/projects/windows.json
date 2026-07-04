@@ -1,0 +1,35 @@
+[
+  {
+    "name": "Hash Cracker",
+    "image": "assets/img/software/hashcracker.png",
+    "description": "A fast and flexible Windows tool for encoding and brute-forcing password hashes across multiple algorithms.",
+    "license": "See GitHub",
+    "documentation": "https://bugfishtm.github.io/windows-hash-cracker",
+    "website": "",
+    "github": "https://github.com/bugfishtm/windows-hash-cracker",
+    "video": "",
+    "contact": "mailto:requests@bugfish.eu"
+  },
+  {
+    "name": "Bugfish Nuke",
+    "image": "assets/img/software/nuke.png",
+    "description": "Emergency data deletion tool for Windows to quickly and securely erase sensitive files and system traces.",
+    "license": "See GitHub",
+    "documentation": "https://bugfishtm.github.io/bugfish-nuke",
+    "website": "",
+    "github": "https://github.com/bugfishtm/bugfish-nuke",
+    "video": "",
+    "contact": "mailto:requests@bugfish.eu"
+  },
+  {
+    "name": "Image Downloader",
+    "image": "assets/img/software/imgdl.png",
+    "description": "Input a URL and retrieve all images found on that website automatically.",
+    "license": "See GitHub",
+    "documentation": "https://bugfishtm.github.io/bugfish-image-downloader",
+    "website": "",
+    "github": "https://github.com/bugfishtm/bugfish-image-downloader",
+    "video": "",
+    "contact": "mailto:requests@bugfish.eu"
+  }
+]

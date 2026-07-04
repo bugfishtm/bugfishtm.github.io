@@ -1,0 +1,68 @@
+[
+  {
+    "name": "Suitefish CMS",
+    "image": "assets/img/software/suitefish.png",
+    "description": "A web framework prioritizing security, flexibility, and performance with a dedicated developer community.",
+    "license": "See GitHub",
+    "documentation": "https://bugfishtm.github.io/suitefish-cms",
+    "website": "https://bugfishtm.github.io/suitefish-cms",
+    "github": "https://github.com/bugfishtm/suitefish-cms",
+    "video": "",
+    "contact": "mailto:requests@bugfish.eu"
+  },
+  {
+    "name": "Bugfish Framework",
+    "image": "assets/img/software/bugfish.jpg",
+    "description": "A web framework prioritizing security, flexibility, and performance, streamlining development and scalability.",
+    "license": "See GitHub",
+    "documentation": "https://bugfishtm.github.io/bugfish-framework",
+    "website": "https://bugfish.eu",
+    "github": "https://github.com/bugfishtm/bugfish-framework",
+    "video": "",
+    "contact": "mailto:requests@bugfish.eu"
+  },
+  {
+    "name": "Online Book Renting",
+    "image": "assets/img/software/obr.png",
+    "description": "Manage books on a public page and let users rent or donate them, with a powerful admin user management system.",
+    "license": "See GitHub",
+    "documentation": "https://bugfishtm.github.io/Online-Book-Renting",
+    "website": "",
+    "github": "https://github.com/bugfishtm/Online-Book-Renting",
+    "video": "",
+    "contact": "mailto:requests@bugfish.eu"
+  },
+  {
+    "name": "Bind9 Web Manager",
+    "image": "assets/img/software/dnshttp.png",
+    "description": "All-in-one DNS solution for effortless management, replication, and user administration.",
+    "license": "See GitHub",
+    "documentation": "https://bugfishtm.github.io/Bind9-Web-Manager",
+    "website": "",
+    "github": "https://github.com/bugfishtm/Bind9-Web-Manager",
+    "video": "",
+    "contact": "mailto:requests@bugfish.eu"
+  },
+  {
+    "name": "Dovecot Certificate Interface",
+    "image": "assets/img/software/dci.png",
+    "description": "Manages per-domain SSL certificates for Dovecot with ISPConfig integration, automation, and user management.",
+    "license": "See GitHub",
+    "documentation": "https://bugfishtm.github.io/Dovecot-Certificate-Interface",
+    "website": "",
+    "github": "https://github.com/bugfishtm/Dovecot-Certificate-Interface",
+    "video": "",
+    "contact": "mailto:requests@bugfish.eu"
+  },
+  {
+    "name": "Mail Relaying over DNS",
+    "image": "assets/img/software/mrod.png",
+    "description": "Sets up a backup MX server that stores incoming emails if the primary server is offline and forwards them when it's back.",
+    "license": "See GitHub",
+    "documentation": "https://bugfishtm.github.io/Mail-Relaying-over-DNS",
+    "website": "",
+    "github": "https://github.com/bugfishtm/Mail-Relaying-over-DNS",
+    "video": "",
+    "contact": "mailto:requests@bugfish.eu"
+  }
+]

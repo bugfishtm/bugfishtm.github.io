@@ -1,0 +1,140 @@
+[
+  {
+    "name": "Bugfish",
+    "image": "assets/img/overview/bugfish.jpg",
+    "url": "https://bugfish.eu",
+    "description": "My personal website and workspace."
+  },
+  {
+    "name": "Suitefish",
+    "image": "assets/img/overview/suitefish.png",
+    "url": "https://bugfishtm.github.io/suitefish-cms",
+    "description": "Official website of the Suitefish project."
+  },
+  {
+    "name": "Trainfish",
+    "image": "assets/img/overview/trainfish.png",
+    "url": "https://trainfish.com",
+    "description": "External distributor website."
+  },
+  {
+    "name": "GitHub",
+    "image": "assets/img/software/github1.png",
+    "url": "https://github.com/bugfishtm",
+    "description": "Open source projects and repositories."
+  },
+  {
+    "name": "DockerHub",
+    "image": "assets/img/software/docker.png",
+    "url": "https://hub.docker.com/u/bugfishtm",
+    "description": "Docker images and container releases."
+  },
+  {
+    "name": "itch.io",
+    "image": "assets/img/overview/delayed.png",
+    "url": "https://bugfishtm.itch.io",
+    "description": "Indie game releases and interactive projects."
+  },
+  {
+    "name": "YouTube",
+    "image": "assets/img/video/youtube.png",
+    "url": "https://youtube.com/bugfishtm",
+    "description": "Gameplays, media and music videos."
+  },
+  {
+    "name": "Spotify",
+    "image": "assets/img/music/spotify.png",
+    "url": "https://open.spotify.com/artist/22t8XUzb2rVqKywyCaS36k",
+    "description": "Music streaming."
+  },
+  {
+    "name": "Bandcamp",
+    "image": "assets/img/music/bandcamp1.png",
+    "url": "https://bugfish.bandcamp.com",
+    "description": "Music downloads."
+  },
+  {
+    "name": "SoundCloud",
+    "image": "assets/img/music/soundcloud.png",
+    "url": "https://soundcloud.com/bugfishtm",
+    "description": "Music streaming."
+  },
+  {
+    "name": "Twitter / X",
+    "image": "assets/img/social/twitter1.png",
+    "url": "https://x.com/bugfishx658",
+    "description": "Status updates."
+  },
+  {
+    "name": "Discord",
+    "image": "assets/img/social/discord.jpg",
+    "url": "https://discord.com/invite/xCj7AEMmye",
+    "description": "Community server."
+  },
+  {
+    "name": "Telegram",
+    "image": "assets/img/social/telegram.png",
+    "url": "https://t.me/bugfishofficial",
+    "description": "Official channel."
+  },
+  {
+    "name": "Steam",
+    "image": "assets/img/social/steam1.png",
+    "url": "https://steamcommunity.com/groups/team-bugfish",
+    "description": "Gaming group."
+  },
+  {
+    "name": "Patreon",
+    "image": "assets/img/social/patreon.png",
+    "url": "https://www.patreon.com/c/Bugfish",
+    "description": "Support me."
+  },
+  {
+    "name": "Facebook",
+    "image": "assets/img/social/fb.png",
+    "url": "https://facebook.com/officialbugfish",
+    "description": "Social page."
+  },
+  {
+    "name": "Instagram",
+    "image": "assets/img/social/insta.png",
+    "url": "https://instagram.com/bugfish_tm",
+    "description": "Visual content."
+  },
+  {
+    "name": "TikTok",
+    "image": "assets/img/social/tiktok1.png",
+    "url": "https://tiktok.com/@bugfish_tm",
+    "description": "Short videos."
+  },
+  {
+    "name": "DeviantArt",
+    "image": "assets/img/video/deviantart.png",
+    "url": "https://deviantart.com/bxgfxsh",
+    "description": "Digital art gallery."
+  },
+  {
+    "name": "Blogger",
+    "image": "assets/img/social/blogger.png",
+    "url": "https://bugfishtm.blogspot.com",
+    "description": "Blog posts."
+  },
+  {
+    "name": "PixaBay",
+    "image": "assets/img/video/pixabay.png",
+    "url": "https://pixabay.com/de/users/bugfish-15886987/",
+    "description": "Free image gallery."
+  },
+  {
+    "name": "DailyMotion",
+    "image": "assets/img/video/dailymotion.png",
+    "url": "https://www.dailymotion.com/user/bugfish",
+    "description": "Media gallery."
+  },
+  {
+    "name": "OpenPetition",
+    "image": "assets/img/social/openpetition.png",
+    "url": "https://www.openpetition.de/organisation/team-bugfish",
+    "description": "Political petitions."
+  }
+]

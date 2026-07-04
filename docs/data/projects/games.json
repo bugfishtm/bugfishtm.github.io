@@ -1,0 +1,24 @@
+[
+  {
+    "name": "Delayed",
+    "image": "assets/img/overview/delayed.png",
+    "description": "Indie game release on itch.io — interactive projects and experiments.",
+    "license": "Proprietary",
+    "documentation": "",
+    "website": "https://bugfishtm.itch.io",
+    "github": "",
+    "video": "https://youtube.com/bugfishtm",
+    "contact": "mailto:requests@bugfish.eu"
+  },
+  {
+    "name": "N-Body Simulator",
+    "image": "assets/img/software/nbd.png",
+    "description": "Interactive 2D JavaScript N-body simulator with real-time gravity and orbital motion. Developed using AI; proceed at your own risk.",
+    "license": "See GitHub",
+    "documentation": "https://bugfishtm.github.io/nbody-simulator",
+    "website": "",
+    "github": "https://github.com/bugfishtm/nbody-simulator",
+    "video": "",
+    "contact": "mailto:requests@bugfish.eu"
+  }
+]

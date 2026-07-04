@@ -3,114 +3,55 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <meta name="description" content="Bugfish — software developer since 2008. Code, music, digital art and more.">
-
-
-
-<title>Bugfish</title>
-
-<!-- META INJECTION START -->
-<!-- META INJECTION START -->
-<!-- META INJECTION START -->
-<link rel="icon" type="image/x-icon" href="./favicon.ico">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="subject" content="documentation">
-<meta name="copyright" content="bugfish">
-<meta name="language" content="en">
-<meta name="robots" content="index,follow">
-<meta name="author" content="bugfish, ynvnzmlzaa@gmail.com">
-<meta property="og:image" content="./meta.jpg">    
-<script type="application/ld+json">
-{
-  "@context": "http://schema.org",
-  "@type": "WebSite",
-  "name": "Bugfish Documentations",
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "http://schema.org",
-  "@type": "TechArticle",
-  "headline": "Bugfish",
-  "description": "A central index of my work — music, code, videos, and more — with links to everything I do.",
-  "articleSection": "Introduction",
-  "datePublished": "2025-06-04",
-  "dateModified": "2025-06-04",
-  "author": {
-	"@type": "Person",
-	"name": "Jan-Maurice Dahlmanns"
-  },
-  "publisher": {
-	"@type": "Organization",
-	"name": "Bugfish",
-	"logo": {
-	  "@type": "ImageObject",
-	  "url": "./logo.png"
-	}
-  }
-}
-</script> 
-<meta property="og:title" content="Bugfish">
-<meta name="description" content="A central index of my work — music, code, videos, and more — with links to everything I do.">  
-<meta name="og:description" content="A central index of my work — music, code, videos, and more — with links to everything I do.">  
-<!-- META INJECTION END -->  
-<!-- META INJECTION END -->  
-<!-- META INJECTION END -->  
-
+  <title>Bugfish — Home</title>
+  <meta name="description" content="Bugfish — software developer since 2008. Code, music, digital art and more. Central hub for all projects and channels.">
+  <meta name="author" content="Bugfish">
+  <meta name="robots" content="index,follow">
+  <meta property="og:title" content="Bugfish">
+  <meta property="og:description" content="Bugfish — software developer since 2008. Code, music, digital art and more.">
+  <meta property="og:image" content="./assets/img/meta.jpg">
+  <link rel="icon" type="image/x-icon" href="./favicon.ico">
+  <link rel="stylesheet" href="./assets/css/style.css">
 </head>
-<body>
+<body data-base="">
 
-  <!-- TOPBAR (mobile only) -->
-  <div id="topbar">
-    <button id="sidebar-toggle" aria-label="Toggle navigation">
-      <span></span><span></span><span></span>
-    </button>
-    <span class="topbar-brand">BUGFISH</span>
-    <div class="topbar-status">
-      <span class="status-dot"></span>
-      <span>ONLINE</span>
+  <header id="navbar">
+    <div class="nav-inner">
+      <a class="nav-brand" href="index.html">
+        <img src="./assets/img/logo.jpg" alt="Bugfish logo">
+        <span><span class="bracket">[</span>BUGFISH<span class="bracket">]</span></span>
+      </a>
+      <button id="nav-burger" aria-label="Toggle navigation" aria-controls="nav-menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav-menu" id="nav-menu" aria-label="Main navigation">
+        <div class="nav-item"><a class="nav-link active" href="index.html">Home</a></div>
+        <div class="nav-item"><a class="nav-link" href="explore.html">Explore</a></div>
+        <div class="nav-item has-dropdown">
+          <button class="nav-link" aria-haspopup="true">Projects <span class="nav-caret">▾</span></button>
+          <div class="nav-dropdown">
+            <a href="projects/docker.html">Docker</a>
+            <a href="projects/android.html">Android</a>
+            <a href="projects/framework.html">Framework</a>
+            <a href="projects/javascript.html">JavaScript</a>
+            <a href="projects/suitefish.html">Suitefish</a>
+            <a href="projects/games.html">Games</a>
+            <a href="projects/windows.html">Windows</a>
+            <a href="projects/websoftware.html">Websoftware</a>
+          </div>
+        </div>
+        <div class="nav-item"><a class="nav-link" href="privacy.html">Privacy</a></div>
+        <div class="nav-item"><a class="nav-link" href="impressum.html">Impressum</a></div>
+      </nav>
     </div>
-  </div>
+  </header>
 
-  <div id="sidebar-overlay"></div>
-
-  <!-- SIDEBAR -->
-  <nav id="sidebar">
-    <div class="sidebar-header">
-      <div class="sidebar-logo">
-        <span class="logo-bracket">[</span>
-        <span class="logo-name">BUGFISH</span>
-        <span class="logo-bracket">]</span>
-      </div>
-      <div class="sidebar-sub">// GITHUB PAGE</div>
-    </div>
-    <ul class="nav-list" id="nav-list">
-      <li><a href="#hero"         class="nav-link active"><span class="nav-num">01</span><span class="nav-label">ROOT</span></a></li>
-      <li><a href="#about"        class="nav-link"><span class="nav-num">02</span><span class="nav-label">ABOUT</span></a></li>
-      <li><a href="#counters"     class="nav-link"><span class="nav-num">03</span><span class="nav-label">UPTIME</span></a></li>
-      <li><a href="#distribution" class="nav-link"><span class="nav-num">04</span><span class="nav-label">DISTRO</span></a></li>
-      <li><a href="#projects"     class="nav-link"><span class="nav-num">05</span><span class="nav-label">PROJECTS</span></a></li>
-      <li><a href="#social"       class="nav-link"><span class="nav-num">06</span><span class="nav-label">SOCIAL</span></a></li>
-      <li><a href="https://bugfishtm.blogspot.com/2023/05/impressum.html" rel="noopener" target="_blank" class="nav-link"><span class="nav-num">07</span><span class="nav-label">IMPRINT</span></a></li>
-      <li><a href="https://bugfishtm.blogspot.com/2023/05/privacy.html" rel="noopener" target="_blank" class="nav-link"><span class="nav-num">08</span><span class="nav-label">PRIVACY</span></a></li>
-    </ul>
-    <div class="sidebar-footer">
-      <div class="sys-status">
-        <span class="status-dot"></span>
-        <span>ONLINE</span>
-      </div>
-      <div class="sidebar-ver">v2.0.0</div>
-    </div>
-  </nav>
-
-  <!-- MAIN -->
-  <main id="main">
+  <main class="full-bleed">
 
     <!-- HERO -->
     <section id="hero">
       <canvas id="matrix-canvas"></canvas>
-      <div class="scanlines"></div>
+      <div class="hero-fade"></div>
       <div class="hero-inner">
         <div class="hero-left">
           <div class="hero-eyebrow">// SYSTEM IDENTIFIED</div>
@@ -120,8 +61,8 @@
           <div class="hero-pills" id="hero-pills"></div>
           <div id="music-player-container"></div>
           <div class="hero-actions">
-            <a href="https://bugfish.eu" target="_blank" rel="noopener" class="btn-hack">WEBSITE</a>
-            <a href="https://github.com/bugfishtm" target="_blank" rel="noopener" class="btn-hack btn-outline">GITHUB ↗</a>
+            <a href="https://bugfish.eu" target="_blank" rel="noopener" class="btn">Website</a>
+            <a href="https://github.com/bugfishtm" target="_blank" rel="noopener" class="btn outline">GitHub ↗</a>
           </div>
         </div>
         <div class="hero-right">
@@ -139,7 +80,8 @@
               <div class="game-input-line">
                 <span class="game-prompt">&gt;&nbsp;</span>
                 <input type="text" id="game-input" class="game-input"
-                       autocomplete="off" spellcheck="false" placeholder="type 'help'">
+                       autocomplete="off" spellcheck="false" placeholder="type 'help'"
+                       aria-label="Game command input">
               </div>
             </div>
           </div>
@@ -147,60 +89,52 @@
       </div>
     </section>
 
-    <!-- ABOUT -->
-    <section id="about">
-      <div class="section-header">
-        <h2 class="section-title">// about<span class="blink">_</span></h2>
-        <div class="section-line"></div>
-      </div>
-      <div class="about-container" id="about-container"></div>
-    </section>
+    <div class="home-wrap">
 
-    <!-- UPTIME COUNTERS -->
-    <section id="counters">
-      <div class="section-header">
-        <h2 class="section-title">// system.uptime<span class="blink">_</span></h2>
-        <div class="section-line"></div>
-      </div>
-      <div class="counters-grid" id="counters-grid"></div>
-    </section>
+      <!-- NEWS -->
+      <section id="news">
+        <div class="section-header">
+          <h2 class="section-title">// news.feed<span class="blink">_</span></h2>
+          <div class="section-line"></div>
+        </div>
+        <div class="news-list" id="news-list"></div>
+        <div class="pagination" id="news-pagination"></div>
+      </section>
 
-    <!-- DISTRIBUTION -->
-    <section id="distribution">
-      <div class="section-header">
-        <h2 class="section-title">// distribution.nodes<span class="blink">_</span></h2>
-        <div class="section-line"></div>
-      </div>
-      <div class="cards-grid" id="dist-grid"></div>
-    </section>
+      <!-- ABOUT -->
+      <section id="about">
+        <div class="section-header">
+          <h2 class="section-title">// about<span class="blink">_</span></h2>
+          <div class="section-line"></div>
+        </div>
+        <div class="about-grid" id="about-container"></div>
+      </section>
 
-    <!-- PROJECTS -->
-    <section id="projects">
-      <div class="section-header">
-        <h2 class="section-title">// active.projects<span class="blink">_</span></h2>
-        <div class="section-line"></div>
-      </div>
-      <div class="cards-grid" id="projects-grid"></div>
-    </section>
+      <!-- UPTIME COUNTERS -->
+      <section id="counters">
+        <div class="section-header">
+          <h2 class="section-title">// system.uptime<span class="blink">_</span></h2>
+          <div class="section-line"></div>
+        </div>
+        <div class="counters-grid" id="counters-grid"></div>
+      </section>
 
-    <!-- SOCIAL -->
-    <section id="social">
-      <div class="section-header">
-        <h2 class="section-title">// social.channels<span class="blink">_</span></h2>
-        <div class="section-line"></div>
-      </div>
-      <div class="cards-grid" id="social-grid"></div>
-    </section>
-
-    <footer id="footer">
-      <div class="footer-inner">
-        <span>DREAMING IN DIGITAL</span>
-        <span id="footer-year"></span>
-      </div>
-    </footer>
-
+    </div>
   </main>
 
-  <script src="app.js"></script>
+  <footer id="footer">
+    <div class="footer-inner">
+      <span>DREAMING IN DIGITAL</span>
+      <div class="footer-links">
+        <a href="explore.html">Explore</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="impressum.html">Impressum</a>
+      </div>
+      <span id="footer-year"></span>
+    </div>
+  </footer>
+
+  <script src="./assets/js/main.js"></script>
+  <script src="./assets/js/home.js"></script>
 </body>
 </html>

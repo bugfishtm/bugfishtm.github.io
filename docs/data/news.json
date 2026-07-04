@@ -1,0 +1,17 @@
+[
+  {
+    "title": "New website launched",
+    "text": "The Bugfish site has been rebuilt from scratch: new grey/orange design, real sub-pages, JSON-driven content and everything hosted locally on GitHub Pages.",
+    "category": "website"
+  },
+  {
+    "title": "Projects section is now JSON-based",
+    "text": "Every project category (Docker, Android, Framework, JavaScript, Suitefish, Games, Windows, Websoftware) can now be edited through a single JSON file in data/projects/.",
+    "category": "website"
+  },
+  {
+    "title": "Three tracks in the player",
+    "text": "Mortis, Fear and Transcend are available in the on-site music player — served locally, no streaming service involved.",
+    "category": "music"
+  }
+]

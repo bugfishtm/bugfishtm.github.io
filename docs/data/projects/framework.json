@@ -1,0 +1,35 @@
+[
+  {
+    "name": "Bugfish Framework",
+    "image": "assets/img/software/bugfish.jpg",
+    "description": "A web framework prioritizing security, flexibility, and performance, streamlining development and scalability.",
+    "license": "See GitHub",
+    "documentation": "https://bugfishtm.github.io/bugfish-framework",
+    "website": "https://bugfish.eu",
+    "github": "https://github.com/bugfishtm/bugfish-framework",
+    "video": "",
+    "contact": "mailto:requests@bugfish.eu"
+  },
+  {
+    "name": "Dolibarr Module",
+    "image": "assets/img/software/dolibarr.jpg",
+    "description": "Integrates the Bugfish Framework into Dolibarr, offering advanced features for development and debugging.",
+    "license": "See GitHub",
+    "documentation": "https://bugfishtm.github.io/Bugfish-Dolibarr-Module",
+    "website": "",
+    "github": "https://github.com/bugfishtm/Bugfish-Dolibarr-Module",
+    "video": "",
+    "contact": "mailto:requests@bugfish.eu"
+  },
+  {
+    "name": "jQuery Sortselect",
+    "image": "assets/img/software/jquery.png",
+    "description": "jQuery plugin adding sortable dual list box functionality to multiple select elements, with multi-instance support.",
+    "license": "See GitHub",
+    "documentation": "https://bugfishtm.github.io/bugfish-jquery-sortselect",
+    "website": "",
+    "github": "https://github.com/bugfishtm/bugfish-jquery-sortselect",
+    "video": "",
+    "contact": "mailto:requests@bugfish.eu"
+  }
+]

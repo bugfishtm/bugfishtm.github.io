@@ -1,0 +1,43 @@
+{
+  "tagline": "i am not even having a good time",
+  "description": "Code. Music. Digital Art. Building real things that ship. Operating in the anti-corruption space while maintaining a daily coding practice.",
+  "tags": ["#developer", "#hacker", "#musician", "#digital-art", "#open-source", "#linux"],
+
+  "aboutStats": [
+    { "key": "ALIAS", "val": "Bugfish" },
+    { "key": "ROLE",  "val": "Full-Stack Developer" },
+    { "key": "SITE",  "val": "www.bugfish.eu" }
+  ],
+
+  "aboutSkills": [
+    { "key": "WEB",      "val": "PHP, JavaScript, jQuery, XHTML, CSS, Bash" },
+    { "key": "SOFTWARE", "val": "C#, C++, Java, ASM, Python" },
+    { "key": "AREAS",    "val": "CMS, DNS, Mail, Games, Music, Administration" },
+    { "key": "OS",       "val": "Linux / Windows / Android" }
+  ],
+
+  "aboutBio": [
+    "Welcome. I'm Bugfish — software developer, tinkerer, and builder with a habit of shipping things that actually work.",
+    "I've been writing code since 2008. My work spans system tools, web platforms, games, music production, and digital art.",
+    "Currently part of the anti-corruption space — navigating red tape and bureaucracy while still pushing commits every day."
+  ],
+
+  "counters": [
+    {
+      "label": "SEEDER SINCE",
+      "date": "2008-01-01",
+      "description": "First line of code written"
+    },
+    {
+      "label": "RESISTANCE SINCE",
+      "date": "2018-08-21",
+      "description": "Evading the state and crooked cops"
+    }
+  ],
+
+  "music": [
+    { "title": "Mortis",    "file": "assets/music/mortis.mp3" },
+    { "title": "Fear",      "file": "assets/music/fear.mp3" },
+    { "title": "Transcend", "file": "assets/music/transcend.mp3" }
+  ]
+}
