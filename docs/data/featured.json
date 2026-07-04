@@ -33,5 +33,5 @@
     "image": "assets/img/software/nbd.png",
     "description": "A small JavaScript experiment that quickly turns into a chaotic reminder of why orbital mechanics is hard. Watch bodies dance, collide, or spiral into oblivion—all powered by physics that behaves correctly just often enough to keep things interesting.",
     "url": "https://bugfishtm.github.io/nbody-simulator"
-  },
+  }
 ]
