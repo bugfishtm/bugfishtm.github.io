@@ -24,7 +24,7 @@ function initMatrix() {
   }
 
   function draw() {
-    ctx.fillStyle = "rgba(26,27,30,0.06)";
+    ctx.fillStyle = "rgba(18,19,22,0.06)";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
     for (let i = 0; i < cols; i++) {
       const ch = chars[Math.floor(Math.random() * chars.length)];
@@ -144,6 +144,8 @@ const GAME = {
   _go(dir) {
     const room = this.rooms[this.currentRoom];
     if (!dir) return ["Go where? Specify: north, south, east, west."];
+    const dirMap = { n: "north", s: "south", e: "east", w: "west" };
+    dir = dirMap[dir] || dir;
     const dest = room.exits[dir];
     if (!dest) return [`No exit to the ${dir.toUpperCase()}.`];
     this.currentRoom = dest;
@@ -364,6 +366,23 @@ function initMusicPlayer(tracks) {
     loadTrack((current + 1) % tracks.length, playing));
 
   audio.addEventListener("ended", () => loadTrack((current + 1) % tracks.length, true));
+
+  // If a track file fails to load, skip to the next one instead of
+  // getting stuck in "playing" state. Stop after one full cycle.
+  let errorStreak = 0;
+  audio.addEventListener("playing", () => { errorStreak = 0; });
+  audio.addEventListener("error", () => {
+    if (!playing) return;
+    errorStreak++;
+    if (errorStreak >= tracks.length) {
+      playing = false;
+      playBtn.textContent = "▶";
+      playBtn.classList.remove("play-active");
+      updateTrackList();
+      return;
+    }
+    loadTrack((current + 1) % tracks.length, true);
+  });
   audio.addEventListener("timeupdate", () => {
     if (!audio.duration) return;
     fillEl.style.width = (audio.currentTime / audio.duration) * 100 + "%";

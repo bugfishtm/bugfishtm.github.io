@@ -5,12 +5,12 @@
 
 :root {
   /* Greyish dark scheme — softer on the eyes than pure black */
-  --bg:           #1a1b1e;   /* page background            */
-  --bg2:          #212226;   /* surface / cards            */
-  --bg3:          #292a2f;   /* raised surface             */
-  --bg4:          #313239;   /* hover surface              */
-  --border:       #35373e;   /* default border             */
-  --border2:      #44464f;   /* strong border              */
+  --bg:           #121316;   /* page background            */
+  --bg2:          #18191d;   /* surface / cards            */
+  --bg3:          #1f2025;   /* raised surface             */
+  --bg4:          #26272d;   /* hover surface              */
+  --border:       #2b2d33;   /* default border             */
+  --border2:      #3a3c45;   /* strong border              */
 
   /* Orange — unchanged on purpose */
   --orange:       #ff6600;
@@ -60,7 +60,7 @@ img { max-width: 100%; }
 ::-webkit-scrollbar-thumb { background: var(--bg4); border-radius: 3px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--orange-dim); }
 
-::selection { background: var(--orange); color: #1a1b1e; }
+::selection { background: var(--orange); color: #121316; }
 
 /* ============================================================
    NAVBAR
@@ -69,7 +69,7 @@ img { max-width: 100%; }
   position: fixed;
   top: 0; left: 0; right: 0;
   height: var(--nav-h);
-  background: rgba(33,34,38,0.92);
+  background: rgba(24,25,29,0.92);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--border);
   z-index: 1000;
@@ -272,13 +272,15 @@ main.full-bleed {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  padding: 10px 22px;
+  padding: 9px 18px;
   background: var(--orange);
   color: #16130f;
   font-family: var(--font);
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 700;
-  letter-spacing: 1.2px;
+  letter-spacing: 1px;
+  line-height: 1.4;
+  white-space: nowrap;
   border: 1px solid var(--orange);
   border-radius: 8px;
   cursor: pointer;
@@ -313,7 +315,7 @@ main.full-bleed {
   box-shadow: none;
 }
 
-.btn.small { padding: 7px 14px; font-size: 11px; }
+.btn.small { padding: 6px 13px; font-size: 11px; letter-spacing: 0.8px; border-radius: 7px; }
 
 .btn.disabled,
 .btn:disabled {
@@ -350,7 +352,7 @@ main.full-bleed {
   inset: 0;
   z-index: 1;
   pointer-events: none;
-  background: radial-gradient(ellipse at 30% 40%, transparent 0%, rgba(26,27,30,0.85) 75%);
+  background: radial-gradient(ellipse at 30% 40%, transparent 0%, rgba(18,19,22,0.85) 75%);
 }
 
 .hero-inner {
@@ -954,6 +956,63 @@ main.full-bleed {
 }
 
 /* ============================================================
+   PROJECT SEARCH
+   ============================================================ */
+.search-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  max-width: 480px;
+  margin-bottom: 26px;
+  background: var(--bg2);
+  border: 1px solid var(--border2);
+  border-radius: 8px;
+  padding: 0 14px;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+.search-wrap:focus-within {
+  border-color: var(--orange);
+  box-shadow: 0 0 0 3px var(--orange-faint);
+}
+.search-icon { color: var(--text-dim); font-size: 15px; user-select: none; }
+.search-input {
+  flex: 1;
+  min-width: 0;
+  background: none;
+  border: none;
+  outline: none;
+  color: var(--text-bright);
+  font-family: var(--mono);
+  font-size: 13px;
+  letter-spacing: 1px;
+  padding: 11px 0;
+  caret-color: var(--orange);
+}
+.search-input::placeholder { color: var(--text-dim); }
+.search-input::-webkit-search-cancel-button { cursor: pointer; }
+.search-count {
+  font-family: var(--mono);
+  color: var(--text-dim);
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.cat-badge {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--cyan);
+  background: rgba(53,201,240,0.08);
+  border: 1px solid rgba(53,201,240,0.35);
+  border-radius: 999px;
+  padding: 3px 11px;
+  white-space: nowrap;
+}
+
+/* ============================================================
    PROJECT CARDS (full width)
    ============================================================ */
 .project-list { display: flex; flex-direction: column; gap: 16px; }
@@ -1191,7 +1250,7 @@ main.full-bleed {
 
   .project-card { flex-direction: column; gap: 16px; padding: 20px; }
   .project-img { width: 72px; height: 72px; }
-  .project-actions .btn { flex: 1 1 calc(50% - 8px); }
+  .project-actions .btn { flex: 1 1 calc(50% - 4px); }
 
   .explore-card { align-items: flex-start; }
   .explore-img { width: 48px; height: 48px; }
@@ -1202,7 +1261,6 @@ main.full-bleed {
   .hero-actions .btn { width: 100%; }
   .glitch { letter-spacing: 5px; }
   .mp-vol-slider { width: 46px; }
-  .project-actions .btn { flex: 1 1 100%; }
   .section-title { font-size: 14px; letter-spacing: 2px; }
 }
 

@@ -1,6 +1,7 @@
 /* ============================================================
    BUGFISH — projects.js
-   Renders full-width project cards for one category.
+   Renders full-width project cards for one category and powers
+   the search box that looks through ALL categories.
    The category is read from <body data-category="...">, and the
    items come from data/projects/<category>.json.
 
@@ -20,6 +21,40 @@ const PROJECT_BUTTONS = [
   { key: "contact",       label: "Contact" },
 ];
 
+/* All categories the search box can look through — must match
+   the JSON files that exist in data/projects/. */
+const PROJECT_CATEGORIES = [
+  "docker", "android", "framework", "javascript",
+  "suitefish", "games", "windows", "websoftware",
+];
+
+const projectCache = {};        // category -> items
+let allProjectsPromise = null;  // lazy, fetched on first search
+
+async function loadCategory(cat) {
+  if (!projectCache[cat]) {
+    projectCache[cat] = await loadJSON(`data/projects/${cat}.json`);
+  }
+  return projectCache[cat];
+}
+
+function loadAllProjects() {
+  if (!allProjectsPromise) {
+    allProjectsPromise = Promise.all(
+      PROJECT_CATEGORIES.map(async cat => {
+        try {
+          const items = await loadCategory(cat);
+          return (Array.isArray(items) ? items : []).map(p => ({ ...p, category: cat }));
+        } catch (err) {
+          console.error(`Could not load projects for '${cat}':`, err);
+          return [];
+        }
+      })
+    ).then(lists => lists.flat());
+  }
+  return allProjectsPromise;
+}
+
 function projectButton(url, label) {
   if (url && String(url).trim() !== "") {
     return `<a class="btn ghost small" href="${esc(url)}" target="_blank" rel="noopener noreferrer">${esc(label)}</a>`;
@@ -27,18 +62,22 @@ function projectButton(url, label) {
   return `<span class="btn ghost small disabled" aria-disabled="true" title="Not available">${esc(label)}</span>`;
 }
 
-function renderProjects(items) {
+function renderProjects(items, opts = {}) {
   const list = document.getElementById("project-list");
   if (!list) return;
 
   if (!Array.isArray(items) || !items.length) {
-    list.innerHTML = `<div class="news-empty">// no projects in this section yet</div>`;
+    list.innerHTML = opts.query
+      ? `<div class="news-empty">// no projects match '${esc(opts.query)}'</div>`
+      : `<div class="news-empty">// no projects in this section yet</div>`;
     return;
   }
 
   list.innerHTML = items.map(item => {
     const license = item.license ? String(item.license).slice(0, 12) : "";
     const buttons = PROJECT_BUTTONS.map(b => projectButton(item[b.key], b.label)).join("");
+    const catBadge = opts.showCategory && item.category
+      ? `<span class="cat-badge">${esc(item.category)}</span>` : "";
     return `
       <article class="project-card">
         <div class="project-img">
@@ -48,6 +87,7 @@ function renderProjects(items) {
         <div class="project-body">
           <div class="project-head">
             <span class="project-name">${esc(item.name)}</span>
+            ${catBadge}
             ${license ? `<span class="license-badge">${esc(license)}</span>` : ""}
           </div>
           <p class="project-desc">${esc(item.description)}</p>
@@ -57,12 +97,42 @@ function renderProjects(items) {
   }).join("");
 }
 
+/* ---- Search across all categories -------------------------- */
+function initProjectSearch(categoryItems) {
+  const input = document.getElementById("project-search");
+  const countEl = document.getElementById("search-count");
+  if (!input) return;
+
+  async function runSearch() {
+    const q = input.value.trim().toLowerCase();
+
+    if (!q) {
+      renderProjects(categoryItems);
+      if (countEl) countEl.textContent = "";
+      return;
+    }
+
+    const all = await loadAllProjects();
+    // Input may have changed while the JSONs were loading.
+    if (input.value.trim().toLowerCase() !== q) return;
+
+    const hits = all.filter(p =>
+      `${p.name} ${p.description} ${p.category}`.toLowerCase().includes(q));
+
+    renderProjects(hits, { showCategory: true, query: q });
+    if (countEl) countEl.textContent = `${hits.length} FOUND`;
+  }
+
+  input.addEventListener("input", runSearch);
+}
+
 document.addEventListener("DOMContentLoaded", async () => {
   const category = document.body.dataset.category;
   if (!category) return;
   try {
-    const items = await loadJSON(`data/projects/${category}.json`);
+    const items = await loadCategory(category);
     renderProjects(items);
+    initProjectSearch(items);
   } catch (err) {
     console.error(err);
     showLoadError(document.getElementById("project-list"), `data/projects/${category}.json`);
