@@ -5,12 +5,12 @@
     "description": "A web framework prioritizing security, flexibility, and performance with a dedicated developer community.",
     "license": "GPLv3",
     "documentation": "https://bugfishtm.github.io/suitefish-cms",
-    "website": "https://bugfishtm.github.io/suitefish-cms",
+    "website": "",
     "github": "https://github.com/bugfishtm/suitefish-cms",
-    "video": "",
+    "video": "https://www.youtube.com/playlist?list=PL6npOHuBGrpAfrpUzQPTOWdqoCnhq1oP0",
     "contact": "",
     "ai": false,
-    "docker": ""
+    "docker": "https://hub.docker.com/r/bugfishtm/suitefish"
   },
   {
     "name": "Online Book Renting",
