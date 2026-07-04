@@ -982,6 +982,13 @@ function renderAbout(cfg) {
     bio.className = "panel about-bio";
     bio.innerHTML = `<div class="panel-title">// bio.txt</div>` +
       cfg.aboutBio.map(p => `<p>${esc(p)}</p>`).join("");
+    if (cfg.assessment) {
+      bio.innerHTML += `
+        <div class="bio-assessment">
+          <div class="bio-assessment-label">// external_assessment.log</div>
+          <p>${esc(cfg.assessment)}</p>
+        </div>`;
+    }
     container.appendChild(bio);
   }
 }

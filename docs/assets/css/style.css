@@ -448,30 +448,6 @@ main.full-bleed {
   margin-bottom: 24px;
 }
 
-.hero-assessment {
-  background: var(--bg2);
-  border: 1px solid var(--border);
-  border-left: 3px solid var(--orange);
-  border-radius: var(--radius);
-  padding: 14px 18px;
-  max-width: 540px;
-  margin-bottom: 24px;
-}
-.hero-assessment-label {
-  font-family: var(--mono);
-  color: var(--orange);
-  font-size: 9px;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  opacity: 0.8;
-  margin-bottom: 8px;
-}
-.hero-assessment p {
-  color: var(--text-mid);
-  font-size: 13px;
-  line-height: 1.8;
-}
-
 .hero-pills {
   display: flex;
   flex-wrap: wrap;
@@ -776,6 +752,43 @@ main.full-bleed {
 .about-bio { grid-column: 1 / -1; }
 .about-bio p { color: var(--text); font-size: 14px; line-height: 2; }
 .about-bio p + p { margin-top: 12px; }
+
+/* AI judgement appended to the bio panel */
+.bio-assessment {
+  border-top: 1px dashed var(--border2);
+  margin-top: 20px;
+  padding-top: 16px;
+}
+.bio-assessment-label {
+  font-family: var(--mono);
+  color: var(--orange);
+  font-size: 9px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  opacity: 0.8;
+  margin-bottom: 10px;
+}
+.bio-assessment p {
+  color: var(--text-mid);
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+/* Insurance box at the end of the home page */
+.insurance-panel p {
+  color: var(--text-mid);
+  font-size: 14px;
+  line-height: 1.9;
+  margin-bottom: 10px;
+}
+.insurance-panel p:last-child { margin-bottom: 0; }
+.insurance-link {
+  color: #ffd400;
+  word-break: break-all;
+  font-family: var(--mono);
+  font-size: 13px;
+}
+.insurance-link:hover { color: #ffe766; text-decoration: underline; }
 
 /* Counters */
 .counters-grid {
