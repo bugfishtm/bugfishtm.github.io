@@ -3,7 +3,7 @@
     "name": "Proxmox VMA2RAW",
     "image": "assets/img/software/proxmox.png",
     "description": "Docker image to convert Proxmox VMA backup files to raw disk images mountable on Windows and Linux.",
-    "license": "See GitHub",
+    "license": "MIT",
     "documentation": "https://bugfishtm.github.io/proxmox-vma2raw",
     "website": "",
     "github": "https://github.com/bugfishtm/proxmox-vma2raw",
