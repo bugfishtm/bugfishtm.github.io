@@ -7,8 +7,8 @@
     "documentation": "https://bugfishtm.github.io/windows-hash-cracker",
     "website": "",
     "github": "https://github.com/bugfishtm/windows-hash-cracker",
-    "video": "",
-    "contact": "mailto:requests@bugfish.eu",
+    "video": "https://www.youtube.com/playlist?list=PL6npOHuBGrpDlS6CCHIUDz5O9mOnH7-7E",
+    "contact": "",
     "ai": false,
     "docker": ""
   },
@@ -20,8 +20,8 @@
     "documentation": "https://bugfishtm.github.io/bugfish-nuke",
     "website": "",
     "github": "https://github.com/bugfishtm/bugfish-nuke",
-    "video": "",
-    "contact": "mailto:requests@bugfish.eu",
+    "video": "https://www.youtube.com/playlist?list=PL6npOHuBGrpBMogf3Fy78H9JaiwaRWyd7",
+    "contact": "",
     "ai": false,
     "docker": ""
   },
@@ -34,7 +34,7 @@
     "website": "",
     "github": "https://github.com/bugfishtm/bugfish-image-downloader",
     "video": "",
-    "contact": "mailto:requests@bugfish.eu",
+    "contact": "",
     "ai": false,
     "docker": ""
   }

@@ -3,13 +3,26 @@
     "name": "Android Web App",
     "image": "assets/img/software/android.png",
     "description": "Ready-to-use Android Studio project for a simple web app with built-in forward, back, and home controls.",
-    "license": "See GitHub",
+    "license": "MIT",
     "documentation": "https://bugfishtm.github.io/Android-Web-App-Example",
     "website": "",
     "github": "https://github.com/bugfishtm/Android-Web-App-Example",
     "video": "",
     "contact": "mailto:requests@bugfish.eu",
     "ai": false,
+    "docker": ""
+  },
+  {
+    "name": "RSS Reader Advanced",
+    "image": "assets/img/software/rss.png",
+    "description": "RSS Reader Advanced is a clean, modern Android RSS/Atom feed reader built as a ready-to-use Android Studio project. It lets you subscribe to any number of feeds, organize them as sources, browse all articles in one place, and keep your favorite items for later.",
+    "license": "GPLv3",
+    "documentation": "https://bugfishtm.github.io/android-advanced-rss-reader",
+    "website": "",
+    "github": "https://github.com/bugfishtm/android-advanced-rss-reader",
+    "video": "",
+    "contact": "",
+    "ai": true,
     "docker": ""
   }
 ]

@@ -30,12 +30,6 @@
     "description": "Docker images and container releases."
   },
   {
-    "name": "itch.io",
-    "image": "assets/img/overview/delayed.png",
-    "url": "https://bugfishtm.itch.io",
-    "description": "Indie game releases and interactive projects."
-  },
-  {
     "name": "YouTube",
     "image": "assets/img/video/youtube.png",
     "url": "https://youtube.com/bugfishtm",
@@ -54,28 +48,10 @@
     "description": "Music downloads."
   },
   {
-    "name": "SoundCloud",
-    "image": "assets/img/music/soundcloud.png",
-    "url": "https://soundcloud.com/bugfishtm",
-    "description": "Music streaming."
-  },
-  {
-    "name": "Twitter / X",
-    "image": "assets/img/social/twitter1.png",
-    "url": "https://x.com/bugfishx658",
-    "description": "Status updates."
-  },
-  {
     "name": "Discord",
     "image": "assets/img/social/discord.jpg",
     "url": "https://discord.com/invite/xCj7AEMmye",
     "description": "Community server."
-  },
-  {
-    "name": "Telegram",
-    "image": "assets/img/social/telegram.png",
-    "url": "https://t.me/bugfishofficial",
-    "description": "Official channel."
   },
   {
     "name": "Steam",
@@ -84,40 +60,16 @@
     "description": "Gaming group."
   },
   {
-    "name": "Patreon",
-    "image": "assets/img/social/patreon.png",
-    "url": "https://www.patreon.com/c/Bugfish",
-    "description": "Support me."
-  },
-  {
     "name": "Facebook",
     "image": "assets/img/social/fb.png",
     "url": "https://facebook.com/officialbugfish",
     "description": "Social page."
   },
   {
-    "name": "Instagram",
-    "image": "assets/img/social/insta.png",
-    "url": "https://instagram.com/bugfish_tm",
-    "description": "Visual content."
-  },
-  {
-    "name": "TikTok",
-    "image": "assets/img/social/tiktok1.png",
-    "url": "https://tiktok.com/@bugfish_tm",
-    "description": "Short videos."
-  },
-  {
     "name": "DeviantArt",
     "image": "assets/img/video/deviantart.png",
     "url": "https://deviantart.com/bxgfxsh",
     "description": "Digital art gallery."
-  },
-  {
-    "name": "Blogger",
-    "image": "assets/img/social/blogger.png",
-    "url": "https://bugfishtm.blogspot.com",
-    "description": "Blog posts."
   },
   {
     "name": "PixaBay",
