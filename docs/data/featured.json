@@ -3,35 +3,35 @@
     "name": "Suitefish CMS",
     "tag": "websoftware",
     "image": "assets/img/software/suitefish.png",
-    "description": "A full content management system built from scratch. Modular, self-hosted and battle-tested — the backbone of many Bugfish web projects.",
+    "description": "A CMS that doesn’t try to reinvent the wheel—just makes sure the wheel is secure, fast, and doesn’t randomly fall off in production. Built for developers who enjoy flexibility without the usual “why is this even configurable?” moments. Surprisingly opinionated where it matters, and quiet where it should be.",
+    "url": "https://bugfishtm.github.io/suitefish-cms"
+  },
+  {
+    "name": "Game Development",
+    "tag": "games",
+    "image": "assets/img/overview/delayed.png",
+    "description": "We are crafting horror puzzle games designed to make players question both their logic and their life choices. Expect clever mechanics, unsettling atmospheres, and at least one moment where you confidently solve something… only to realize that was a mistake.",
     "url": "https://bugfishtm.github.io/suitefish-cms"
   },
   {
     "name": "Bind9 Web Manager",
     "tag": "websoftware",
     "image": "assets/img/software/dnshttp.png",
-    "description": "All-in-one DNS solution for effortless management, replication and user administration. Ships as a ready-to-run container.",
-    "url": "https://github.com/bugfishtm/Bind9-Web-Manager"
+    "description": "Because editing DNS configs by hand at 3 a.m. is a character-building experience nobody actually wants. This tool wraps Bind9 in a UI that makes complex setups manageable, replication less painful, and user management something you won’t dread explaining to others.",
+    "url": "https://bugfishtm.github.io/Bind9-Web-Manager"
   },
   {
-    "name": "Proxmox VMA2RAW",
-    "tag": "websoftware",
-    "image": "assets/img/software/proxmox.png",
-    "description": "Convert Proxmox VMA backup files to raw disk images mountable on Windows and Linux — no Proxmox host required.",
-    "url": "https://github.com/bugfishtm/proxmox-vma2raw"
-  },
-  {
-    "name": "Floor Plan Designer",
-    "tag": "javascript",
-    "image": "assets/img/software/fbr.png",
-    "description": "Draw and edit floor plans directly in the browser. Pure JavaScript, no backend, no accounts — open it and start planning.",
-    "url": "https://github.com/bugfishtm/floor-plan-designer"
-  },
-  {
-    "name": "Hash Cracker",
+    "name": "Nuke Everything",
     "tag": "windows",
-    "image": "assets/img/software/hashcracker.png",
-    "description": "Windows tool to recover lost password hashes with dictionary and brute-force modes. Fast, small and dependency-free.",
-    "url": "https://github.com/bugfishtm/windows-hash-cracker"
-  }
+    "image": "assets/img/software/nuke.png",
+    "description": "When “delete” and “format” just don’t feel convincing enough. This tool ensures your data is not just gone, but gone with intent. Ideal for those moments when you absolutely, positively do not want anything recoverable—no questions asked, no traces left behind.",
+    "url": "https://bugfishtm.github.io/bugfish-nuke"
+  },
+  {
+    "name": "N-Body Simulator",
+    "tag": "javascript",
+    "image": "assets/img/software/nbd.png",
+    "description": "A small JavaScript experiment that quickly turns into a chaotic reminder of why orbital mechanics is hard. Watch bodies dance, collide, or spiral into oblivion—all powered by physics that behaves correctly just often enough to keep things interesting.",
+    "url": "https://bugfishtm.github.io/nbody-simulator"
+  },
 ]
