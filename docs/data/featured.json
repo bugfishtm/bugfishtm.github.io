@@ -8,14 +8,14 @@
   },
   {
     "name": "Bind9 Web Manager",
-    "tag": "docker",
+    "tag": "websoftware",
     "image": "assets/img/software/dnshttp.png",
     "description": "All-in-one DNS solution for effortless management, replication and user administration. Ships as a ready-to-run container.",
     "url": "https://github.com/bugfishtm/Bind9-Web-Manager"
   },
   {
     "name": "Proxmox VMA2RAW",
-    "tag": "docker",
+    "tag": "websoftware",
     "image": "assets/img/software/proxmox.png",
     "description": "Convert Proxmox VMA backup files to raw disk images mountable on Windows and Linux — no Proxmox host required.",
     "url": "https://github.com/bugfishtm/proxmox-vma2raw"

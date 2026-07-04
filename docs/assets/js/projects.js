@@ -9,7 +9,7 @@
      name, image, description  — required
      license                   — short text (max 12 chars shown)
      ai                        — true ⇒ "AI ASSISTED" badge
-     documentation, website, github, video, contact
+     documentation, website, github, docker, video, contact
                                — optional urls; missing/empty ⇒
                                  the button is not rendered.
    ============================================================ */
@@ -18,6 +18,7 @@ const PROJECT_BUTTONS = [
   { key: "documentation", label: "Docs" },
   { key: "website",       label: "Website" },
   { key: "github",        label: "GitHub" },
+  { key: "docker",        label: "Docker" },
   { key: "video",         label: "Videos" },
   { key: "contact",       label: "Contact" },
 ];
@@ -25,8 +26,8 @@ const PROJECT_BUTTONS = [
 /* All categories the search looks through — must match the JSON
    files that exist in data/projects/. */
 const PROJECT_CATEGORIES = [
-  "docker", "android", "framework", "javascript",
-  "suitefish", "games", "windows", "websoftware",
+  "android", "framework", "javascript",
+  "games", "windows", "websoftware",
 ];
 
 const projectCache = {};        // category -> items

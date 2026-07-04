@@ -9,7 +9,8 @@
     "github": "",
     "video": "https://youtube.com/bugfishtm",
     "contact": "mailto:requests@bugfish.eu",
-    "ai": false
+    "ai": false,
+    "docker": ""
   },
   {
     "name": "N-Body Simulator",
@@ -21,6 +22,7 @@
     "github": "https://github.com/bugfishtm/nbody-simulator",
     "video": "",
     "contact": "mailto:requests@bugfish.eu",
-    "ai": false
+    "ai": false,
+    "docker": ""
   }
 ]

@@ -9,7 +9,8 @@
     "github": "https://github.com/bugfishtm/bugfish-jquery-sortselect",
     "video": "",
     "contact": "mailto:requests@bugfish.eu",
-    "ai": false
+    "ai": false,
+    "docker": ""
   },
   {
     "name": "N-Body Simulator",
@@ -21,7 +22,8 @@
     "github": "https://github.com/bugfishtm/nbody-simulator",
     "video": "",
     "contact": "mailto:requests@bugfish.eu",
-    "ai": false
+    "ai": false,
+    "docker": ""
   },
   {
     "name": "Markdown Editor",
@@ -33,7 +35,8 @@
     "github": "https://github.com/bugfishtm/js-markdown-editor",
     "video": "",
     "contact": "mailto:requests@bugfish.eu",
-    "ai": false
+    "ai": false,
+    "docker": ""
   },
   {
     "name": "Personal Accounting",
@@ -45,7 +48,8 @@
     "github": "https://github.com/bugfishtm/js-personal-finances",
     "video": "",
     "contact": "mailto:requests@bugfish.eu",
-    "ai": false
+    "ai": false,
+    "docker": ""
   },
   {
     "name": "AI/ML API Interface",
@@ -57,7 +61,8 @@
     "github": "https://github.com/bugfishtm/simple-aiml-api-interface",
     "video": "",
     "contact": "mailto:requests@bugfish.eu",
-    "ai": false
+    "ai": false,
+    "docker": ""
   },
   {
     "name": "Floor Plan Designer",
@@ -69,7 +74,8 @@
     "github": "https://github.com/bugfishtm/floor-plan-designer",
     "video": "",
     "contact": "mailto:requests@bugfish.eu",
-    "ai": false
+    "ai": false,
+    "docker": ""
   },
   {
     "name": "Image Converter",
@@ -81,7 +87,8 @@
     "github": "https://github.com/bugfishtm/js-image-converter",
     "video": "",
     "contact": "mailto:requests@bugfish.eu",
-    "ai": false
+    "ai": false,
+    "docker": ""
   },
   {
     "name": "Audio Converter",
@@ -93,7 +100,8 @@
     "github": "https://github.com/bugfishtm/js-audio-converter",
     "video": "",
     "contact": "mailto:requests@bugfish.eu",
-    "ai": false
+    "ai": false,
+    "docker": ""
   },
   {
     "name": "API Request Tool",
@@ -105,6 +113,7 @@
     "github": "https://github.com/bugfishtm/js-api-request-tool",
     "video": "",
     "contact": "mailto:requests@bugfish.eu",
-    "ai": false
+    "ai": false,
+    "docker": ""
   }
 ]

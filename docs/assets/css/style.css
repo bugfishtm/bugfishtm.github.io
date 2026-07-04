@@ -448,6 +448,30 @@ main.full-bleed {
   margin-bottom: 24px;
 }
 
+.hero-assessment {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--orange);
+  border-radius: var(--radius);
+  padding: 14px 18px;
+  max-width: 540px;
+  margin-bottom: 24px;
+}
+.hero-assessment-label {
+  font-family: var(--mono);
+  color: var(--orange);
+  font-size: 9px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  opacity: 0.8;
+  margin-bottom: 8px;
+}
+.hero-assessment p {
+  color: var(--text-mid);
+  font-size: 13px;
+  line-height: 1.8;
+}
+
 .hero-pills {
   display: flex;
   flex-wrap: wrap;
