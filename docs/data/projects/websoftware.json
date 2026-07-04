@@ -1,18 +1,5 @@
 [
   {
-    "name": "Proxmox VMA2RAW",
-    "image": "assets/img/software/proxmox.png",
-    "description": "Docker image to convert Proxmox VMA backup files to raw disk images mountable on Windows and Linux.",
-    "license": "See GitHub",
-    "documentation": "https://bugfishtm.github.io/proxmox-vma2raw",
-    "website": "https://hub.docker.com/u/bugfishtm",
-    "github": "https://github.com/bugfishtm/proxmox-vma2raw",
-    "video": "",
-    "contact": "mailto:requests@bugfish.eu",
-    "ai": false,
-    "docker": "https://hub.docker.com/u/bugfishtm"
-  },
-  {
     "name": "Suitefish CMS",
     "image": "assets/img/software/suitefish.png",
     "description": "A web framework prioritizing security, flexibility, and performance with a dedicated developer community.",
@@ -21,20 +8,7 @@
     "website": "https://bugfishtm.github.io/suitefish-cms",
     "github": "https://github.com/bugfishtm/suitefish-cms",
     "video": "",
-    "contact": "mailto:requests@bugfish.eu",
-    "ai": false,
-    "docker": ""
-  },
-  {
-    "name": "Bugfish Framework",
-    "image": "assets/img/software/bugfish.jpg",
-    "description": "A web framework prioritizing security, flexibility, and performance, streamlining development and scalability.",
-    "license": "See GitHub",
-    "documentation": "https://bugfishtm.github.io/bugfish-framework",
-    "website": "https://bugfish.eu",
-    "github": "https://github.com/bugfishtm/bugfish-framework",
-    "video": "",
-    "contact": "mailto:requests@bugfish.eu",
+    "contact": "",
     "ai": false,
     "docker": ""
   },
@@ -47,9 +21,9 @@
     "website": "",
     "github": "https://github.com/bugfishtm/Online-Book-Renting",
     "video": "",
-    "contact": "mailto:requests@bugfish.eu",
+    "contact": "",
     "ai": false,
-    "docker": ""
+    "docker": "https://hub.docker.com/r/bugfishtm/obr"
   },
   {
     "name": "Bind9 Web Manager",
@@ -60,9 +34,9 @@
     "website": "",
     "github": "https://github.com/bugfishtm/Bind9-Web-Manager",
     "video": "",
-    "contact": "mailto:requests@bugfish.eu",
+    "contact": "",
     "ai": false,
-    "docker": ""
+    "docker": "https://hub.docker.com/r/bugfishtm/dnshttp"
   },
   {
     "name": "Dovecot Certificate Interface",
@@ -73,7 +47,7 @@
     "website": "",
     "github": "https://github.com/bugfishtm/Dovecot-Certificate-Interface",
     "video": "",
-    "contact": "mailto:requests@bugfish.eu",
+    "contact": "",
     "ai": false,
     "docker": ""
   },
@@ -86,7 +60,7 @@
     "website": "",
     "github": "https://github.com/bugfishtm/Mail-Relaying-over-DNS",
     "video": "",
-    "contact": "mailto:requests@bugfish.eu",
+    "contact": "",
     "ai": false,
     "docker": ""
   }

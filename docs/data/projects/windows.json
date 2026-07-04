@@ -1,5 +1,18 @@
 [
   {
+    "name": "Proxmox VMA2RAW",
+    "image": "assets/img/software/proxmox.png",
+    "description": "Docker image to convert Proxmox VMA backup files to raw disk images mountable on Windows and Linux.",
+    "license": "See GitHub",
+    "documentation": "https://bugfishtm.github.io/proxmox-vma2raw",
+    "website": "https://hub.docker.com/u/bugfishtm",
+    "github": "https://github.com/bugfishtm/proxmox-vma2raw",
+    "video": "",
+    "contact": "",
+    "ai": false,
+    "docker": "https://hub.docker.com/r/bugfishtm/proxmox-vma2raw/"
+  },
+  {
     "name": "Hash Cracker",
     "image": "assets/img/software/hashcracker.png",
     "description": "A fast and flexible Windows tool for encoding and brute-forcing password hashes across multiple algorithms.",
