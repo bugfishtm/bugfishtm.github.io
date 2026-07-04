@@ -163,6 +163,16 @@ img { max-width: 100%; }
   transform: translateY(0);
 }
 
+/* Invisible hover bridge across the gap between the trigger and
+   the dropdown, so the menu doesn't close while moving the mouse
+   down into it. */
+.nav-dropdown::before {
+  content: '';
+  position: absolute;
+  top: -12px; left: 0; right: 0;
+  height: 12px;
+}
+
 .nav-dropdown a {
   display: flex;
   align-items: center;
@@ -692,6 +702,11 @@ main.full-bleed {
   padding: 48px 24px 64px;
 }
 
+/* Vertical rhythm between the home sections (news / about / uptime).
+   Their headers are each :first-child of their <section>, so the
+   spacing has to live on the sections themselves. */
+.home-wrap > section + section { margin-top: 64px; }
+
 /* About */
 .about-grid {
   display: grid;
@@ -1217,6 +1232,8 @@ main.full-bleed {
     padding: 13px 14px;
     font-size: 15px;
   }
+
+  .nav-dropdown::before { content: none; }
 
   .nav-dropdown {
     position: static;

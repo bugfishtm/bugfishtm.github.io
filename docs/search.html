@@ -3,28 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bugfish — Explore</title>
-  <meta name="description" content="Explore all Bugfish channels and platforms — websites, code, music, video and social profiles.">
+  <title>Bugfish — Search</title>
+  <meta name="description" content="Search through all Bugfish projects — Docker, Android, Framework, JavaScript, Suitefish, Games, Windows and Websoftware.">
   <meta name="author" content="Bugfish">
   <meta name="robots" content="index,follow">
   <meta name="theme-color" content="#121316">
-  <link rel="canonical" href="https://bugfishtm.github.io/explore.html">
+  <link rel="canonical" href="https://bugfishtm.github.io/search.html">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Bugfish">
   <meta property="og:locale" content="en_US">
-  <meta property="og:title" content="Bugfish — Explore">
-  <meta property="og:description" content="Explore all Bugfish channels and platforms — websites, code, music, video and social profiles.">
-  <meta property="og:url" content="https://bugfishtm.github.io/explore.html">
+  <meta property="og:title" content="Bugfish — Search">
+  <meta property="og:description" content="Search through all Bugfish projects — Docker, Android, Framework, JavaScript, Suitefish, Games, Windows and Websoftware.">
+  <meta property="og:url" content="https://bugfishtm.github.io/search.html">
   <meta property="og:image" content="https://bugfishtm.github.io/meta.jpg">
   <meta property="og:image:alt" content="Bugfish — software developer since 2008">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Bugfish — Explore">
-  <meta name="twitter:description" content="Explore all Bugfish channels and platforms — websites, code, music, video and social profiles.">
+  <meta name="twitter:title" content="Bugfish — Search">
+  <meta name="twitter:description" content="Search through all Bugfish projects — Docker, Android, Framework, JavaScript, Suitefish, Games, Windows and Websoftware.">
   <meta name="twitter:image" content="https://bugfishtm.github.io/meta.jpg">
   <link rel="icon" type="image/x-icon" href="./favicon.ico">
   <link rel="stylesheet" href="./assets/css/style.css">
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://bugfishtm.github.io/#website","name":"Bugfish","url":"https://bugfishtm.github.io/","potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://bugfishtm.github.io/search.html?q={search_term_string}"},"query-input":"required name=search_term_string"}},{"@type":"Person","@id":"https://bugfishtm.github.io/#person","name":"Bugfish","url":"https://bugfish.eu","sameAs":["https://github.com/bugfishtm","https://bugfishtm.github.io/"],"jobTitle":"Full-Stack Developer"},{"@type":"CollectionPage","url":"https://bugfishtm.github.io/explore.html","name":"Bugfish — Explore","description":"Explore all Bugfish channels and platforms — websites, code, music, video and social profiles.","isPartOf":{"@id":"https://bugfishtm.github.io/#website"},"author":{"@id":"https://bugfishtm.github.io/#person"}}]}
+  {"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://bugfishtm.github.io/#website","name":"Bugfish","url":"https://bugfishtm.github.io/","potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://bugfishtm.github.io/search.html?q={search_term_string}"},"query-input":"required name=search_term_string"}},{"@type":"Person","@id":"https://bugfishtm.github.io/#person","name":"Bugfish","url":"https://bugfish.eu","sameAs":["https://github.com/bugfishtm","https://bugfishtm.github.io/"],"jobTitle":"Full-Stack Developer"},{"@type":"SearchResultsPage","url":"https://bugfishtm.github.io/search.html","name":"Bugfish — Search","description":"Search through all Bugfish projects — Docker, Android, Framework, JavaScript, Suitefish, Games, Windows and Websoftware.","isPartOf":{"@id":"https://bugfishtm.github.io/#website"},"author":{"@id":"https://bugfishtm.github.io/#person"}}]}
   </script>
 </head>
 <body data-base="">
@@ -40,7 +40,7 @@
       </button>
       <nav class="nav-menu" id="nav-menu" aria-label="Main navigation">
         <div class="nav-item"><a class="nav-link" href="index.html">Home</a></div>
-        <div class="nav-item"><a class="nav-link active" href="explore.html">Explore</a></div>
+        <div class="nav-item"><a class="nav-link" href="explore.html">Explore</a></div>
         <div class="nav-item has-dropdown">
           <button class="nav-link" aria-haspopup="true">Projects <span class="nav-caret">▾</span></button>
           <div class="nav-dropdown">
@@ -54,7 +54,7 @@
             <a href="projects/websoftware.html">Websoftware</a>
           </div>
         </div>
-        <div class="nav-item"><a class="nav-link" href="search.html">Search</a></div>
+        <div class="nav-item"><a class="nav-link active" href="search.html">Search</a></div>
         <div class="nav-item"><a class="nav-link" href="privacy.html">Privacy</a></div>
         <div class="nav-item"><a class="nav-link" href="impressum.html">Impressum</a></div>
       </nav>
@@ -63,12 +63,18 @@
 
   <main>
     <div class="page-header">
-      <h1 class="page-title">// explore<span class="accent">_</span></h1>
-      <p class="page-sub">All Bugfish channels, platforms and distribution nodes in one place.
-        Edit <code>data/explore.json</code> to change this list.</p>
+      <h1 class="page-title">// search<span class="accent">_</span></h1>
+      <p class="page-sub">Search through every Bugfish project across all categories.</p>
     </div>
 
-    <div class="explore-list" id="explore-list"></div>
+    <div class="search-wrap">
+      <span class="search-icon">&#8981;</span>
+      <input type="search" id="project-search" class="search-input"
+             placeholder="Search all projects..." aria-label="Search all projects">
+      <span class="search-count" id="search-count"></span>
+    </div>
+
+    <div class="project-list" id="project-list"></div>
   </main>
 
   <footer id="footer">
@@ -84,6 +90,6 @@
   </footer>
 
   <script src="./assets/js/main.js"></script>
-  <script src="./assets/js/explore.js"></script>
+  <script src="./assets/js/projects.js"></script>
 </body>
 </html>

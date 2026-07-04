@@ -97,8 +97,11 @@ function renderProjects(items, opts = {}) {
   }).join("");
 }
 
-/* ---- Search across all categories -------------------------- */
-function initProjectSearch(categoryItems) {
+/* ---- Search across all categories --------------------------
+   baseItems/baseOpts are what gets rendered when the box is
+   empty: the category list on category pages, everything on the
+   global search page. */
+function initProjectSearch(baseItems, baseOpts = {}) {
   const input = document.getElementById("project-search");
   const countEl = document.getElementById("search-count");
   if (!input) return;
@@ -107,7 +110,7 @@ function initProjectSearch(categoryItems) {
     const q = input.value.trim().toLowerCase();
 
     if (!q) {
-      renderProjects(categoryItems);
+      renderProjects(baseItems, baseOpts);
       if (countEl) countEl.textContent = "";
       return;
     }
@@ -126,9 +129,8 @@ function initProjectSearch(categoryItems) {
   input.addEventListener("input", runSearch);
 }
 
-document.addEventListener("DOMContentLoaded", async () => {
-  const category = document.body.dataset.category;
-  if (!category) return;
+/* ---- Category page ----------------------------------------- */
+async function initCategoryPage(category) {
   try {
     const items = await loadCategory(category);
     renderProjects(items);
@@ -137,4 +139,33 @@ document.addEventListener("DOMContentLoaded", async () => {
     console.error(err);
     showLoadError(document.getElementById("project-list"), `data/projects/${category}.json`);
   }
+}
+
+/* ---- Global search page (search.html) -----------------------
+   No data-category on <body>: show every project of every
+   category, support ?q=… deep links (used by the JSON-LD
+   SearchAction as well). */
+async function initGlobalSearchPage() {
+  const input = document.getElementById("project-search");
+  try {
+    const all = await loadAllProjects();
+    renderProjects(all, { showCategory: true });
+    initProjectSearch(all, { showCategory: true });
+
+    const q = new URLSearchParams(window.location.search).get("q");
+    if (input && q) {
+      input.value = q;
+      input.dispatchEvent(new Event("input"));
+    }
+    if (input) input.focus();
+  } catch (err) {
+    console.error(err);
+    showLoadError(document.getElementById("project-list"), "project data");
+  }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  const category = document.body.dataset.category;
+  if (category) initCategoryPage(category);
+  else if (document.getElementById("project-list")) initGlobalSearchPage();
 });
