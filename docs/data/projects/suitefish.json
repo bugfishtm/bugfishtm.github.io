@@ -1,26 +1,2 @@
 [
-  {
-    "name": "Suitefish CMS",
-    "image": "assets/img/software/suitefish.png",
-    "description": "A web framework prioritizing security, flexibility, and performance with a dedicated developer community.",
-    "license": "See GitHub",
-    "documentation": "https://bugfishtm.github.io/suitefish-cms",
-    "website": "https://bugfishtm.github.io/suitefish-cms",
-    "github": "https://github.com/bugfishtm/suitefish-cms",
-    "video": "",
-    "contact": "mailto:requests@bugfish.eu",
-    "ai": false
-  },
-  {
-    "name": "License Key Manager",
-    "image": "assets/img/overview/scel.png",
-    "description": "Cryptographic system used to authenticate Release Files issued under the Suitefish Commercial Exception License. Developed using AI; proceed at your own risk.",
-    "license": "SCEL",
-    "documentation": "https://bugfishtm.github.io/suitefish-scel",
-    "website": "",
-    "github": "https://github.com/bugfishtm/suitefish-scel",
-    "video": "",
-    "contact": "mailto:requests@bugfish.eu",
-    "ai": false
-  }
 ]
