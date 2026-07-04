@@ -52,19 +52,6 @@
     "docker": ""
   },
   {
-    "name": "AI/ML API Interface",
-    "image": "assets/img/software/apiml.png",
-    "description": "Single-file browser UI for the AIML API covering chat, image, TTS, STT, and more across 15+ models. Developed using AI; proceed at your own risk.",
-    "license": "GPLv3",
-    "documentation": "",
-    "website": "https://bugfishtm.github.io/simple-aiml-api-interface",
-    "github": "https://github.com/bugfishtm/simple-aiml-api-interface",
-    "video": "",
-    "contact": "",
-    "ai": true,
-    "docker": ""
-  },
-  {
     "name": "Floor Plan Designer",
     "image": "assets/img/software/fbr.png",
     "description": "Browser-based 2D floor plan designer with furniture placement, annotations, and JSON/PNG export. Developed using AI; proceed at your own risk.",
