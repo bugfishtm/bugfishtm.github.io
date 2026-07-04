@@ -8,14 +8,8 @@
   {
     "name": "Suitefish",
     "image": "assets/img/overview/suitefish.png",
-    "url": "https://bugfishtm.github.io/suitefish-cms",
+    "url": "https://suitefish.com",
     "description": "Official website of the Suitefish project."
-  },
-  {
-    "name": "Trainfish",
-    "image": "assets/img/overview/trainfish.png",
-    "url": "https://trainfish.com",
-    "description": "External distributor website."
   },
   {
     "name": "GitHub",
@@ -58,12 +52,6 @@
     "image": "assets/img/social/steam1.png",
     "url": "https://steamcommunity.com/groups/team-bugfish",
     "description": "Gaming group."
-  },
-  {
-    "name": "Facebook",
-    "image": "assets/img/social/fb.png",
-    "url": "https://facebook.com/officialbugfish",
-    "description": "Social page."
   },
   {
     "name": "DeviantArt",
