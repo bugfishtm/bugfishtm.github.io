@@ -8,7 +8,8 @@
     "website": "https://bugfishtm.github.io/suitefish-cms",
     "github": "https://github.com/bugfishtm/suitefish-cms",
     "video": "",
-    "contact": "mailto:requests@bugfish.eu"
+    "contact": "mailto:requests@bugfish.eu",
+    "ai": false
   },
   {
     "name": "Bugfish Framework",
@@ -19,7 +20,8 @@
     "website": "https://bugfish.eu",
     "github": "https://github.com/bugfishtm/bugfish-framework",
     "video": "",
-    "contact": "mailto:requests@bugfish.eu"
+    "contact": "mailto:requests@bugfish.eu",
+    "ai": false
   },
   {
     "name": "Online Book Renting",
@@ -30,7 +32,8 @@
     "website": "",
     "github": "https://github.com/bugfishtm/Online-Book-Renting",
     "video": "",
-    "contact": "mailto:requests@bugfish.eu"
+    "contact": "mailto:requests@bugfish.eu",
+    "ai": false
   },
   {
     "name": "Bind9 Web Manager",
@@ -41,7 +44,8 @@
     "website": "",
     "github": "https://github.com/bugfishtm/Bind9-Web-Manager",
     "video": "",
-    "contact": "mailto:requests@bugfish.eu"
+    "contact": "mailto:requests@bugfish.eu",
+    "ai": false
   },
   {
     "name": "Dovecot Certificate Interface",
@@ -52,7 +56,8 @@
     "website": "",
     "github": "https://github.com/bugfishtm/Dovecot-Certificate-Interface",
     "video": "",
-    "contact": "mailto:requests@bugfish.eu"
+    "contact": "mailto:requests@bugfish.eu",
+    "ai": false
   },
   {
     "name": "Mail Relaying over DNS",
@@ -63,6 +68,7 @@
     "website": "",
     "github": "https://github.com/bugfishtm/Mail-Relaying-over-DNS",
     "video": "",
-    "contact": "mailto:requests@bugfish.eu"
+    "contact": "mailto:requests@bugfish.eu",
+    "ai": false
   }
 ]

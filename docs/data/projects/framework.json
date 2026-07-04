@@ -8,7 +8,8 @@
     "website": "https://bugfish.eu",
     "github": "https://github.com/bugfishtm/bugfish-framework",
     "video": "",
-    "contact": "mailto:requests@bugfish.eu"
+    "contact": "mailto:requests@bugfish.eu",
+    "ai": false
   },
   {
     "name": "Dolibarr Module",
@@ -19,7 +20,8 @@
     "website": "",
     "github": "https://github.com/bugfishtm/Bugfish-Dolibarr-Module",
     "video": "",
-    "contact": "mailto:requests@bugfish.eu"
+    "contact": "mailto:requests@bugfish.eu",
+    "ai": false
   },
   {
     "name": "jQuery Sortselect",
@@ -30,6 +32,7 @@
     "website": "",
     "github": "https://github.com/bugfishtm/bugfish-jquery-sortselect",
     "video": "",
-    "contact": "mailto:requests@bugfish.eu"
+    "contact": "mailto:requests@bugfish.eu",
+    "ai": false
   }
 ]

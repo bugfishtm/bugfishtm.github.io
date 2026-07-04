@@ -1,46 +1,36 @@
-# Bugfish Documentations
+# Bugfish — Project Website
 
 ## 🔍 Overview
 
-You can access our documentation online at [Bugfish Documentation Hub](https://bugfishtm.github.io). Whether you're looking for guidance on software, technology, or any other subject, our documentation is here to assist you.
+This repository hosts my personal project website, served via **GitHub Pages** at [https://bugfishtm.github.io](https://bugfishtm.github.io). It is the central hub for my projects, channels and platforms.
 
-## 📁 Repository Structure 
+**Please note:** This is a private project. The source code is public only because it is part of my project infrastructure — GitHub Pages requires the repository content to be accessible. This is not an open-source project, not a template, and not intended for reuse.
 
-This table provides an overview of key files and folders related to the repository. Click on the links to access each file for more detailed information. If certain folders are missing from the repository, they are irrelevant to this project.
+## 📁 Repository Structure
 
-|Document Type|Description|
+This table provides an overview of the key files and folders of the website.
+
+|Path|Description|
 |----|-----|
-| .github | Folder with github setup files. |
-| [.github/CODE_OF_CONDUCT.md](./.github/CODE_OF_CONDUCT.md) | The community guidelines. |
-| docs | Folder for the documentation. | 
-| .gitattributes | Repository setting file. Only for development purposes. |
-| .gitignore | Repository ignore file. Only for development purposes. |
-| README.md | Readme of this project. You are currently looking at this file. |
-| repository_reset.bat | File to reset this repository. Only for development purposes. |
-| repository_update.bat | File to update this repository. Only for development purposes. |
-| [CONTRIBUTING.md](CONTRIBUTING.md) | Information for contributors. | 
-| [CHANGELOG.md](CHANGELOG.md) | Information about changelogs. | 
-| [SECURITY.md](SECURITY.md) | How to handle security issues. |
+| index.html | Home page — hero, featured showcase, project search, about. |
+| explore.html | All channels, platforms and distribution nodes. |
+| projects/ | Project category pages (Docker, Android, JavaScript, ...). |
+| data/ | JSON files driving the site content (projects, featured, home). |
+| assets/ | Stylesheets, scripts, images and music — everything served locally. |
+| privacy.html | Privacy policy (GDPR). |
+| impressum.html | Impressum (legal notice). |
+| 404.html | Error page. |
 | [LICENSE.md](LICENSE.md) | License of this project. |
 
-## 🤝 Community Guidelines
+## 👀 Looking Around
 
-We’re on a mission to create groundbreaking solutions, pushing the boundaries of technology. By being here, you’re an integral part of that journey. 
+You are welcome to browse the code and see how the site is built. However:
 
-**Positive Guidelines:**
-- Be kind, empathetic, and respectful in all interactions.
-- Engage thoughtfully, offering constructive, solution-oriented feedback.
-- Foster an environment of collaboration, support, and mutual respect.
-
-**Unacceptable Behavior:**
-- Harassment, hate speech, or offensive language.
-- Personal attacks, discrimination, or any form of bullying.
-- Sharing private or sensitive information without explicit consent.
-
-Let’s collaborate, inspire one another, and build something extraordinary together!
+- **All rights are reserved.** No permission is granted to copy, reuse, modify or redistribute any part of this repository — code, design, texts, images or music — unless explicitly stated otherwise in [LICENSE.md](LICENSE.md).
+- This repository does not accept feature requests, and contributions are generally not expected — it exists to run my website.
 
 ## 📜 License Information
 
-The license for this software can be found in the [LICENSE.md](LICENSE.md) file. Third-party licenses are located in the ./_licenses folder. The software may also include additional licensed software or libraries.
+The license for this project can be found in the [LICENSE.md](LICENSE.md) file. The repository may also include additional licensed software or libraries.
 
-🐟 Bugfish 
+🐟 Bugfish

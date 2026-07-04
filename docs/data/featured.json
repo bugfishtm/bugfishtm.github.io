@@ -1,0 +1,37 @@
+[
+  {
+    "name": "Suitefish CMS",
+    "tag": "websoftware",
+    "image": "assets/img/software/suitefish.png",
+    "description": "A full content management system built from scratch. Modular, self-hosted and battle-tested — the backbone of many Bugfish web projects.",
+    "url": "https://bugfishtm.github.io/suitefish-cms"
+  },
+  {
+    "name": "Bind9 Web Manager",
+    "tag": "docker",
+    "image": "assets/img/software/dnshttp.png",
+    "description": "All-in-one DNS solution for effortless management, replication and user administration. Ships as a ready-to-run container.",
+    "url": "https://github.com/bugfishtm/Bind9-Web-Manager"
+  },
+  {
+    "name": "Proxmox VMA2RAW",
+    "tag": "docker",
+    "image": "assets/img/software/proxmox.png",
+    "description": "Convert Proxmox VMA backup files to raw disk images mountable on Windows and Linux — no Proxmox host required.",
+    "url": "https://github.com/bugfishtm/proxmox-vma2raw"
+  },
+  {
+    "name": "Floor Plan Designer",
+    "tag": "javascript",
+    "image": "assets/img/software/fbr.png",
+    "description": "Draw and edit floor plans directly in the browser. Pure JavaScript, no backend, no accounts — open it and start planning.",
+    "url": "https://github.com/bugfishtm/floor-plan-designer"
+  },
+  {
+    "name": "Hash Cracker",
+    "tag": "windows",
+    "image": "assets/img/software/hashcracker.png",
+    "description": "Windows tool to recover lost password hashes with dictionary and brute-force modes. Fast, small and dependency-free.",
+    "url": "https://github.com/bugfishtm/windows-hash-cracker"
+  }
+]

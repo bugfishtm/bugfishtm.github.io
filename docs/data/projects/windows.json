@@ -8,7 +8,8 @@
     "website": "",
     "github": "https://github.com/bugfishtm/windows-hash-cracker",
     "video": "",
-    "contact": "mailto:requests@bugfish.eu"
+    "contact": "mailto:requests@bugfish.eu",
+    "ai": false
   },
   {
     "name": "Bugfish Nuke",
@@ -19,7 +20,8 @@
     "website": "",
     "github": "https://github.com/bugfishtm/bugfish-nuke",
     "video": "",
-    "contact": "mailto:requests@bugfish.eu"
+    "contact": "mailto:requests@bugfish.eu",
+    "ai": false
   },
   {
     "name": "Image Downloader",
@@ -30,6 +32,7 @@
     "website": "",
     "github": "https://github.com/bugfishtm/bugfish-image-downloader",
     "video": "",
-    "contact": "mailto:requests@bugfish.eu"
+    "contact": "mailto:requests@bugfish.eu",
+    "ai": false
   }
 ]

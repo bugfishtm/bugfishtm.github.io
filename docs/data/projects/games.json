@@ -8,7 +8,8 @@
     "website": "https://bugfishtm.itch.io",
     "github": "",
     "video": "https://youtube.com/bugfishtm",
-    "contact": "mailto:requests@bugfish.eu"
+    "contact": "mailto:requests@bugfish.eu",
+    "ai": false
   },
   {
     "name": "N-Body Simulator",
@@ -19,6 +20,7 @@
     "website": "",
     "github": "https://github.com/bugfishtm/nbody-simulator",
     "video": "",
-    "contact": "mailto:requests@bugfish.eu"
+    "contact": "mailto:requests@bugfish.eu",
+    "ai": false
   }
 ]

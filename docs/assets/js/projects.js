@@ -1,16 +1,17 @@
 /* ============================================================
    BUGFISH — projects.js
    Renders full-width project cards for one category and powers
-   the search box that looks through ALL categories.
+   the home-page search that looks through ALL categories.
    The category is read from <body data-category="...">, and the
    items come from data/projects/<category>.json.
 
    Item fields:
      name, image, description  — required
      license                   — short text (max 12 chars shown)
+     ai                        — true ⇒ "AI ASSISTED" badge
      documentation, website, github, video, contact
                                — optional urls; missing/empty ⇒
-                                 the button renders disabled.
+                                 the button is not rendered.
    ============================================================ */
 
 const PROJECT_BUTTONS = [
@@ -21,8 +22,8 @@ const PROJECT_BUTTONS = [
   { key: "contact",       label: "Contact" },
 ];
 
-/* All categories the search box can look through — must match
-   the JSON files that exist in data/projects/. */
+/* All categories the search looks through — must match the JSON
+   files that exist in data/projects/. */
 const PROJECT_CATEGORIES = [
   "docker", "android", "framework", "javascript",
   "suitefish", "games", "windows", "websoftware",
@@ -56,10 +57,8 @@ function loadAllProjects() {
 }
 
 function projectButton(url, label) {
-  if (url && String(url).trim() !== "") {
-    return `<a class="btn ghost small" href="${esc(url)}" target="_blank" rel="noopener noreferrer">${esc(label)}</a>`;
-  }
-  return `<span class="btn ghost small disabled" aria-disabled="true" title="Not available">${esc(label)}</span>`;
+  if (!url || String(url).trim() === "") return ""; // hidden when unavailable
+  return `<a class="btn ghost small" href="${esc(url)}" target="_blank" rel="noopener noreferrer">${esc(label)}</a>`;
 }
 
 function renderProjects(items, opts = {}) {
@@ -78,6 +77,8 @@ function renderProjects(items, opts = {}) {
     const buttons = PROJECT_BUTTONS.map(b => projectButton(item[b.key], b.label)).join("");
     const catBadge = opts.showCategory && item.category
       ? `<span class="cat-badge">${esc(item.category)}</span>` : "";
+    const aiBadge = item.ai === true
+      ? `<span class="ai-badge" title="Built with the help of AI">AI ASSISTED</span>` : "";
     return `
       <article class="project-card">
         <div class="project-img">
@@ -89,6 +90,7 @@ function renderProjects(items, opts = {}) {
             <span class="project-name">${esc(item.name)}</span>
             ${catBadge}
             ${license ? `<span class="license-badge">${esc(license)}</span>` : ""}
+            ${aiBadge}
           </div>
           <p class="project-desc">${esc(item.description)}</p>
           <div class="project-actions">${buttons}</div>
@@ -97,20 +99,21 @@ function renderProjects(items, opts = {}) {
   }).join("");
 }
 
-/* ---- Search across all categories --------------------------
-   baseItems/baseOpts are what gets rendered when the box is
-   empty: the category list on category pages, everything on the
-   global search page. */
-function initProjectSearch(baseItems, baseOpts = {}) {
+/* ---- Home search: results appear only while typing ---------- */
+function initHomeSearch() {
   const input = document.getElementById("project-search");
   const countEl = document.getElementById("search-count");
-  if (!input) return;
+  const list = document.getElementById("project-list");
+  if (!input || !list) return;
+
+  const hint = `<div class="news-empty">// type to search all projects — name, description or category</div>`;
+  list.innerHTML = hint;
 
   async function runSearch() {
     const q = input.value.trim().toLowerCase();
 
     if (!q) {
-      renderProjects(baseItems, baseOpts);
+      list.innerHTML = hint;
       if (countEl) countEl.textContent = "";
       return;
     }
@@ -127,45 +130,29 @@ function initProjectSearch(baseItems, baseOpts = {}) {
   }
 
   input.addEventListener("input", runSearch);
+
+  // Deep links: /?q=term (also used by the JSON-LD SearchAction)
+  const q = new URLSearchParams(window.location.search).get("q");
+  if (q) {
+    input.value = q;
+    runSearch();
+    document.getElementById("search")?.scrollIntoView();
+  }
 }
 
-/* ---- Category page ----------------------------------------- */
+/* ---- Category page ------------------------------------------ */
 async function initCategoryPage(category) {
   try {
     const items = await loadCategory(category);
     renderProjects(items);
-    initProjectSearch(items);
   } catch (err) {
     console.error(err);
     showLoadError(document.getElementById("project-list"), `data/projects/${category}.json`);
   }
 }
 
-/* ---- Global search page (search.html) -----------------------
-   No data-category on <body>: show every project of every
-   category, support ?q=… deep links (used by the JSON-LD
-   SearchAction as well). */
-async function initGlobalSearchPage() {
-  const input = document.getElementById("project-search");
-  try {
-    const all = await loadAllProjects();
-    renderProjects(all, { showCategory: true });
-    initProjectSearch(all, { showCategory: true });
-
-    const q = new URLSearchParams(window.location.search).get("q");
-    if (input && q) {
-      input.value = q;
-      input.dispatchEvent(new Event("input"));
-    }
-    if (input) input.focus();
-  } catch (err) {
-    console.error(err);
-    showLoadError(document.getElementById("project-list"), "project data");
-  }
-}
-
 document.addEventListener("DOMContentLoaded", () => {
   const category = document.body.dataset.category;
   if (category) initCategoryPage(category);
-  else if (document.getElementById("project-list")) initGlobalSearchPage();
+  else initHomeSearch();
 });
