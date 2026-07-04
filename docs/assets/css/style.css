@@ -753,27 +753,6 @@ main.full-bleed {
 .about-bio p { color: var(--text); font-size: 14px; line-height: 2; }
 .about-bio p + p { margin-top: 12px; }
 
-/* AI judgement appended to the bio panel */
-.bio-assessment {
-  border-top: 1px dashed var(--border2);
-  margin-top: 20px;
-  padding-top: 16px;
-}
-.bio-assessment-label {
-  font-family: var(--mono);
-  color: var(--orange);
-  font-size: 9px;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  opacity: 0.8;
-  margin-bottom: 10px;
-}
-.bio-assessment p {
-  color: var(--text-mid);
-  font-size: 13px;
-  line-height: 1.9;
-}
-
 /* Insurance box at the end of the home page */
 .insurance-panel p {
   color: var(--text-mid);
