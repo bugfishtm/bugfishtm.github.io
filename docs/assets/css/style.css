@@ -1398,9 +1398,13 @@ main.full-bleed {
    RESPONSIVE
    ============================================================ */
 @media (max-width: 1100px) {
-  .hero-inner { flex-direction: column; gap: 44px; padding: 70px 24px 56px; }
-  .hero-right { flex: none; width: 100%; max-width: 580px; }
-  .music-player { max-width: 100%; }
+  /* Stacked layout: stretch both columns to the full content width so
+     the music player and the game terminal line up with each other and
+     with the section cards below. */
+  .hero-inner { flex-direction: column; align-items: stretch; gap: 40px; padding: 44px 24px 46px; }
+  .hero-left, .hero-right { width: 100%; min-width: 0; }
+  .hero-right { flex: none; max-width: none; }
+  .music-player { max-width: none; }
 }
 
 @media (max-width: 900px) {
