@@ -29,7 +29,8 @@
   --cyan:         #35c9f0;
 
   --nav-h:        64px;
-  --maxw:         1180px;
+  --hud-h:        30px;
+  --maxw:         1240px;
   --radius:       10px;
   --font:         'Segoe UI', system-ui, -apple-system, Roboto, Arial, sans-serif;
   --mono:         'Cascadia Code', 'Consolas', 'Courier New', monospace;
@@ -231,6 +232,71 @@ main.full-bleed {
   padding: var(--nav-h) 0 0;
 }
 
+/* ============================================================
+   TOP STATUS HUD — live counters + wall clock (hacker HUD)
+   Sticks just under the fixed navbar at the top of the page.
+   ============================================================ */
+.top-hud {
+  position: sticky;
+  top: var(--nav-h);
+  z-index: 900;
+  min-height: var(--hud-h);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 0 18px;
+  background: rgba(15,16,19,0.97);
+  border-top: 1px solid var(--orange-dim);
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: var(--text-dim);
+  overflow: hidden;
+}
+/* faint scanline texture on the HUD */
+.top-hud::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    to bottom, rgba(0,0,0,0) 0 2px, rgba(0,0,0,0.14) 2px 3px);
+  opacity: 0.4;
+}
+.th-prompt { color: var(--orange); flex-shrink: 0; }
+.th-scroll {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex: 1;
+  min-width: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.th-scroll::-webkit-scrollbar { display: none; }
+.th-item { display: inline-flex; align-items: center; gap: 6px; flex-shrink: 0; }
+.th-key  { color: var(--text-dim); text-transform: uppercase; }
+.th-val  { color: var(--orange-soft); font-weight: 700; font-variant-numeric: tabular-nums; }
+.th-unit { color: var(--text-dim); opacity: 0.65; text-transform: uppercase; font-size: 9px; }
+.th-sys .th-val, #th-clock { color: var(--text-bright); }
+.th-online {
+  flex-shrink: 0;
+  color: var(--green);
+  letter-spacing: 2px;
+  display: inline-flex;
+  align-items: center;
+}
+.th-dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 8px var(--green);
+  margin-right: 7px;
+  animation: blink 1.4s step-end infinite;
+}
+
 .page-header { margin-bottom: 36px; }
 
 .page-title {
@@ -251,15 +317,15 @@ main.full-bleed {
 .section-header {
   display: flex;
   align-items: center;
-  gap: 16px;
-  margin: 56px 0 26px;
+  gap: 14px;
+  margin: 38px 0 18px;
 }
 .section-header:first-child { margin-top: 0; }
 
 .section-title {
   font-family: var(--mono);
   color: var(--orange);
-  font-size: 17px;
+  font-size: 15px;
   letter-spacing: 3px;
   text-transform: uppercase;
   white-space: nowrap;
@@ -371,9 +437,9 @@ main.full-bleed {
   max-width: var(--maxw);
   margin: 0 auto;
   display: flex;
-  gap: 56px;
+  gap: 48px;
   align-items: center;
-  padding: 90px 24px 70px;
+  padding: 54px 24px 50px;
 }
 
 .hero-left { flex: 1; min-width: 0; }
@@ -443,9 +509,9 @@ main.full-bleed {
 .hero-desc {
   color: var(--text);
   font-size: 15px;
-  line-height: 1.9;
+  line-height: 1.7;
   max-width: 540px;
-  margin-bottom: 24px;
+  margin-bottom: 20px;
 }
 
 .hero-pills {
@@ -474,12 +540,26 @@ main.full-bleed {
 .hero-right { flex: 0 0 430px; }
 
 .terminal-window {
+  position: relative;
   background: var(--bg2);
   border: 1px solid var(--border2);
   border-top: 2px solid var(--orange);
   border-radius: var(--radius);
   overflow: hidden;
   box-shadow: 0 0 60px rgba(255,102,0,0.07), 0 24px 64px rgba(0,0,0,0.5);
+}
+/* Hacker-style scanline overlay across the terminal */
+.terminal-window::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 4;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(0,0,0,0) 0 2px,
+    rgba(0,0,0,0.16) 2px 3px);
+  opacity: 0.45;
 }
 
 .term-titlebar {
@@ -504,6 +584,38 @@ main.full-bleed {
   flex: 1;
   text-align: center;
 }
+.term-clock {
+  font-family: var(--mono);
+  color: var(--orange);
+  font-size: 11px;
+  letter-spacing: 1px;
+  font-variant-numeric: tabular-nums;
+  flex-shrink: 0;
+}
+
+/* Game status strip (breach counter, elapsed time, status) */
+.term-hud {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 7px 14px;
+  background: var(--bg3);
+  border-bottom: 1px solid var(--border);
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  color: var(--text-dim);
+  text-transform: uppercase;
+}
+.term-hud-item { display: inline-flex; align-items: center; }
+.term-hud-item b { color: var(--orange-soft); font-weight: 700; font-variant-numeric: tabular-nums; }
+.hud-moves.low { color: var(--red); animation: blink 0.9s step-end infinite; }
+.hud-status { margin-left: auto; letter-spacing: 2px; }
+.hud-status.alive  { color: var(--green); }
+.hud-status.won    { color: var(--orange); }
+.hud-status.cuffed { color: var(--red); }
 
 .term-body {
   padding: 18px;
@@ -699,26 +811,26 @@ main.full-bleed {
 .home-wrap {
   max-width: var(--maxw);
   margin: 0 auto;
-  padding: 48px 24px 64px;
+  padding: 32px 24px 52px;
 }
 
 /* Vertical rhythm between the home sections (news / about / uptime).
    Their headers are each :first-child of their <section>, so the
    spacing has to live on the sections themselves. */
-.home-wrap > section + section { margin-top: 64px; }
+.home-wrap > section + section { margin-top: 44px; }
 
 /* About */
 .about-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 18px;
+  gap: 14px;
 }
 
 .panel {
   background: var(--bg2);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 24px 28px;
+  padding: 18px 22px;
 }
 .panel.accent-left { border-left: 3px solid var(--orange); }
 
@@ -727,7 +839,7 @@ main.full-bleed {
   color: var(--orange);
   font-size: 11px;
   letter-spacing: 4px;
-  margin-bottom: 18px;
+  margin-bottom: 14px;
   text-transform: uppercase;
 }
 
@@ -750,8 +862,8 @@ main.full-bleed {
 .about-val { color: var(--text-bright); }
 
 .about-bio { grid-column: 1 / -1; }
-.about-bio p { color: var(--text); font-size: 14px; line-height: 2; }
-.about-bio p + p { margin-top: 12px; }
+.about-bio p { color: var(--text); font-size: 14px; line-height: 1.75; }
+.about-bio p + p { margin-top: 10px; }
 
 /* Insurance box at the end of the home page */
 .insurance-panel p {
@@ -773,7 +885,7 @@ main.full-bleed {
 .counters-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 18px;
+  gap: 14px;
 }
 
 .counter-card {
@@ -781,7 +893,7 @@ main.full-bleed {
   border: 1px solid var(--border);
   border-top: 2px solid var(--orange);
   border-radius: var(--radius);
-  padding: 34px 28px;
+  padding: 24px 22px;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -806,7 +918,7 @@ main.full-bleed {
   color: var(--text-dim);
   font-size: 10px;
   letter-spacing: 3px;
-  margin-bottom: 26px;
+  margin-bottom: 18px;
 }
 .counter-num {
   font-family: var(--mono);
@@ -1362,12 +1474,18 @@ main.full-bleed {
   .showcase-img { width: 80px; height: 80px; }
 }
 
+@media (max-width: 640px) {
+  .top-hud { gap: 12px; padding: 0 12px; }
+  .th-prompt { display: none; }
+}
+
 @media (max-width: 460px) {
   .hero-actions { flex-direction: column; }
   .hero-actions .btn { width: 100%; }
   .glitch { letter-spacing: 5px; }
   .mp-vol-slider { width: 46px; }
   .section-title { font-size: 14px; letter-spacing: 2px; }
+  .th-online span:not(.th-dot) { display: none; }
 }
 
 /* Reduce motion for users that prefer it */

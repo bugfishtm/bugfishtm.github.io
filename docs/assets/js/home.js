@@ -1,7 +1,8 @@
 /* ============================================================
    BUGFISH — home.js
    Home page: hero, matrix rain, escape.exe horror minigame,
-   music player, featured showcase, about and uptime counters.
+   music player, featured showcase, about and uptime counters,
+   plus the top status HUD (live day-counters + wall clock).
    Content comes from data/home.json and data/featured.json.
    ============================================================ */
 
@@ -47,19 +48,23 @@ function initMatrix() {
 /* ============================================================
    ESCAPE.EXE — single-room horror escape
    ------------------------------------------------------------
-   You wake locked in a basement room. The cops were called on
-   you and will breach after 50 moves. There is exactly ONE way
-   out (the trapdoor under the rug), everything else is a red
-   herring, a joke — or lethal.
+   You wake locked in a basement. A unit is rolling; they breach
+   after MAX_MOVES moves. The wall clock is REAL and always shown.
+   There are TWO real ways out — most everything else lies, jokes,
+   or kills you.
 
-   True path (≈12 moves):
-     move rug → open drawer → take screwdriver →
-     unscrew trapdoor → examine poster → turn on radio (code!)
-     → open safe 1987 → take flashlight → turn on flashlight →
-     open trapdoor → enter trapdoor
+   Escape A (trapdoor tunnel):
+     move rug → open drawer → take screwdriver → unscrew trapdoor
+     → turn on radio (year 1987) / read mirror → move poster
+     → open safe 1987 → take flashlight → turn on flashlight
+     → open trapdoor → enter trapdoor
+   Escape B (coal chute):
+     move tarp → take crowbar → examine boards → pry boards
+     → climb chute
+   Surrender ending, plus many creative deaths in between.
    ============================================================ */
 const GAME = {
-  MAX_MOVES: 50,
+  MAX_MOVES: 60,
   state: null,
 
   reset() {
@@ -67,7 +72,9 @@ const GAME = {
       moves: this.MAX_MOVES,
       over: false,
       won: false,
+      status: "alive",                 // alive | won | cuffed
       attempt: (this.state ? this.state.attempt : 0) + 1,
+      /* escape A */
       rugMoved: false,
       trapdoorUnscrewed: false,
       trapdoorOpen: false,
@@ -76,12 +83,18 @@ const GAME = {
       wrongCodes: 0,
       drawerOpen: false,
       radioHeard: false,
+      keyBroken: false,
+      flashlightOn: false,
+      /* escape B */
+      tarpMoved: false,
+      boardsFound: false,
+      boardsPried: false,
+      /* items / props */
       boxFound: false,
       boxOpen: false,
       maskOn: false,
-      keyBroken: false,
       bulbDead: false,
-      flashlightOn: false,
+      pipeBroken: false,
       inventory: [],
     };
   },
@@ -89,17 +102,20 @@ const GAME = {
   intro() {
     const s = this.state;
     return [
-      { t: `ATTEMPT #${s.attempt}`, c: "head" },
-      { t: "───────────────────────────────────────", c: "sys" },
-      { t: "You wake on cold concrete. Head pounding. You didn't do" },
-      { t: "what they think you did — but the sirens don't care." },
+      { t: `ATTEMPT #${s.attempt} — ESCAPE.EXE`, c: "head" },
+      { t: "─────────────────────────────────────────", c: "sys" },
+      { t: "You wake face-down on cold concrete. Blood in your mouth." },
+      { t: "You don't remember the last hour. You remember the sirens." },
       { t: "" },
-      { t: "A voice hisses through the steel door:" },
-      { t: '"They dispatched a unit. 50 moves until they breach.', c: "head" },
-      { t: ' There IS a way out of that room. Find it."', c: "head" },
-      { t: "Footsteps fade. Somewhere far away: sirens." },
-      { t: "───────────────────────────────────────", c: "sys" },
-      { t: "Type 'help' for commands. Every action costs time.", c: "sys" },
+      { t: "One dying bulb. The air stinks of gas, mold, and something dead." },
+      { t: "A voice rasps through the steel door, lips against the metal:" },
+      { t: '"They\'re coming for you. A unit is already rolling.', c: "head" },
+      { t: `  ${this.MAX_MOVES} moves before they breach this room.`, c: "head" },
+      { t: '  There is a way out. More than one. Most of them lie."', c: "head" },
+      { t: "The slot slides shut. Footsteps climb away into the dark." },
+      { t: "─────────────────────────────────────────", c: "sys" },
+      { t: "Every action burns time. Noise burns more. The clock is real.", c: "sys" },
+      { t: "Type 'help' for commands. Type 'time' to check the clock.", c: "sys" },
       { t: "" },
     ];
   },
@@ -109,18 +125,21 @@ const GAME = {
       { t: "─── COMMANDS (free) ─────────────────────", c: "sys" },
       { t: "  look / l              scan the room" },
       { t: "  examine [thing] / x   inspect closer" },
+      { t: "  search [thing]        rummage / dig" },
       { t: "  open / close [thing]  doors, drawers..." },
       { t: "  take [thing]          pick something up" },
-      { t: "  move [thing]          shove things around" },
-      { t: "  use [thing]           use an item" },
+      { t: "  move / pry [thing]    shove or force things" },
+      { t: "  use [thing]           use a held item" },
       { t: "  turn on/off [thing]   power things" },
       { t: "  unscrew [thing]       you'll need a tool" },
-      { t: "  enter [thing]         squeeze into places" },
+      { t: "  enter / climb [thing] squeeze into places" },
       { t: "  open safe [code]      if you find a safe..." },
+      { t: "  surrender             give yourself up" },
       { t: "  inventory / i         check pockets (free)" },
+      { t: "  time                  check the clock (free)" },
       { t: "  restart               give up, start over" },
       { t: "─────────────────────────────────────────", c: "sys" },
-      { t: "Everything else costs 1 move. Noise costs more.", c: "sys" },
+      { t: "TWO ways out of this room exist. Find one. Live.", c: "sys" },
     ];
   },
 
@@ -128,12 +147,14 @@ const GAME = {
   has(item) { return this.state.inventory.includes(item); },
 
   _warn(m) {
+    if (m === 50) return "Upstairs a radio crackles: 'unit en route, stand by.'";
     if (m === 40) return "Distant sirens. They're real.";
-    if (m === 30) return "The sirens are getting closer.";
-    if (m === 20) return "Tires screech somewhere outside.";
-    if (m === 10) return "Car doors. Voices. Boots on gravel.";
-    if (m === 5)  return "Heavy boots coming down the stairs.";
-    if (m === 3)  return "Fists hammer the door: 'OPEN UP!'";
+    if (m === 30) return "The sirens are close now. Too close.";
+    if (m === 20) return "Tires screech on the street above.";
+    if (m === 10) return "Car doors slam. Voices. Boots on gravel.";
+    if (m === 5)  return "Heavy boots come down the stairs. Slowly.";
+    if (m === 3)  return "Fists hammer the steel: 'OPEN UP! NOW!'";
+    if (m === 1)  return "The handle rattles. A shoulder slams the door.";
     return null;
   },
 
@@ -150,7 +171,7 @@ const GAME = {
     if (s.moves <= 0) {
       out.push({ t: "", c: "" });
       out.push({ t: "The door explodes inward. Flashbang. White. Ringing.", c: "err" });
-      out.push({ t: "Rough hands. Cold cuffs. It's over.", c: "err" });
+      out.push({ t: "Rough hands. Cold cuffs. Concrete against your cheek.", c: "err" });
       if (s.maskOn) out.push({ t: "(Arrested wearing a clown mask. The mugshot is legendary.)", c: "sys" });
       this._restart(out);
       return true;
@@ -172,19 +193,44 @@ const GAME = {
     this.intro().forEach(l => out.push(l));
   },
 
-  _win(out) {
+  _cuff(out) {
+    const s = this.state;
+    s.over = true;
+    s.won = false;
+    s.status = "cuffed";
+    out.push({ t: "" });
+    out.push({ t: "You put your hands where they can see them and wait." });
+    out.push({ t: "The door caves in. Lights. Screaming. A knee on your neck.", c: "err" });
+    out.push({ t: "The cuffs bite. You're alive. For now. That has to count.", c: "err" });
+    out.push({ t: "" });
+    out.push({ t: "╔═══════════════════════════════════╗", c: "head" });
+    out.push({ t: "║   TAKEN ALIVE — YOU DIDN'T RUN    ║", c: "head" });
+    out.push({ t: "╚═══════════════════════════════════╝", c: "head" });
+    out.push({ t: "Type 'restart' to try the way that isn't a door.", c: "sys" });
+  },
+
+  _win(out, route) {
     const s = this.state;
     s.over = true;
     s.won = true;
+    s.status = "won";
     out.push({ t: "" });
-    out.push({ t: "You click the flashlight on and drop into the tunnel.", c: "" });
-    out.push({ t: "Behind you, red and blue light floods the room you just left.", c: "" });
-    out.push({ t: "The tunnel breathes cold air. You crawl. You don't look back.", c: "" });
+    if (route === "chute") {
+      out.push({ t: "You haul yourself up the coal chute, filth in your teeth." });
+      out.push({ t: "Metal groans, then gives — and night air hits you. Cold. Free." });
+      out.push({ t: "You surface in the alley. A cruiser idles at the curb, empty." });
+      out.push({ t: "You don't run. Running is what the guilty do. You walk." });
+    } else {
+      out.push({ t: "You click the flashlight on and lower into the tunnel." });
+      out.push({ t: "Behind you, red and blue light floods the room you just left." });
+      out.push({ t: "The tunnel breathes cold air. You crawl. You don't look back." });
+    }
     out.push({ t: "" });
     out.push({ t: "╔═══════════════════════════════════╗", c: "head" });
     out.push({ t: `║   YOU ESCAPED — ${String(s.moves).padStart(2, "0")} MOVES TO SPARE   ║`, c: "head" });
     out.push({ t: "╚═══════════════════════════════════╝", c: "head" });
-    out.push({ t: "Type 'restart' to run it again.", c: "sys" });
+    out.push({ t: `route: ${route === "chute" ? "coal chute" : "trapdoor tunnel"}`, c: "sys" });
+    out.push({ t: "Type 'restart' to run it again — the other way out.", c: "sys" });
   },
 
   /* ---- main dispatcher ------------------------------------- */
@@ -198,13 +244,28 @@ const GAME = {
     /* free commands, always available */
     if (lower === "help") return this.help();
     if (lower === "clear") return [{ _clear: true }];
-    if (lower === "restart") {
+    if (lower === "restart" || lower === "reset") {
       this.reset();
       return [{ t: "// rebooting simulation...", c: "sys" }, ...this.intro()];
     }
     if (["i", "inv", "inventory", "bag", "pockets"].includes(lower)) {
       if (!s.inventory.length) return [{ t: "Your pockets are empty. Like your alibi." }];
       return [{ t: "CARRYING:" }, ...s.inventory.map(k => ({ t: `  ▸ ${this._itemName(k)}` }))];
+    }
+    if (["time", "clock", "watch", "check time", "check watch", "check clock"].includes(lower)) {
+      const n = new Date();
+      const pd = x => String(x).padStart(2, "0");
+      return [
+        { t: `WALL CLOCK ${pd(n.getHours())}:${pd(n.getMinutes())}:${pd(n.getSeconds())}`, c: "head" },
+        { t: `BREACH IN ${s.moves} moves.`, c: "sys" },
+        { t: "The clock doesn't care whether you're ready.", c: "sys" },
+      ];
+    }
+    if (lower === "surrender" || lower === "give up" || lower === "hands up" || lower === "give in") {
+      if (s.over) return [{ t: s.won ? "You're already out." : "It's over. Type 'restart'.", c: "sys" }];
+      const o = [];
+      this._cuff(o);
+      return o;
     }
     if (lower === "sudo" || lower.startsWith("sudo ")) {
       return [{ t: "Permission denied. Reality does not accept sudo.", c: "sys" }];
@@ -214,7 +275,7 @@ const GAME = {
 
     if (s.over) {
       return [{ t: s.won ? "You're already out. Type 'restart' to run it again."
-                         : "Type 'restart'.", c: "sys" }];
+                         : "It's over. Type 'restart'.", c: "sys" }];
     }
 
     /* costed actions */
@@ -223,14 +284,15 @@ const GAME = {
       out.push({ t: `You fumble ('${raw}' does nothing). Try 'help'.`, c: "sys" });
       return out; // unknown input costs nothing
     }
-    if (s.over) return out;                 // died or won inside the action
+    if (s.over) return out;                 // won / surrendered inside the action
+    if (result === 0) return out;           // death restarted the run, or free-cost handling — don't tick
     if (this._tick(out, result)) return out; // timer may kill
     return out;
   },
 
   _itemName(k) {
     return { screwdriver: "SCREWDRIVER", note: "CRUMPLED NOTE", flashlight: "FLASHLIGHT",
-             key: "RUSTY KEY", mask: "CLOWN MASK" }[k] || k.toUpperCase();
+             key: "RUSTY KEY", mask: "CLOWN MASK", crowbar: "CROWBAR", matches: "MATCHBOOK" }[k] || k.toUpperCase();
   },
 
   /* Executes one action. Returns the time cost (number) or null
@@ -248,11 +310,13 @@ const GAME = {
     /* ---- look ---- */
     if (V("look", "l", "scan") && (!rest || is("room", "around"))) {
       p("╔═ THE ROOM ═════════════════════════╗", "head");
-      p("Concrete walls. A bare BULB flickers overhead.");
-      p("A steel DOOR (locked). A WINDOW that looks... wrong.");
-      p("A filthy BED. A wooden DESK. An old RADIO.");
-      p("A cracked MIRROR. A cat POSTER. A moldy RUG.");
-      p("A VENT near the ceiling. Exposed WIRES by the door.");
+      p("Concrete walls, sweating damp. A bare BULB gutters overhead.");
+      p("A steel DOOR, bolted from OUTSIDE. A WINDOW that looks wrong.");
+      p("A filthy BED. A wooden DESK. A dead RADIO. A cracked MIRROR.");
+      p("A cat POSTER. A moldy RUG. A rusted PIPE hissing faint gas.");
+      p("A VENT near the ceiling. Bare WIRES humming by the door.");
+      p("A stiff TARP heaped in the corner. BOARDS nailed to the far wall.");
+      p("A rusted BUCKET. A tipped plastic BOTTLE against the skirting.");
       p("╚════════════════════════════════════╝", "head");
       return 1;
     }
@@ -261,19 +325,29 @@ const GAME = {
     /* ---- door (careful: "trapdoor" contains "door") ---- */
     if (is("door") && !is("trapdoor", "trap door", "hatch")) {
       if (V("examine", "x", "inspect", "check")) {
-        p("Reinforced steel. Deadbolt on the OUTSIDE. Deep scratch");
-        p("marks near the floor — someone tried this before you.");
-        p("Exposed WIRES run along the frame. They hum.");
+        p("Reinforced steel. Deadbolt on the OUTSIDE. Deep gouges near the");
+        p("floor — someone before you clawed at it, and never got out.");
+        p("Bare WIRES run along the frame. They hum.");
         return 1;
       }
-      if (V("open", "unlock")) { p("Locked from outside. The handle just laughs at you."); return 1; }
-      if (V("kick", "hit", "punch", "break", "smash", "ram")) {
+      if (V("open", "unlock", "answer")) {
+        if (s.moves <= 6) {
+          this._die(out, [
+            "You throw the door open to meet them head-on.",
+            "You never hear the shot. Just white — then cold — then nothing.",
+          ]);
+          return 0;
+        }
+        p("Locked from outside. The handle just laughs at you.");
+        return 1;
+      }
+      if (V("kick", "hit", "punch", "break", "smash", "ram", "shoulder")) {
         p("BOOM. The steel doesn't move. The whole street heard that.", "err");
         p("(-3 extra moves: noise travels)", "err");
         return 4;
       }
-      if (V("knock")) { p("You knock politely. Somewhere, a cop laughs."); return 1; }
-      if (V("listen")) { p("Humming wires. Your own pulse. Distant sirens."); return 1; }
+      if (V("knock")) { p("You knock politely. Somewhere upstairs, a cop laughs."); return 1; }
+      if (V("listen")) { p("Humming wires. Your own pulse. Boots, maybe. Nearer."); return 1; }
     }
 
     /* ---- window ---- */
@@ -281,19 +355,21 @@ const GAME = {
       if (V("examine", "x", "inspect", "check")) {
         p("You step closer. Wait. The frame has no depth. The glass");
         p("has no reflection. Someone PAINTED a window on the wall.");
-        p("Whoever kept you here has a sense of humor.");
+        p("Whoever kept you here has a sense of humor. A cruel one.");
         return 1;
       }
       if (V("open")) { p("You try to open a painting. It goes as well as expected."); return 1; }
       if (V("break", "punch", "hit", "smash", "kick")) {
         p("You punch the wall with confidence. The wall wins.", "err");
-        p("Your knuckles are bleeding. Worth it? No.");
+        p("Your knuckles split. Worth it? No.");
         return 1;
       }
     }
 
-    /* ---- rug / trapdoor ---- */
-    if (is("rug", "carpet", "mat") ) {
+    /* ---- rug / trapdoor (escape A floor route) ----
+       NB: no "mat" synonym — it substring-collides with
+       "matches" / "mattress" in the includes() matcher. */
+    if (is("rug", "carpet")) {
       if (V("move", "lift", "pull", "push", "shift", "slide", "take", "remove", "flip")) {
         if (s.rugMoved) { p("The rug is already shoved aside, revealing the TRAPDOOR."); return 1; }
         s.rugMoved = true;
@@ -328,7 +404,7 @@ const GAME = {
         if (s.trapdoorOpen) { p("It's open. The darkness below says hello."); return 1; }
         s.trapdoorOpen = true;
         p("The trapdoor creaks open. A tunnel. Pitch black.", "head");
-        p("Cold air rises. You can't see the bottom.");
+        p("Cold air rises from it. You can't see the bottom.");
         return 1;
       }
       if (V("enter", "go", "crawl", "climb", "jump", "descend", "use")) return this._enterTunnel(out);
@@ -341,6 +417,72 @@ const GAME = {
         p("Black. Deep. Breathing. Entering blind would be brave. Or final.");
         return 1;
       }
+    }
+
+    /* ---- tarp / corpse / crowbar (escape B: discovery) ---- */
+    if (is("tarp", "tarpaulin", "sheet", "corner")) {
+      if (V("move", "lift", "pull", "remove", "examine", "x", "look", "search", "check")) {
+        if (!s.tarpMoved) {
+          s.tarpMoved = true;
+          p("You drag the stiff tarp off the shape in the corner.");
+          p("A CORPSE. Weeks gone. The last guest they kept down here.", "err");
+          p("Its gray fingers are locked around a CROWBAR.", "head");
+          return 1;
+        }
+        p("The body stares at the ceiling. The CROWBAR is still in its grip.");
+        return 1;
+      }
+    }
+    if (is("corpse", "body", "dead", "remains", "skeleton", "guest")) {
+      if (!s.tarpMoved) { p("You don't see a body. Just a lump under a TARP in the corner."); return 1; }
+      if (V("examine", "x", "search", "check", "loot")) {
+        p("Cold. Rigid. Whatever it knew died with it. It clutches a CROWBAR.");
+        return 1;
+      }
+      if (V("talk", "ask", "pet")) { p("You leave the dead their silence. Take the CROWBAR instead."); return 1; }
+      if (V("eat")) { p("No. Absolutely not. Whatever you are, you're not that yet."); return 1; }
+    }
+    if (is("crowbar", "prybar", "pry bar", "lever")) {
+      if (!s.tarpMoved) { p("You haven't found anything like that. Yet."); return 1; }
+      if (V("take", "get", "grab", "pick")) {
+        if (this.has("crowbar")) { p("Already in your hands. Heavy. Good for prying."); return 1; }
+        s.inventory.push("crowbar");
+        p("You peel the dead fingers back and take the CROWBAR. Sorry, friend.");
+        return 1;
+      }
+      if (V("use", "pry", "wedge", "force", "swing")) {
+        if (!this.has("crowbar")) { p("Take the crowbar first."); return 1; }
+        if (s.boardsFound) return this._action("pry boards", out);
+        p("You heft it. Pry something with it — the BOARDS on the far wall, maybe.");
+        return 1;
+      }
+      if (V("examine", "x")) { p("A rusted crowbar. Opens a lot of things. Or a skull."); return 1; }
+    }
+
+    /* ---- boards / coal chute (escape B: the way UP) ---- */
+    if (is("boards", "board", "planks", "plank", "chute")) {
+      if (V("examine", "x", "inspect", "check", "look")) {
+        s.boardsFound = true;
+        if (s.boardsPried) { p("The boards are off. A COAL CHUTE slopes UP into the dark, toward the street."); return 1; }
+        p("Thick planks nailed over an opening in the far wall.");
+        p("Behind them: a draft, and the smell of the street. A COAL CHUTE —");
+        p("a way UP and OUT. You'd have to PRY the planks off. Fingers won't do.");
+        return 1;
+      }
+      if (V("pry", "force", "wedge", "remove", "open", "move", "pull", "rip", "kick", "break")) {
+        s.boardsFound = true;
+        if (s.boardsPried) { p("Already off. CLIMB the chute."); return 1; }
+        if (!this.has("crowbar")) {
+          p("You claw at the planks. A nail opens your palm. They don't move.", "err");
+          p("You need something to pry with.");
+          return 1;
+        }
+        s.boardsPried = true;
+        p("You jam the crowbar behind the planks and heave. CRACK.", "head");
+        p("Nails scream out. A black chute yawns open, sloping upward.", "head");
+        return 1;
+      }
+      if (V("enter", "climb", "go", "crawl", "use", "ascend")) return this._climbChute(out);
     }
 
     /* ---- desk / drawer / note ---- */
@@ -379,6 +521,10 @@ const GAME = {
         if (!this.has("screwdriver")) { p("Take it first."); return 1; }
         if (s.rugMoved && !s.trapdoorUnscrewed) { return this._action("unscrew trapdoor", out); }
         p("Point it at what? Try 'unscrew [thing]'.");
+        return 1;
+      }
+      if (V("stab", "jam", "insert", "stick")) {
+        p("You wave a screwdriver around like a knife. The room is unimpressed.");
         return 1;
       }
     }
@@ -439,7 +585,7 @@ const GAME = {
       }
       if (V("use", "turn", "switch") || cmd === "turn on flashlight") {
         if (!this.has("flashlight")) { p("Take it first."); return 1; }
-        if (cmd.includes("off")) { s.flashlightOn = false; p("Click. Darkness feels closer now."); return 1; }
+        if (cmd.includes("off")) { s.flashlightOn = false; p("Click. The darkness leans in closer."); return 1; }
         s.flashlightOn = true;
         p("Click. A strong white beam. Now we're talking.", "head");
         return 1;
@@ -483,7 +629,7 @@ const GAME = {
       }
       if (V("examine", "x", "inspect", "check")) {
         p("An ancient transistor radio. The power knob is worn shiny —");
-        p("someone used to listen to it a lot.");
+        p("someone used to listen to it a lot, down here, waiting.");
         return 1;
       }
       if (V("hit", "kick", "break", "smash")) { p("You smack the radio. It plays half a polka note in protest."); return 1; }
@@ -504,7 +650,7 @@ const GAME = {
       }
     }
 
-    /* ---- bed / box / mask ---- */
+    /* ---- bed / box / mask / matches ---- */
     if (is("under bed") || (is("bed") && V("search"))) {
       if (s.boxFound) { p("Just dust bunnies the size of actual bunnies now."); return 1; }
       s.boxFound = true;
@@ -522,10 +668,10 @@ const GAME = {
     }
     if (is("box", "shoebox") && s.boxFound) {
       if (V("open", "examine", "x", "check", "search")) {
-        if (s.boxOpen) { p(this.has("mask") ? "Empty." : "The CLOWN MASK grins from inside."); return 1; }
+        if (s.boxOpen) { p("Inside: whatever you haven't pocketed yet."); return 1; }
         s.boxOpen = true;
-        p("You lift the lid slowly... inside:");
-        p("a rubber CLOWN MASK. It smiles. You don't.", "head");
+        p("You lift the lid slowly. Inside, side by side:");
+        p("a rubber CLOWN MASK, and a damp MATCHBOOK.", "head");
         return 1;
       }
     }
@@ -537,14 +683,82 @@ const GAME = {
         return 1;
       }
       if (V("wear", "put", "use")) {
-        if (!this.has("mask") && !s.boxOpen) { p("What mask?"); return 1; }
         if (!this.has("mask")) { s.inventory.push("mask"); }
         s.maskOn = true;
         p("You put on the clown mask. Nothing about your situation");
         p("improves, but you feel 12% more mysterious.");
         return 1;
       }
+      if (V("eat", "swallow", "chew")) {
+        this._die(out, [
+          "You cram the rubber mask into your mouth. Panic isn't logic.",
+          "It lodges. Your throat shuts. The clown gets the last laugh.",
+        ]);
+        return 0;
+      }
       if (V("examine", "x")) { p("Red nose, dead eyes. It has seen things."); return 1; }
+    }
+    if (is("match", "matches", "matchbook", "lighter", "flame")) {
+      if (V("take", "get", "grab", "pick")) {
+        if (!s.boxOpen) { p("What matches? You haven't found any."); return 1; }
+        if (this.has("matches")) { p("Already in your pocket. Three left."); return 1; }
+        s.inventory.push("matches");
+        p("A damp matchbook. Three matches left. In THIS air... careful.", "sys");
+        return 1;
+      }
+      if (V("light", "strike", "use", "burn")) {
+        if (!this.has("matches")) { p("You've nothing to light. And that's probably lucky."); return 1; }
+        this._die(out, [
+          "You strike a match. It flares orange in the dark —",
+          "— and the gas in the air catches all at once.",
+          "The room becomes a fireball. You are standing inside it.",
+          "They'll identify you from dental records. History rhymes: 1987.",
+        ]);
+        return 0;
+      }
+      if (V("examine", "x")) { p("A matchbook. In a room that reeks of gas. Do the math."); return 1; }
+    }
+
+    /* ---- pipe / gas ---- */
+    if (is("pipe", "pipes", "radiator", "gas", "valve")) {
+      if (V("examine", "x", "inspect", "check", "smell", "listen")) {
+        p("A corroded pipe runs floor to ceiling. Somewhere it's cracked —");
+        p("a thin hiss, and that sweet, dizzy stink of gas fills the room.", "err");
+        p("One spark and none of this matters. Keep flames away.", "err");
+        return 1;
+      }
+      if (V("break", "hit", "kick", "smash", "open", "turn", "twist")) {
+        s.pipeBroken = true;
+        p("You wrench the valve. The hiss becomes a roar of gas.", "err");
+        p("Your head swims. The whole room is a bomb now. Don't light anything.", "err");
+        return 1;
+      }
+      if (V("touch", "grab")) { p("Cold, greasy metal. Doing nothing for you."); return 1; }
+    }
+
+    /* ---- bottle / chemicals — LETHAL if drunk ---- */
+    if (is("bottle", "jug", "chemical", "chemicals", "bleach", "acid", "jar")) {
+      if (V("examine", "x", "read", "inspect", "check")) {
+        p("A plastic jug, label half torn: '...URIC ACID — DO NOT ______'.");
+        p("The liquid inside is the color of nothing good.");
+        return 1;
+      }
+      if (V("drink", "sip", "swallow", "taste", "chug")) {
+        this._die(out, [
+          "Thirst beats sense. You drink.",
+          "It goes down like fire and comes back up like broken glass.",
+          "You fold onto the concrete. The room tilts, then empties out.",
+        ]);
+        return 0;
+      }
+      if (V("take", "pour", "throw", "empty", "use")) { p("You'd rather not carry acid in your pocket, thanks."); return 1; }
+    }
+
+    /* ---- bucket ---- */
+    if (is("bucket", "pail")) {
+      if (V("examine", "x", "look", "inspect", "check")) { p("A rusted bucket, half-full of water that moves on its own. Larvae."); return 1; }
+      if (V("drink", "sip", "taste")) { p("You gag on the first mouthful and stop. (-1 move retching)", "err"); return 2; }
+      if (V("kick", "tip", "empty", "spill", "throw")) { p("You tip the bucket. Now the smell is everywhere. Great work."); return 1; }
     }
 
     /* ---- vent ---- */
@@ -572,20 +786,30 @@ const GAME = {
       if (V("eat")) { p("No."); return 1; }
     }
 
-    /* ---- wires — LETHAL ---- */
+    /* ---- wires / outlet — LETHAL ---- */
     if (is("wires", "wire", "wiring", "cable", "cables")) {
       if (V("examine", "x", "inspect", "check", "look")) {
         p("Thick industrial cables, insulation peeled back, copper bare.");
-        p("They hum with enough current to run a small village.");
-        p("Touching these would be a spectacularly bad idea.", "err");
+        p("They hum with enough current to run a whole street.");
+        p("Touching them would be a spectacularly bad way to die.", "err");
         return 1;
       }
-      if (V("touch", "grab", "pull", "cut", "take", "use", "bite", "lick")) {
+      if (V("touch", "grab", "pull", "cut", "take", "use", "bite", "lick", "hold", "jam", "insert", "stick", "poke")) {
         this._die(out, [
           "Your hand closes around bare copper.",
-          "Every muscle locks. The bulb flares white.",
-          "For 1.21 seconds, you ARE the electrical grid.",
-          "You light up like a christmas tree. Then: nothing.",
+          "Every muscle locks rigid. The bulb flares white, then bursts.",
+          "For one long second, you ARE the current.",
+          "Then the breaker in your chest trips. Dark. Done.",
+        ]);
+        return 0;
+      }
+    }
+    if (is("outlet", "socket", "plug")) {
+      if (V("examine", "x", "inspect", "check")) { p("A cracked wall socket, wires poking out. Live, almost certainly."); return 1; }
+      if (V("touch", "use", "put", "insert", "stick", "jam", "poke")) {
+        this._die(out, [
+          "You feed metal into the socket. The room flashes white.",
+          "Your jaw locks. Your heart forgets its rhythm — then forgets everything.",
         ]);
         return 0;
       }
@@ -593,7 +817,7 @@ const GAME = {
 
     /* ---- bulb / switch (careful: "flashlight" contains "light") ---- */
     if (is("bulb", "lamp", "switch") || (is("light") && !is("flashlight"))) {
-      if (V("turn", "flip", "use", "switch", "hit", "touch") ) {
+      if (V("turn", "flip", "use", "switch", "hit", "touch")) {
         if (s.bulbDead) { p("The bulb is dead. You did that."); return 1; }
         s.bulbDead = true;
         p("You flip the crusty switch. POP — the bulb dies dramatically.", "err");
@@ -605,36 +829,41 @@ const GAME = {
 
     /* ---- floor / walls / ceiling ---- */
     if (is("floor", "ground")) { if (V("examine", "x", "check", "search")) { p(s.rugMoved ? "Concrete, and that TRAPDOOR you found." : "Concrete. A moldy RUG covers part of it."); return 1; } }
-    if (is("wall", "walls")) { if (V("examine", "x", "check", "search")) { p("Concrete. A painted window. A poster. Your growing despair."); return 1; } }
-    if (is("ceiling")) { if (V("examine", "x", "check")) { p("A bulb and a VENT. No action movie escape hatch. Sorry."); return 1; } }
+    if (is("wall", "walls")) { if (V("examine", "x", "check", "search")) { p("Concrete. A painted window. A poster. BOARDS on the far wall. Despair."); return 1; } }
+    if (is("ceiling")) { if (V("examine", "x", "check")) { p("A bulb and a VENT. No action-movie escape hatch. Sorry."); return 1; } }
 
     /* ---- flavor / trolls / penalties ---- */
-    if (V("scream", "yell", "shout") || cmd === "call for help" || cmd === "cry") {
+    if (V("scream", "yell", "shout") || cmd === "call for help" || cmd === "cry for help") {
       p("You scream your lungs out. Excellent. Now they know", "err");
       p("exactly which room you're in. (-5 extra moves)", "err");
       return 6;
     }
     if (V("sleep", "nap")) {
-      p("You... take a nap?? With a SWAT team en route???", "err");
+      p("You... take a nap?? With a unit en route???", "err");
       p("You dream of open doors. (-10 extra moves)", "err");
       return 11;
     }
     if (V("dance")) { p("You bust out a move. The rat watches, unimpressed. 4/10."); return 1; }
-    if (V("sing")) { p("You sing to calm your nerves. The mirror cracks a little more."); return 1; }
-    if (V("pray")) { p("You pray. A voice answers: 'HAVE YOU TRIED THE RUG?' Wait, what?"); return 1; }
+    if (V("sing")) { p("You sing to steady your nerves. The mirror cracks a little more."); return 1; }
+    if (V("pray")) { p("You pray. A voice you don't know whispers: 'THE RUG. THE TARP. PICK ONE.'"); return 1; }
     if (V("hide")) { p("You hide under the bed. Solid plan. They definitely won't look there."); return 1; }
-    if (V("wait")) { p("Time passes. That's literally all that happens."); return 1; }
+    if (V("wait")) { p("Time passes. That's literally all that happens. The clock keeps eating."); return 1; }
     if (V("panic")) { p("You panic efficiently. Achievement unlocked. Nothing else unlocked."); return 1; }
-    if (V("think")) { p("You think hard. The year... something about a year... a fire?"); return 1; }
-    if (V("smell")) { p("Mold, dust, fear. Mostly fear."); return 1; }
+    if (V("think")) { p("You think hard. A year... a fire... a rug... a body in the corner..."); return 1; }
+    if (V("smell")) { p("Gas, mold, rot, and fear. Mostly the gas. Mostly the fear."); return 1; }
     if (V("listen")) { p("Sirens. Closer than before. Always closer."); return 1; }
+    if (V("cry", "weep", "sob")) { p("You cry, quietly. It changes nothing, but you needed it."); return 1; }
+    if (V("beg", "plead")) { p("You beg the door for mercy. The door has heard it all before."); return 1; }
+    if (V("laugh")) { p("You laugh. It comes out wrong. Somewhere the rat goes still."); return 1; }
+    if (V("count")) { p("You count your breaths. The number keeps getting smaller."); return 1; }
+    if (V("spit", "curse", "swear")) { p("You spit at the floor and swear. 3% braver. 0% freer."); return 1; }
 
     return null; // not understood — costs nothing
   },
 
   _enterTunnel(out) {
     const s = this.state;
-    if (!s.rugMoved) { out.push({ t: "Enter what? You'd have to find a way out first." }); return 1; }
+    if (!s.rugMoved) { out.push({ t: "Enter what? You'd have to find a way down first." }); return 1; }
     if (!s.trapdoorUnscrewed) { out.push({ t: "The trapdoor is bolted shut. Four rusty screws." }); return 1; }
     if (!s.trapdoorOpen) { out.push({ t: "It's unscrewed but still closed. Open it." }); return 1; }
     if (!this.has("flashlight") || !s.flashlightOn) {
@@ -646,7 +875,15 @@ const GAME = {
       ]);
       return 0;
     }
-    this._win(out);
+    this._win(out, "tunnel");
+    return 0;
+  },
+
+  _climbChute(out) {
+    const s = this.state;
+    if (!s.boardsFound) { out.push({ t: "Climb what? The walls are solid concrete... mostly." }); return 1; }
+    if (!s.boardsPried) { out.push({ t: "The chute is boarded over. Thick planks, nailed deep. Pry them." }); return 1; }
+    this._win(out, "chute");
     return 0;
   },
 };
@@ -657,8 +894,43 @@ function initGame() {
   const term = document.getElementById("zork-terminal");
   if (!output || !input || !term) return;
 
+  const clockEl = document.getElementById("term-clock");
+  const movesEl = document.getElementById("hud-moves");
+  const elapsedEl = document.getElementById("hud-elapsed");
+  const statusEl = document.getElementById("hud-status");
+
   const history = [];
   let histIdx = -1;
+  let elapsedStart = Date.now();
+  let lastAttempt = 0;
+
+  const pad = n => String(n).padStart(2, "0");
+
+  function updateHUD() {
+    const s = GAME.state;
+    if (!s) return;
+    if (s.attempt !== lastAttempt) { lastAttempt = s.attempt; elapsedStart = Date.now(); }
+
+    if (clockEl) {
+      const n = new Date();
+      clockEl.textContent = `${pad(n.getHours())}:${pad(n.getMinutes())}:${pad(n.getSeconds())}`;
+    }
+    if (movesEl) {
+      movesEl.textContent = pad(s.moves);
+      movesEl.classList.toggle("low", s.moves <= 10);
+    }
+    if (elapsedEl && !s.over) {
+      const sec = Math.floor((Date.now() - elapsedStart) / 1000);
+      elapsedEl.textContent = `${Math.floor(sec / 60)}:${pad(sec % 60)}`;
+    }
+    if (statusEl) {
+      let t = "● ONLINE", c = "alive";
+      if (s.over && s.won) { t = "✓ ESCAPED"; c = "won"; }
+      else if (s.over && s.status === "cuffed") { t = "✗ IN CUSTODY"; c = "cuffed"; }
+      statusEl.textContent = t;
+      statusEl.className = "hud-status " + c;
+    }
+  }
 
   function addLine(line) {
     if (typeof line === "object" && line._clear) { output.innerHTML = ""; return; }
@@ -676,6 +948,7 @@ function initGame() {
   }
 
   GAME.reset();
+  lastAttempt = GAME.state.attempt;
   const boot = GAME.intro();
   let bi = 0;
   (function bootTick() {
@@ -695,6 +968,7 @@ function initGame() {
     input.value = "";
     printLines(GAME.process(val));
     addLine({ t: "", c: "" });
+    updateHUD();
   }
 
   input.addEventListener("keydown", e => {
@@ -710,6 +984,9 @@ function initGame() {
   });
 
   term.addEventListener("click", () => input.focus());
+
+  updateHUD();
+  setInterval(updateHUD, 1000);
 }
 
 /* ============================================================
@@ -1016,6 +1293,55 @@ function initCounters(counters) {
 }
 
 /* ============================================================
+   TOP STATUS HUD — live day-counters + wall clock, hacker style.
+   Sits under the navbar at the top of the page. Data reused from
+   home.json counters (no new site copy invented).
+   ============================================================ */
+function initTopHUD(counters) {
+  const bar = document.getElementById("top-hud");
+  if (!bar) return;
+
+  const list = Array.isArray(counters) ? counters : [];
+  const items = list.map((c, i) => {
+    const key = String(c.label || "").replace(/\s*SINCE\s*$/i, "").trim() || `NODE ${i + 1}`;
+    return `<span class="th-item">
+        <span class="th-key">${esc(key)}</span>
+        <b class="th-val" id="th-c-${i}">----</b>
+        <span class="th-unit">days</span>
+      </span>`;
+  }).join("");
+
+  bar.innerHTML = `
+    <span class="th-prompt">root@bugfish:~$</span>
+    <div class="th-scroll">${items}
+      <span class="th-item th-sys">
+        <span class="th-key">SYS</span>
+        <b class="th-val" id="th-clock">--:--:--</b>
+      </span>
+    </div>
+    <span class="th-item th-online"><span class="th-dot"></span>ONLINE</span>`;
+
+  const pad = n => String(n).padStart(2, "0");
+
+  function tick() {
+    list.forEach((c, i) => {
+      const el = document.getElementById(`th-c-${i}`);
+      if (!el) return;
+      const diff = Date.now() - new Date(c.date).getTime();
+      if (isNaN(diff) || diff < 0) return;
+      el.textContent = String(Math.floor(diff / 86400000));
+    });
+    const clock = document.getElementById("th-clock");
+    if (clock) {
+      const n = new Date();
+      clock.textContent = `${pad(n.getHours())}:${pad(n.getMinutes())}:${pad(n.getSeconds())}`;
+    }
+  }
+  tick();
+  setInterval(tick, 1000);
+}
+
+/* ============================================================
    BOOT
    ============================================================ */
 document.addEventListener("DOMContentLoaded", async () => {
@@ -1026,6 +1352,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     const cfg = await loadJSON("data/home.json");
     renderHero(cfg);
     renderAbout(cfg);
+    initTopHUD(cfg.counters);
     initCounters(cfg.counters);
     initMusicPlayer(cfg.music);
   } catch (err) {

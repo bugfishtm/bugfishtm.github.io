@@ -60,6 +60,9 @@
 
   <main class="full-bleed">
 
+    <!-- TOP STATUS HUD (live counters + wall clock) -->
+    <div id="top-hud" class="top-hud" role="status" aria-label="System status"></div>
+
     <!-- HERO -->
     <section id="hero">
       <canvas id="matrix-canvas"></canvas>
@@ -86,6 +89,12 @@
                 <span class="term-dot max"></span>
               </div>
               <span class="term-title-text">escape.exe</span>
+              <span class="term-clock" id="term-clock">--:--:--</span>
+            </div>
+            <div class="term-hud">
+              <span class="term-hud-item">BREACH&nbsp;<b class="hud-moves" id="hud-moves">--</b></span>
+              <span class="term-hud-item">TIME&nbsp;<b id="hud-elapsed">0:00</b></span>
+              <span class="term-hud-item hud-status alive" id="hud-status">● ONLINE</span>
             </div>
             <div class="term-body">
               <div id="game-output" class="game-output"></div>
