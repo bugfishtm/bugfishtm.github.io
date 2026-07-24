@@ -1,5 +1,8 @@
 # Bugfish — Project Website
 
+> [!TIP]
+> No new features are currently planned for this project. However, users are welcome to create issues or feature requests, which will be reviewed and responded to within 1–3 weeks.
+
 ## 🔍 Overview
 
 This repository hosts my personal project website, served via **GitHub Pages** at [https://bugfishtm.github.io](https://bugfishtm.github.io). It is the central hub for my projects, channels and platforms.
