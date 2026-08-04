@@ -1,0 +1,27 @@
+[
+  {
+    "_comment": "Field reference for data/news.json — copy an entry, drop the _comment. Newest entries are shown first (sorted by date). Empty fields are simply not rendered.",
+    "date": "2026-08-04",
+    "title": "Entry with everything",
+    "text": "The first paragraph of the news entry.\n\nA blank line starts a new paragraph, a single line break stays a line break.",
+    "image_url": "assets/img/logo.jpg",
+    "link_url": "https://bugfish.eu",
+    "video_url": "assets/video/clip.mp4"
+  },
+  {
+    "date": "2026-08-03",
+    "title": "Text only",
+    "text": "Every field except the title is optional — this entry has no image, no link and no video.",
+    "image_url": "",
+    "link_url": "",
+    "video_url": ""
+  },
+  {
+    "date": "2026-08-02",
+    "title": "Linked video",
+    "text": "A video_url that is not a video file (.mp4 / .webm / .ogv / .mov / .m4v) becomes a 'Watch Video' button instead of an inline player, so nothing is embedded from a third party.",
+    "image_url": "assets/img/video/youtube.png",
+    "link_url": "",
+    "video_url": "https://youtube.com/bugfishtm"
+  }
+]
