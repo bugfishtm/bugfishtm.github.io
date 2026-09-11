@@ -1,0 +1,15 @@
+[
+  {
+    "name": "EspoCRM Extensions",
+    "image": "assets/img/overview/software.png",
+    "description": "Custom EspoCRM modules and extensions — additional entities, layouts, hooks and workflow automations built on top of EspoCRM. Documentation, source and downloads are being prepared for release.",
+    "license": "GPLv3",
+    "documentation": "",
+    "website": "",
+    "github": "",
+    "video": "",
+    "contact": "",
+    "ai": false,
+    "docker": ""
+  }
+]

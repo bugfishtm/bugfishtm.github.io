@@ -7,7 +7,7 @@
   <meta name="description" content="Bugfish - software developer since 2008. Code, music, digital art and more. Central hub for all projects and channels.">
   <meta name="author" content="Bugfish">
   <meta name="robots" content="index,follow">
-  <meta name="theme-color" content="#121316">
+  <meta name="theme-color" content="#0a0b0d">
   <link rel="canonical" href="https://bugfishtm.github.io/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Bugfish">
@@ -24,7 +24,7 @@
   <link rel="icon" type="image/x-icon" href="./favicon.ico">
   <link rel="stylesheet" href="./assets/css/style.css">
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://bugfishtm.github.io/#website","name":"Bugfish","url":"https://bugfishtm.github.io/","potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://bugfishtm.github.io/search.html?q={search_term_string}"},"query-input":"required name=search_term_string"}},{"@type":"Person","@id":"https://bugfishtm.github.io/#person","name":"Bugfish","url":"https://bugfish.eu","sameAs":["https://github.com/bugfishtm","https://bugfishtm.github.io/"],"jobTitle":"Full-Stack Developer"},{"@type":"WebPage","url":"https://bugfishtm.github.io/","name":"Bugfish - Home","description":"Bugfish - software developer since 2008. Code, music, digital art and more. Central hub for all projects and channels.","isPartOf":{"@id":"https://bugfishtm.github.io/#website"},"author":{"@id":"https://bugfishtm.github.io/#person"}}]}
+  {"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://bugfishtm.github.io/#website","name":"Bugfish","url":"https://bugfishtm.github.io/","potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://bugfishtm.github.io/projects.html?q={search_term_string}"},"query-input":"required name=search_term_string"}},{"@type":"Person","@id":"https://bugfishtm.github.io/#person","name":"Bugfish","url":"https://bugfish.eu","sameAs":["https://github.com/bugfishtm","https://bugfishtm.github.io/"],"jobTitle":"Full-Stack Developer"},{"@type":"WebPage","url":"https://bugfishtm.github.io/","name":"Bugfish - Home","description":"Bugfish - software developer since 2008. Code, music, digital art and more. Central hub for all projects and channels.","isPartOf":{"@id":"https://bugfishtm.github.io/#website"},"author":{"@id":"https://bugfishtm.github.io/#person"}}]}
   </script>
 </head>
 <body data-base="">
@@ -40,18 +40,7 @@
       </button>
       <nav class="nav-menu" id="nav-menu" aria-label="Main navigation">
         <div class="nav-item"><a class="nav-link active" href="index.html">Home</a></div>
-        <div class="nav-item"><a class="nav-link" href="search.html">Search</a></div>
-        <div class="nav-item has-dropdown">
-          <button class="nav-link" aria-haspopup="true">Projects <span class="nav-caret">▾</span></button>
-          <div class="nav-dropdown">
-            <a href="projects/android.html">Android</a>
-            <a href="projects/framework.html">Framework</a>
-            <a href="projects/javascript.html">JavaScript</a>
-            <a href="projects/games.html">Games</a>
-            <a href="projects/windows.html">Windows</a>
-            <a href="projects/websoftware.html">Websoftware</a>
-          </div>
-        </div>
+        <div class="nav-item"><a class="nav-link" href="projects.html">Projects</a></div>
         <div class="nav-item"><a class="nav-link" href="privacy.html">Privacy</a></div>
         <div class="nav-item"><a class="nav-link" href="impressum.html">Impressum</a></div>
       </nav>
@@ -81,19 +70,19 @@
           </div>
         </div>
         <div class="hero-right">
-          <div class="terminal-window" id="zork-terminal">
+          <div class="terminal-window" id="nightfall-terminal">
             <div class="term-titlebar">
               <div class="term-dots">
                 <span class="term-dot close"></span>
                 <span class="term-dot min"></span>
                 <span class="term-dot max"></span>
               </div>
-              <span class="term-title-text">escape.exe</span>
+              <span class="term-title-text">nightfall.sh</span>
               <span class="term-clock" id="term-clock">--:--:--</span>
             </div>
             <div class="term-hud">
-              <span class="term-hud-item">BREACH&nbsp;<b class="hud-moves" id="hud-moves">--</b></span>
-              <span class="term-hud-item">TIME&nbsp;<b id="hud-elapsed">0:00</b></span>
+              <span class="term-hud-item">NODE&nbsp;<b id="hud-node">localhost</b></span>
+              <span class="term-hud-item">TRACE&nbsp;<b class="hud-trace" id="hud-trace">0%</b></span>
               <span class="term-hud-item hud-status alive" id="hud-status">● ONLINE</span>
             </div>
             <div class="term-body">
@@ -168,7 +157,7 @@
       <span>DREAMING IN DIGITAL</span>
       <div class="footer-links">
         <a href="index.html#explore">Explore</a>
-        <a href="search.html">Search</a>
+        <a href="projects.html">Projects</a>
         <a href="privacy.html">Privacy</a>
         <a href="impressum.html">Impressum</a>
       </div>

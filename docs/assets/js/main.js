@@ -122,15 +122,15 @@ function initHashTarget() {
 }
 
 /* ---- Legacy search links ------------------------------------
-   The project search used to live on the home page, so old links
-   (and bookmarks) look like "/?q=term". Search now has its own
-   page — hand those queries over instead of dropping them.
-   Pages that carry the search input handle ?q= themselves. */
+   Search used to live on the home page, then on its own search
+   page; both are gone now — the projects page carries the search.
+   Old links/bookmarks like "/?q=term" are handed over instead of
+   dropped. Pages that carry the search input handle ?q= themselves. */
 function forwardLegacySearch() {
   if (document.getElementById("project-search")) return;
   const q = new URLSearchParams(window.location.search).get("q");
   if (!q) return;
-  window.location.replace(`${BASE}search.html?q=${encodeURIComponent(q)}`);
+  window.location.replace(`${BASE}projects.html?q=${encodeURIComponent(q)}`);
 }
 
 document.addEventListener("DOMContentLoaded", () => {

@@ -15,10 +15,11 @@ This table provides an overview of the key files and folders of the website.
 
 |Path|Description|
 |----|-----|
-| index.html | Home page — hero, featured showcase, news, explore, about. |
-| search.html | Search across all project categories. |
+| index.html | Home page — hero, NIGHTFALL hacking game, featured showcase, news, explore, about. |
+| projects.html | All projects on one page — category tabs (incl. EspoCRM, Ciphers) + search. |
+| search.html | Redirect — search now lives on the projects page. |
 | explore.html | Redirect — Explore now lives on the home page. |
-| projects/ | Project category pages (Docker, Android, JavaScript, ...). |
+| projects/ | Redirect stubs — old per-category pages now point at projects.html?cat=…. |
 | data/ | JSON files driving the site content (projects, featured, home, news). |
 | data/news.json | News entries — 10 per page, newest first. See `data/news.example.json` for all fields. |
 | assets/ | Stylesheets, scripts, images and music — everything served locally. |

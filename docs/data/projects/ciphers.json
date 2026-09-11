@@ -1,0 +1,28 @@
+[
+  {
+    "name": "Cipher Toolkit",
+    "image": "assets/img/software/hashcracker.png",
+    "description": "A growing collection of classic and modern cipher implementations — Caesar, Vigenère, substitution and XOR — with encode, decode and brute-force helpers. Part of the Bugfish crypto experiments; the same shift cipher that guards the vault in the terminal game on the home page.",
+    "license": "GPLv3",
+    "documentation": "",
+    "website": "",
+    "github": "",
+    "video": "",
+    "contact": "",
+    "ai": false,
+    "docker": ""
+  },
+  {
+    "name": "Hash Cracker",
+    "image": "assets/img/software/hashcracker.png",
+    "description": "A fast and flexible Windows tool for encoding and brute-forcing password hashes across multiple algorithms.",
+    "license": "GPLv3",
+    "documentation": "https://bugfishtm.github.io/windows-hash-cracker",
+    "website": "",
+    "github": "https://github.com/bugfishtm/windows-hash-cracker",
+    "video": "https://www.youtube.com/playlist?list=PL6npOHuBGrpDlS6CCHIUDz5O9mOnH7-7E",
+    "contact": "",
+    "ai": false,
+    "docker": ""
+  }
+]

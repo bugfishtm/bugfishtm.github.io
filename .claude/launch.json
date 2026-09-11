@@ -1,0 +1,15 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "docs",
+      "runtimeExecutable": "node",
+      "runtimeArgs": [
+        "C:\\Users\\bugfish\\AppData\\Local\\Temp\\claude\\C--Users-bugfish-Desktop-bugfishtm-github-io\\89b71509-993b-4f13-8189-03b594afe59c\\scratchpad\\serve.js",
+        "C:\\Users\\bugfish\\Desktop\\bugfishtm.github.io\\docs",
+        "8765"
+      ],
+      "port": 8765
+    }
+  ]
+}

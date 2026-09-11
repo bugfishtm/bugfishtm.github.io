@@ -4,13 +4,14 @@
    ============================================================ */
 
 :root {
-  /* Greyish dark scheme — softer on the eyes than pure black */
-  --bg:           #121316;   /* page background            */
-  --bg2:          #18191d;   /* surface / cards            */
-  --bg3:          #1f2025;   /* raised surface             */
-  --bg4:          #26272d;   /* hover surface              */
-  --border:       #2b2d33;   /* default border             */
-  --border2:      #3a3c45;   /* strong border              */
+  /* Graphite dark scheme — pulled darker + colder for a scarier mood.
+     Same orange accent as before; just less light bleeding in. */
+  --bg:           #0a0b0d;   /* page background            */
+  --bg2:          #101115;   /* surface / cards            */
+  --bg3:          #16171c;   /* raised surface             */
+  --bg4:          #1e2026;   /* hover surface              */
+  --border:       #23252c;   /* default border             */
+  --border2:      #33353f;   /* strong border              */
 
   /* Orange — unchanged on purpose */
   --orange:       #ff6600;
@@ -19,13 +20,17 @@
   --orange-faint: rgba(255,102,0,0.10);
   --orange-glow:  rgba(255,102,0,0.28);
 
-  --text:         #c7c8cd;
-  --text-dim:     #7d7f88;
-  --text-mid:     #a2a4ac;
-  --text-bright:  #eceded;
+  /* Blood accent — used sparingly for danger/horror cues */
+  --blood:        #c0202a;
+  --blood-glow:   rgba(200,32,42,0.22);
 
-  --green:        #3ddc84;
-  --red:          #ff5252;
+  --text:         #b9bac0;
+  --text-dim:     #6b6d76;
+  --text-mid:     #94969e;
+  --text-bright:  #e8e9ea;
+
+  --green:        #2fbf6f;
+  --red:          #ff4242;
   --cyan:         #35c9f0;
 
   --nav-h:        64px;
@@ -61,7 +66,27 @@ img { max-width: 100%; }
 ::-webkit-scrollbar-thumb { background: var(--bg4); border-radius: 3px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--orange-dim); }
 
-::selection { background: var(--orange); color: #121316; }
+::selection { background: var(--orange); color: #0a0b0d; }
+
+/* ---- Global horror atmosphere ----
+   A fixed vignette + faint scanlines sit above the page background but
+   below all content, so every page feels like it's lit by one dying
+   bulb. Pointer-events off so nothing is blocked. */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at 50% 32%, rgba(0,0,0,0) 40%, rgba(0,0,0,0.55) 100%),
+    repeating-linear-gradient(to bottom, rgba(0,0,0,0) 0 3px, rgba(0,0,0,0.05) 3px 4px);
+  mix-blend-mode: multiply;
+}
+/* Keep real content above the vignette. */
+#navbar, main, #footer, .top-hud { position: relative; z-index: 2; }
+#navbar { z-index: 1000; }
+.top-hud { z-index: 900; }
 
 /* ============================================================
    NAVBAR
@@ -428,7 +453,9 @@ main.full-bleed {
   inset: 0;
   z-index: 1;
   pointer-events: none;
-  background: radial-gradient(ellipse at 30% 40%, transparent 0%, rgba(18,19,22,0.85) 75%);
+  background:
+    radial-gradient(ellipse at 30% 40%, transparent 0%, rgba(8,9,11,0.92) 78%),
+    linear-gradient(to bottom, rgba(8,9,11,0.35), rgba(8,9,11,0.75));
 }
 
 .hero-inner {
@@ -464,6 +491,14 @@ main.full-bleed {
   line-height: 1;
   margin-bottom: 20px;
   text-shadow: 0 0 44px var(--orange-glow);
+  animation: title-flicker 6.5s infinite steps(1);
+}
+/* A dying-bulb flicker on the wordmark. */
+@keyframes title-flicker {
+  0%, 42%, 45%, 61%, 63%, 100% { opacity: 1; }
+  43%   { opacity: 0.35; }
+  44%   { opacity: 0.85; }
+  62%   { opacity: 0.5;  }
 }
 .glitch::before, .glitch::after {
   content: attr(data-text);
@@ -614,8 +649,12 @@ main.full-bleed {
 .hud-moves.low { color: var(--red); animation: blink 0.9s step-end infinite; }
 .hud-status { margin-left: auto; letter-spacing: 2px; }
 .hud-status.alive  { color: var(--green); }
-.hud-status.won    { color: var(--orange); }
+.hud-status.admin  { color: var(--orange); }
+.hud-status.won,
+.hud-status.done   { color: var(--orange); }
+.hud-status.traced,
 .hud-status.cuffed { color: var(--red); }
+.hud-trace.high { color: var(--red); animation: blink 0.9s step-end infinite; }
 
 .term-body {
   padding: 18px;
@@ -642,7 +681,23 @@ main.full-bleed {
 .game-line.err  { color: var(--red); }
 .game-line.sys  { color: var(--text-dim); }
 .game-line.head { color: var(--text-bright); font-weight: bold; }
+.game-line.ok   { color: var(--cyan); }
+.game-line.warn { color: var(--orange-soft); }
+.game-line.veil { color: var(--blood); font-weight: bold; }
 .game-line.empty{ height: 8px; }
+
+/* Trace-critical state: the whole terminal pulses blood-red. */
+.terminal-window.danger { border-top-color: var(--blood); }
+.terminal-window.danger::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  background: radial-gradient(ellipse at 50% 50%, transparent 55%, var(--blood-glow) 100%);
+  animation: danger-pulse 1s ease-in-out infinite;
+}
+@keyframes danger-pulse { 50% { opacity: 0.35; } }
 
 .game-input-line {
   display: flex;
@@ -1291,6 +1346,52 @@ a.news-title:hover { color: var(--orange); }
   color: var(--orange);
   transform: translate(3px, -3px);
 }
+
+/* ============================================================
+   PROJECT CATEGORY TABS  (top of the unified projects page)
+   ============================================================ */
+.cat-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--border);
+}
+.cat-tab {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--text-mid);
+  background: var(--bg2);
+  border: 1px solid var(--border2);
+  border-radius: 7px;
+  padding: 8px 15px;
+  cursor: pointer;
+  transition: color var(--transition), border-color var(--transition),
+              background var(--transition), box-shadow var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.cat-tab:hover { color: var(--text-bright); border-color: var(--orange-dim); }
+.cat-tab.active {
+  color: var(--orange);
+  border-color: var(--orange);
+  background: var(--orange-faint);
+  box-shadow: 0 0 18px var(--orange-glow);
+}
+.cat-tab .cat-count {
+  font-size: 10px;
+  color: var(--text-dim);
+  background: var(--bg4);
+  border-radius: 999px;
+  padding: 1px 7px;
+  min-width: 20px;
+  text-align: center;
+}
+.cat-tab.active .cat-count { color: var(--orange); background: var(--orange-faint); }
 
 /* ============================================================
    PROJECT SEARCH

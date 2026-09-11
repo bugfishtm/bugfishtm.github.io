@@ -1,9 +1,9 @@
 /* ============================================================
    BUGFISH — projects.js
-   Renders full-width project cards for one category and powers
-   search.html, which looks through ALL categories.
-   The category is read from <body data-category="...">, and the
-   items come from data/projects/<category>.json.
+   Powers the single unified projects page (projects.html):
+   category tabs at the top + a search box that filters the
+   current scope. Each category's items come from
+   data/projects/<category>.json.
 
    Item fields:
      name, image, description  — required
@@ -12,6 +12,10 @@
      documentation, website, github, docker, video, contact
                                — optional urls; missing/empty ⇒
                                  the button is not rendered.
+
+   Deep links:
+     projects.html?cat=<category>   opens that tab
+     projects.html?q=<term>         prefills the search (All scope)
    ============================================================ */
 
 const PROJECT_BUTTONS = [
@@ -23,38 +27,35 @@ const PROJECT_BUTTONS = [
   { key: "contact",       label: "Contact" },
 ];
 
-/* All categories the search looks through — must match the JSON
-   files that exist in data/projects/. */
+/* Every category + its display label. The JSON file for each must
+   exist at data/projects/<id>.json. Order here is the tab order. */
 const PROJECT_CATEGORIES = [
-  "android", "framework", "javascript",
-  "games", "windows", "websoftware",
+  { id: "android",     label: "Android" },
+  { id: "framework",   label: "Framework" },
+  { id: "javascript",  label: "JavaScript" },
+  { id: "games",       label: "Games" },
+  { id: "windows",     label: "Windows" },
+  { id: "websoftware", label: "Websoftware" },
+  { id: "espocrm",     label: "EspoCRM" },
+  { id: "ciphers",     label: "Ciphers" },
 ];
 
-const projectCache = {};        // category -> items
-let allProjectsPromise = null;  // lazy, fetched on first search
+const CATEGORY_LABEL = Object.fromEntries(PROJECT_CATEGORIES.map(c => [c.id, c.label]));
 
 async function loadCategory(cat) {
-  if (!projectCache[cat]) {
-    projectCache[cat] = await loadJSON(`data/projects/${cat}.json`);
-  }
-  return projectCache[cat];
+  const items = await loadJSON(`data/projects/${cat}.json`);
+  return (Array.isArray(items) ? items : []).map(p => ({ ...p, category: cat }));
 }
 
-function loadAllProjects() {
-  if (!allProjectsPromise) {
-    allProjectsPromise = Promise.all(
-      PROJECT_CATEGORIES.map(async cat => {
-        try {
-          const items = await loadCategory(cat);
-          return (Array.isArray(items) ? items : []).map(p => ({ ...p, category: cat }));
-        } catch (err) {
-          console.error(`Could not load projects for '${cat}':`, err);
-          return [];
-        }
-      })
-    ).then(lists => lists.flat());
-  }
-  return allProjectsPromise;
+/* Load every category once, tolerating any single missing file. */
+async function loadAllProjects() {
+  const lists = await Promise.all(
+    PROJECT_CATEGORIES.map(async c => {
+      try { return await loadCategory(c.id); }
+      catch (err) { console.error(`Could not load projects for '${c.id}':`, err); return []; }
+    })
+  );
+  return lists.flat();
 }
 
 function projectButton(url, label) {
@@ -77,7 +78,7 @@ function renderProjects(items, opts = {}) {
     const license = item.license ? String(item.license).slice(0, 12) : "";
     const buttons = PROJECT_BUTTONS.map(b => projectButton(item[b.key], b.label)).join("");
     const catBadge = opts.showCategory && item.category
-      ? `<span class="cat-badge">${esc(item.category)}</span>` : "";
+      ? `<span class="cat-badge">${esc(CATEGORY_LABEL[item.category] || item.category)}</span>` : "";
     const aiBadge = item.ai === true
       ? `<span class="ai-badge" title="Built with the help of AI">AI ASSISTED</span>` : "";
     return `
@@ -100,61 +101,88 @@ function renderProjects(items, opts = {}) {
   }).join("");
 }
 
-/* ---- Search page: results appear only while typing ---------- */
-function initSearchPage() {
-  const input = document.getElementById("project-search");
+/* ---- Unified projects page: tabs + search ------------------- */
+function initProjectsPage() {
+  const tabsEl  = document.getElementById("cat-tabs");
+  const input   = document.getElementById("project-search");
   const countEl = document.getElementById("search-count");
-  const list = document.getElementById("project-list");
-  if (!input || !list) return;
+  const list    = document.getElementById("project-list");
+  if (!tabsEl || !list) return;
 
-  const hint = `<div class="news-empty">// type to search all projects — name, description or category</div>`;
-  list.innerHTML = hint;
+  list.innerHTML = `<div class="news-empty">// loading projects...</div>`;
 
-  async function runSearch() {
-    const q = input.value.trim().toLowerCase();
+  const params = new URLSearchParams(window.location.search);
+  const validCats = new Set(PROJECT_CATEGORIES.map(c => c.id));
+  let activeCat = params.get("cat");
+  if (!activeCat || !validCats.has(activeCat)) activeCat = "all";
+  let query = params.get("q") || "";
+  if (input && query) input.value = query;
 
-    if (!q) {
-      list.innerHTML = hint;
-      if (countEl) countEl.textContent = "";
-      return;
+  let all = [];
+  const countByCat = {};
+
+  function buildTabs() {
+    const total = all.length;
+    const tab = (id, label, count) =>
+      `<button class="cat-tab${id === activeCat ? " active" : ""}" role="tab"
+         aria-selected="${id === activeCat}" data-cat="${id}">
+         ${esc(label)}<span class="cat-count">${count}</span></button>`;
+    tabsEl.innerHTML =
+      tab("all", "All", total) +
+      PROJECT_CATEGORIES.map(c => tab(c.id, c.label, countByCat[c.id] || 0)).join("");
+
+    tabsEl.querySelectorAll(".cat-tab").forEach(btn => {
+      btn.addEventListener("click", () => {
+        activeCat = btn.dataset.cat;
+        tabsEl.querySelectorAll(".cat-tab").forEach(b => {
+          const on = b === btn;
+          b.classList.toggle("active", on);
+          b.setAttribute("aria-selected", on);
+        });
+        render();
+        syncUrl();
+      });
+    });
+  }
+
+  function render() {
+    const q = query.trim().toLowerCase();
+    let scope = activeCat === "all" ? all : all.filter(p => p.category === activeCat);
+    if (q) {
+      scope = scope.filter(p =>
+        `${p.name} ${p.description} ${CATEGORY_LABEL[p.category] || p.category}`
+          .toLowerCase().includes(q));
     }
-
-    const all = await loadAllProjects();
-    // Input may have changed while the JSONs were loading.
-    if (input.value.trim().toLowerCase() !== q) return;
-
-    const hits = all.filter(p =>
-      `${p.name} ${p.description} ${p.category}`.toLowerCase().includes(q));
-
-    renderProjects(hits, { showCategory: true, query: q });
-    if (countEl) countEl.textContent = `${hits.length} FOUND`;
+    renderProjects(scope, { showCategory: activeCat === "all", query: q || undefined });
+    if (countEl) countEl.textContent = q ? `${scope.length} FOUND` : "";
   }
 
-  input.addEventListener("input", runSearch);
-
-  // Deep links: search.html?q=term (also used by the JSON-LD
-  // SearchAction, and by old /?q=term links forwarded in main.js)
-  const q = new URLSearchParams(window.location.search).get("q");
-  if (q) {
-    input.value = q;
-    runSearch();
-    document.getElementById("search")?.scrollIntoView();
+  function syncUrl() {
+    const p = new URLSearchParams();
+    if (activeCat !== "all") p.set("cat", activeCat);
+    if (query.trim()) p.set("q", query.trim());
+    const qs = p.toString();
+    history.replaceState(null, "", qs ? `?${qs}` : window.location.pathname);
   }
-}
 
-/* ---- Category page ------------------------------------------ */
-async function initCategoryPage(category) {
-  try {
-    const items = await loadCategory(category);
-    renderProjects(items);
-  } catch (err) {
+  if (input) {
+    input.addEventListener("input", () => {
+      query = input.value;
+      render();
+      syncUrl();
+    });
+  }
+
+  loadAllProjects().then(items => {
+    all = items;
+    PROJECT_CATEGORIES.forEach(c => { countByCat[c.id] = 0; });
+    all.forEach(p => { countByCat[p.category] = (countByCat[p.category] || 0) + 1; });
+    buildTabs();
+    render();
+  }).catch(err => {
     console.error(err);
-    showLoadError(document.getElementById("project-list"), `data/projects/${category}.json`);
-  }
+    showLoadError(list, "data/projects/*.json");
+  });
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  const category = document.body.dataset.category;
-  if (category) initCategoryPage(category);
-  else initSearchPage();
-});
+document.addEventListener("DOMContentLoaded", initProjectsPage);
