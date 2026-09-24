@@ -14,8 +14,8 @@
   ],
 
   "stats": [
-    { "since": "2008-01-01", "label": "years of code" },
-    { "since": "2018-08-21", "label": "years in subsistence" }
+    { "since": "2008-01-01", "label": "days of code" },
+    { "since": "2018-08-21", "label": "days in subsistence" }
   ],
 
   "counters": [

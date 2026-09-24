@@ -166,7 +166,7 @@ function renderStats(stats) {
     let value = String(s.value == null ? "" : s.value);
     if (s.since) {
       const t = Date.parse(s.since);
-      if (!isNaN(t)) value = String(Math.floor((Date.now() - t) / 31557600000));
+      if (!isNaN(t)) value = String(Math.floor((Date.now() - t) / 86400000));
     }
     const m = /^(\d+)(.*)$/.exec(value);
     const href = homeHref(s.url);
