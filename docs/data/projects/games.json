@@ -1,0 +1,15 @@
+[
+  {
+    "name": "Shadows",
+    "image": "assets/img/overview/delayed.png",
+    "description": "Shadowed releases — games in development.",
+    "license": "Proprietary",
+    "documentation": "",
+    "website": "",
+    "github": "",
+    "video": "",
+    "contact": "",
+    "ai": false,
+    "docker": ""
+  }
+]

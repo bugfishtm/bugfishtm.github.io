@@ -1,0 +1,28 @@
+[
+  {
+    "name": "D'Agapeyeff Cipher",
+    "image": "assets/img/overview/calc.png",
+    "description": "My systematic attempts to decrypt the D'Agapeyeff cipher have involved extensive testing of various cryptographic hypotheses. Although these efforts have provided valuable insights into the cipher's structure, a validated solution has not yet been established.",
+    "license": "Private",
+    "documentation": "",
+    "website": "",
+    "github": "https://github.com/bugfishtm/cipher-agapeyeff",
+    "video": "",
+    "contact": "",
+    "ai": true,
+    "docker": ""
+  },
+  {
+    "name": "Dorabella Cipher",
+    "image": "assets/img/overview/calc.png",
+    "description": "My investigation into the Dorabella cipher has focused on analyzing its unique geometric and substitution characteristics through various cryptographic frameworks. While this research has advanced my understanding of its potential underlying patterns, a verified decryption has not yet been achieved.",
+    "license": "Private",
+    "documentation": "",
+    "website": "",
+    "github": "https://github.com/bugfishtm/cipher-dorabella",
+    "video": "",
+    "contact": "",
+    "ai": true,
+    "docker": ""
+  }
+]

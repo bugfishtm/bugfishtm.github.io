@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bugfish - Home</title>
+  <meta name="description" content="Bugfish - software developer since 2008. Code, music, digital art and more. Central hub for all projects and channels.">
+  <meta name="author" content="Bugfish">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#0a0b0d">
+  <link rel="canonical" href="https://bugfishtm.github.io/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Bugfish">
+  <meta property="og:locale" content="en_US"><meta name="google-site-verification" content="eBIokABU5URHaTeLCvHI57QUaNq-QDOLibTsp9B_R1Y" />
+  <meta property="og:title" content="Bugfish - Home">
+  <meta property="og:description" content="Bugfish - software developer since 2008. Code, music, digital art and more. Central hub for all projects and channels.">
+  <meta property="og:url" content="https://bugfishtm.github.io/">
+  <meta property="og:image" content="https://bugfishtm.github.io/meta.jpg">
+  <meta property="og:image:alt" content="Bugfish - software developer since 2008">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Bugfish - Home">
+  <meta name="twitter:description" content="Bugfish - software developer since 2008. Code, music, digital art and more. Central hub for all projects and channels.">
+  <meta name="twitter:image" content="https://bugfishtm.github.io/meta.jpg">
+  <link rel="icon" type="image/x-icon" href="./favicon.ico">
+  <!-- The channels moved to their own page — keep old index.html#explore links working.
+       The "js" class lets the page hide reveal-on-scroll content only when scripts run. -->
+  <script>
+    if (location.hash === "#explore") location.replace("channels.html");
+    document.documentElement.classList.add("js");
+  </script>
+  <link rel="preload" as="image" href="./assets/img/meta.jpg">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://bugfishtm.github.io/#website","name":"Bugfish","url":"https://bugfishtm.github.io/","potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://bugfishtm.github.io/projects.html?q={search_term_string}"},"query-input":"required name=search_term_string"}},{"@type":"Person","@id":"https://bugfishtm.github.io/#person","name":"Bugfish","alternateName":"bugfishtm","url":"https://bugfish.eu","image":"https://bugfishtm.github.io/logo.jpg","sameAs":["https://github.com/bugfishtm","https://bugfishtm.github.io/","https://youtube.com/bugfishtm","https://open.spotify.com/artist/22t8XUzb2rVqKywyCaS36k","https://bugfish.bandcamp.com","https://hub.docker.com/u/bugfishtm","https://deviantart.com/bxgfxsh"],"jobTitle":"Full-Stack Developer","knowsAbout":["PHP","JavaScript","C#","C++","Java","Python","DNS","Mail servers","Content management systems","Game development","Music production","Digital art"]},{"@type":"WebPage","url":"https://bugfishtm.github.io/","name":"Bugfish - Home","description":"Bugfish - software developer since 2008. Code, music, digital art and more. Central hub for all projects and channels.","isPartOf":{"@id":"https://bugfishtm.github.io/#website"},"author":{"@id":"https://bugfishtm.github.io/#person"}}]}
+  </script>
+</head>
+<body data-base="">
+
+  <header id="navbar">
+    <div class="nav-inner">
+      <a class="nav-brand" href="index.html">
+        <img src="./assets/img/logo.jpg" alt="Bugfish logo">
+        <span><span class="bracket">[</span>BUGFISH<span class="bracket">]</span></span>
+      </a>
+      <button id="nav-burger" aria-label="Toggle navigation" aria-controls="nav-menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav-menu" id="nav-menu" aria-label="Main navigation">
+        <div class="nav-item"><a class="nav-link active" href="index.html" aria-current="page">Home</a></div>
+        <div class="nav-item"><a class="nav-link" href="channels.html">Channels</a></div>
+        <div class="nav-item"><a class="nav-link" href="projects.html">Projects</a></div>
+        <div class="nav-item"><a class="nav-link" href="tools.html">Tools</a></div>
+        <div class="nav-item"><a class="nav-link" href="privacy.html">Privacy</a></div>
+        <div class="nav-item"><a class="nav-link" href="impressum.html">Impressum</a></div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="full-bleed hx">
+
+    <!-- HERO — key art (hero image is set in data/home.json → heroImage) -->
+    <section class="hx-hero" id="hero">
+      <div class="hx-hero-bg" id="hx-hero-bg" aria-hidden="true"></div>
+      <div class="hx-art" id="hx-art">
+        <canvas id="matrix-canvas" aria-hidden="true"></canvas>
+        <div class="hx-art-fx" aria-hidden="true"></div>
+      </div>
+
+      <div class="hx-wrap hx-hero-copy">
+        <div class="rv">
+          <h1 class="hx-title"><span class="sr-only">Bugfish — </span><span id="hx-headline">Code. Music.</span>
+            <span class="hx-accent" id="hx-accent" data-text="Digital Art.">Digital Art.</span></h1>
+          <p class="hx-lead" id="hero-desc"></p>
+          <p class="hx-status" id="hero-tagline"></p>
+        </div>
+
+        <aside class="hx-statbox rv" style="--d:2" aria-label="Bugfish in numbers">
+          <div class="hx-statbox-head"><span>// system.stats</span><b>● online</b></div>
+          <div class="hx-stats" id="hx-stats"></div>
+        </aside>
+      </div>
+    </section>
+
+    <div class="hx-wrap">
+
+      <section class="hx-sec" id="featured" aria-labelledby="featured-h" style="padding-top: 0px; margin-top: 25px;">
+        <div class="hx-banners" id="hx-banners"><div class="news-empty">// loading featured projects...</div></div>
+      </section>
+
+    </div>
+
+  </main>
+
+  <footer id="footer">
+    <div class="footer-inner">
+      <span id="footer-year"></span>
+    </div>
+  </footer>
+
+  <script src="./assets/js/main.js"></script>
+  <script src="./assets/js/home.js"></script>
+  <script src="./assets/js/news.js"></script>
+</body>
+</html>
