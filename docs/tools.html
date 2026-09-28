@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bugfish - Tools</title>
+  <meta name="description" content="50 free browser tools for developers and admins - bcrypt / PHP password_hash, hashes, JWT, DNS and mail checks, JSON, regex, encoders, CSS generators, QR codes and games. Everything runs locally in your browser.">
+  <meta name="author" content="Bugfish">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#0a0b0d">
+  <link rel="canonical" href="https://bugfishtm.github.io/tools.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Bugfish">
+  <meta property="og:locale" content="en_US"><meta name="google-site-verification" content="eBIokABU5URHaTeLCvHI57QUaNq-QDOLibTsp9B_R1Y" />
+  <meta property="og:title" content="Bugfish - Tools">
+  <meta property="og:description" content="50 free browser tools for developers and admins. Everything runs locally in your browser.">
+  <meta property="og:url" content="https://bugfishtm.github.io/tools.html">
+  <meta property="og:image" content="https://bugfishtm.github.io/meta.jpg">
+  <meta property="og:image:alt" content="Bugfish - software developer since 2008">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Bugfish - Tools">
+  <meta name="twitter:description" content="50 free browser tools for developers and admins. Everything runs locally in your browser.">
+  <meta name="twitter:image" content="https://bugfishtm.github.io/meta.jpg">
+  <link rel="icon" type="image/x-icon" href="./favicon.ico">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://bugfishtm.github.io/#website","name":"Bugfish","url":"https://bugfishtm.github.io/","potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://bugfishtm.github.io/projects.html?q={search_term_string}"},"query-input":"required name=search_term_string"}},{"@type":"Person","@id":"https://bugfishtm.github.io/#person","name":"Bugfish","url":"https://bugfish.eu","sameAs":["https://github.com/bugfishtm","https://bugfishtm.github.io/"],"jobTitle":"Full-Stack Developer"},{"@type":"CollectionPage","url":"https://bugfishtm.github.io/tools.html","name":"Bugfish - Tools","description":"50 free browser tools for developers and admins. Everything runs locally in your browser.","isPartOf":{"@id":"https://bugfishtm.github.io/#website"},"author":{"@id":"https://bugfishtm.github.io/#person"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://bugfishtm.github.io/"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://bugfishtm.github.io/tools.html"}]}]}
+  </script>
+</head>
+<body data-base="">
+
+  <header id="navbar">
+    <div class="nav-inner">
+      <a class="nav-brand" href="index.html">
+        <img src="./assets/img/logo.jpg" alt="Bugfish logo">
+        <span><span class="bracket">[</span>BUGFISH<span class="bracket">]</span></span>
+      </a>
+      <button id="nav-burger" aria-label="Toggle navigation" aria-controls="nav-menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav-menu" id="nav-menu" aria-label="Main navigation">
+        <div class="nav-item"><a class="nav-link" href="index.html">Home</a></div>
+        <div class="nav-item"><a class="nav-link" href="channels.html">Channels</a></div>
+        <div class="nav-item"><a class="nav-link" href="projects.html">Projects</a></div>
+        <div class="nav-item"><a class="nav-link active" href="tools.html" aria-current="page">Tools</a></div>
+        <div class="nav-item"><a class="nav-link" href="privacy.html">Privacy</a></div>
+        <div class="nav-item"><a class="nav-link" href="impressum.html">Impressum</a></div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- INDEX: searchable, filterable list of every tool -->
+    <section id="tools-index">
+      <div class="page-header">
+        <h1 class="page-title">// tools<span class="accent">_</span></h1>
+        <p class="page-sub">Self-coded utilities for developers, admins and the curious. They run
+          locally in your browser — what you type is not uploaded anywhere. Only the two DNS tools
+          need the internet, and they ask for your consent first
+          (<a href="privacy.html#tools">privacy</a>). Search, pick a category or click any
+          <span class="tag" style="cursor:default">tag</span> to filter.</p>
+      </div>
+
+      <div class="tools-toolbar">
+        <div class="search-wrap">
+          <span class="search-icon">&#8981;</span>
+          <input type="search" id="tool-search" class="search-input" autocomplete="off"
+                 placeholder="Search tools... e.g. bcrypt, dns, json" aria-label="Search tools">
+          <span class="search-count" id="tool-count"></span>
+          <kbd class="search-kbd" title="Press / to search">/</kbd>
+        </div>
+        <span class="tools-stats" id="tools-stats"></span>
+      </div>
+
+      <div class="cat-tabs" id="tool-cats" role="tablist" aria-label="Tool categories"></div>
+      <div class="tag-cloud" id="tool-tags" aria-label="Filter by tag"></div>
+      <div class="tools-filter" id="tool-filter" hidden></div>
+      <div class="tools-recent" id="tool-recent" hidden></div>
+
+      <div class="tool-list" id="tool-list" role="list" aria-label="Tools">
+        <div class="tool-empty">// loading tools...</div>
+      </div>
+      <p class="tools-storage" id="tool-storage" hidden></p>
+      <noscript><p class="tool-empty">// the tools need JavaScript enabled — they run entirely in your browser.</p></noscript>
+    </section>
+
+    <!-- VIEW: one open tool (tools.html#tool-id) -->
+    <section id="tool-view" hidden>
+      <nav class="tool-crumbs" aria-label="Breadcrumb">
+        <a class="btn ghost small" href="tools.html" id="tool-back">&larr; All tools</a>
+        <span>tools / <span id="tool-crumb-cat"></span> / <b id="tool-crumb-id"></b></span>
+      </nav>
+      <header class="tool-head">
+        <span class="tool-icon" id="tool-view-icon"></span>
+        <div class="tool-head-body">
+          <h1 class="tool-title" id="tool-view-title"></h1>
+          <p class="tool-lead" id="tool-view-desc"></p>
+          <div class="tool-tags" id="tool-view-tags"></div>
+        </div>
+        <button class="tool-fav" id="tool-view-fav" aria-label="Add to favorites" title="Favorite">&#9734;</button>
+      </header>
+      <div class="tool-body" id="tool-body"></div>
+      <aside class="tool-related" id="tool-related" hidden>
+        <div class="section-header">
+          <h2 class="section-title">// related.tools<span class="blink">_</span></h2>
+          <div class="section-line"></div>
+        </div>
+        <div class="tool-related-grid" id="tool-related-grid"></div>
+      </aside>
+    </section>
+  </main>
+
+  <footer id="footer">
+    <div class="footer-inner">
+      <span id="footer-year"></span>
+    </div>
+  </footer>
+
+  <script src="./assets/js/main.js"></script>
+  <script src="./assets/js/tools.js"></script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+[
+  {
+    "name": "Bugfish Framework",
+    "image": "assets/img/software/bugfish.jpg",
+    "description": "A web framework prioritizing security, flexibility, and performance, streamlining development and scalability.",
+    "license": "LGPL-2.1",
+    "documentation": "https://bugfishtm.github.io/bugfish-framework",
+    "website": "",
+    "github": "https://github.com/bugfishtm/bugfish-framework",
+    "video": "",
+    "contact": "",
+    "ai": false,
+    "docker": ""
+  },
+  {
+    "name": "Dolibarr Module",
+    "image": "assets/img/software/dolibarr.jpg",
+    "description": "Integrates the Bugfish Framework into Dolibarr, offering advanced features for development and debugging.",
+    "license": "GPLv3",
+    "documentation": "https://bugfishtm.github.io/Bugfish-Dolibarr-Module",
+    "website": "",
+    "github": "https://github.com/bugfishtm/Bugfish-Dolibarr-Module",
+    "video": "",
+    "contact": "",
+    "ai": false,
+    "docker": ""
+  },
+  {
+    "name": "Repository Template",
+    "image": "assets/img/software/folder.png",
+    "description": "A reusable template for keeping a clean, recognizable structure across all your repositories.",
+    "license": "GPLv3",
+    "documentation": "",
+    "website": "",
+    "github": "https://github.com/bugfishtm/Repository-Template",
+    "video": "",
+    "contact": "",
+    "ai": false,
+    "docker": ""
+  }
+]

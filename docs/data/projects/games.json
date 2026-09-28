@@ -1,0 +1,54 @@
+[
+  {
+    "name": "Autoclave",
+    "image": "assets/img/ac.png",
+    "description": "Escape is the only objective in this atmospheric, isometric 3D horror game. Rotate your camera view to uncover hidden passages, manipulate heavy machinery, and find the exit of a locked underground facility.",
+    "license": "Public",
+    "documentation": "",
+    "website": "https://bugfishtm.github.io/bugfish-game",
+    "github": "",
+    "video": "",
+    "contact": "",
+    "ai": true,
+    "docker": ""
+  },
+  {
+    "name": "Galactic Intervention",
+    "image": "assets/img/gi.png",
+    "description": "Forge your empire among the stars in Galactic Intervention, the ultimate massively multiplayer space strategy browser game. Command a fleet of massive warships, align with powerful galactic factions, and engage in tactical space battles with thousands of players simultaneously.",
+    "license": "Public",
+    "documentation": "",
+    "website": "https://bugfish.eu/_execute",
+    "github": "",
+    "video": "",
+    "contact": "",
+    "ai": false,
+    "docker": ""
+  },
+  {
+    "name": "Terminal Snake",
+    "image": "assets/img/snake.png",
+    "description": "Classic snake in terminal style — keyboard, swipe or on-screen pad. Speeds up as you grow; your high score stays in your browser.",
+    "license": "Public",
+    "documentation": "",
+    "website": "https://bugfishtm.github.io/tools.html?cat=fun#snake",
+    "github": "",
+    "video": "",
+    "contact": "",
+    "ai": true,
+    "docker": ""
+  },
+  {
+    "name": "Breach Protocol",
+    "image": "assets/img/breach.png",
+    "description": "Hacking puzzle: pick codes along rows and columns to upload daemon sequences before your buffer runs out.",
+    "license": "Public",
+    "documentation": "",
+    "website": "https://bugfishtm.github.io/tools.html?cat=fun#breach",
+    "github": "",
+    "video": "",
+    "contact": "",
+    "ai": true,
+    "docker": ""
+  }
+]
