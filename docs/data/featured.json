@@ -10,16 +10,6 @@
     "cta": ""
   },
   {
-    "name": "Galactic Intervention",
-    "tag": "games",
-    "image": "",
-    "icon": "assets/img/gi.png",
-    "accent": "#E4F4FA",
-    "description": "Forge your empire among the stars in Galactic Intervention, the ultimate massively multiplayer space strategy browser game. Command a fleet of massive warships, align with powerful galactic factions, and engage in tactical space battles with thousands of players simultaneously.",
-    "url": "https://bugfish.eu/_execute",
-    "cta": "Join The War"
-  },
-  {
     "name": "Suitefish CMS",
     "tag": "websoftware",
     "image": "",
@@ -30,14 +20,14 @@
     "cta": "Explore Suitefish"
   },
   {
-    "name": "Autoclave",
+    "name": "Browser Chess",
     "tag": "games",
     "image": "",
-    "icon": "assets/img/ac.png",
-    "accent": "#F96360",
-    "description": "Escape is the only objective in this atmospheric, isometric 3D horror game. Rotate your camera view to uncover hidden passages, manipulate heavy machinery, and find the exit of a locked underground facility.",
-    "url": "https://bugfishtm.github.io/bugfish-game",
-    "cta": "Try To Escape"
+    "icon": "assets/img/ch.png",
+    "accent": "#29292B",
+    "description": "Play professional online chess instantly. Challenge the powerful Stockfish engine as a guest with no login required, or log in to face players worldwide in multiplayer matchmaking, climb the ranks, and track your stats.",
+    "url": "https://chess.bugfish.eu",
+    "cta": "Join a Game"
   },
   {
     "name": "Bind9 Web Manager",

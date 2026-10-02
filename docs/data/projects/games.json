@@ -1,28 +1,15 @@
 [
   {
-    "name": "Autoclave",
-    "image": "assets/img/ac.png",
-    "description": "Escape is the only objective in this atmospheric, isometric 3D horror game. Rotate your camera view to uncover hidden passages, manipulate heavy machinery, and find the exit of a locked underground facility.",
+    "name": "Browser Chess",
+    "image": "assets/img/ch.png",
+    "description": "Play professional online chess instantly. Challenge the powerful Stockfish engine as a guest with no login required, or log in to face players worldwide in multiplayer matchmaking, climb the ranks, and track your stats.",
     "license": "Public",
     "documentation": "",
-    "website": "https://bugfishtm.github.io/bugfish-game",
+    "website": "https://chess.bugfish.eu",
     "github": "",
     "video": "",
     "contact": "",
     "ai": true,
-    "docker": ""
-  },
-  {
-    "name": "Galactic Intervention",
-    "image": "assets/img/gi.png",
-    "description": "Forge your empire among the stars in Galactic Intervention, the ultimate massively multiplayer space strategy browser game. Command a fleet of massive warships, align with powerful galactic factions, and engage in tactical space battles with thousands of players simultaneously.",
-    "license": "Public",
-    "documentation": "",
-    "website": "https://bugfish.eu/_execute",
-    "github": "",
-    "video": "",
-    "contact": "",
-    "ai": false,
     "docker": ""
   },
   {
