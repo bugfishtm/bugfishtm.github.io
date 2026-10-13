@@ -20,16 +20,6 @@
     "cta": "Explore Suitefish"
   },
   {
-    "name": "Browser Chess",
-    "tag": "games",
-    "image": "",
-    "icon": "assets/img/ch.png",
-    "accent": "#29292B",
-    "description": "Play professional online chess instantly. Challenge the powerful Stockfish engine as a guest with no login required, or log in to face players worldwide in multiplayer matchmaking, climb the ranks, and track your stats.",
-    "url": "https://chess.bugfish.eu",
-    "cta": "Join a Game"
-  },
-  {
     "name": "Bind9 Web Manager",
     "tag": "websoftware",
     "image": "",
@@ -38,6 +28,16 @@
     "description": "Because editing DNS configs by hand at 3 a.m. is a character-building experience nobody actually wants. This tool wraps Bind9 in a UI that makes complex setups manageable, replication less painful, and user management something you won’t dread explaining to others.",
     "url": "https://bugfishtm.github.io/Bind9-Web-Manager",
     "cta": "View Documentation"
+  },
+  {
+    "name": "Browser Chess",
+    "tag": "games",
+    "image": "",
+    "icon": "assets/img/ch.png",
+    "accent": "#FFFFFF",
+    "description": "Play professional online chess instantly. Challenge the powerful Stockfish engine as a guest with no login required, or log in to face players worldwide in multiplayer matchmaking, climb the ranks, and track your stats.",
+    "url": "https://chess.bugfish.eu",
+    "cta": "Join a Game"
   },
   {
     "name": "Nuke Everything",
