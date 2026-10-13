@@ -20,16 +20,6 @@
     "cta": "Explore Suitefish"
   },
   {
-    "name": "Gaming",
-    "tag": "games",
-    "image": "",
-    "icon": "assets/img/gdb.png",
-    "accent": "#C60B16",
-    "description": "Unlock instant gaming directly in your browser. Our extensive digital catalog bridges the gap between solitary adventures and community-driven action.",
-    "url": "https://gaming.bugfish.eu",
-    "cta": "Explore Database"
-  },
-  {
     "name": "Bind9 Web Manager",
     "tag": "websoftware",
     "image": "",
@@ -38,6 +28,16 @@
     "description": "Because editing DNS configs by hand at 3 a.m. is a character-building experience nobody actually wants. This tool wraps Bind9 in a UI that makes complex setups manageable, replication less painful, and user management something you won’t dread explaining to others.",
     "url": "https://bugfishtm.github.io/Bind9-Web-Manager",
     "cta": "View Documentation"
+  },
+  {
+    "name": "Gaming",
+    "tag": "games",
+    "image": "",
+    "icon": "assets/img/gdb.png",
+    "accent": "#C60B16",
+    "description": "Unlock instant gaming directly in your browser. Our extensive digital catalog bridges the gap between solitary adventures and community-driven action.",
+    "url": "https://gaming.bugfish.eu",
+    "cta": "Explore Database"
   },
   {
     "name": "Browser Chess",
