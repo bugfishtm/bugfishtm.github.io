@@ -1,5 +1,18 @@
 [
   {
+    "name": "Gaming Database",
+    "image": "assets/img/gdb.png",
+    "description": "Unlock instant gaming directly in your browser. Our extensive digital catalog bridges the gap between solitary adventures and community-driven action.",
+    "license": "Public",
+    "documentation": "",
+    "website": "https://gaming.bugfish.eu",
+    "github": "",
+    "video": "",
+    "contact": "",
+    "ai": true,
+    "docker": ""
+  },
+  {
     "name": "Browser Chess",
     "image": "assets/img/ch.png",
     "description": "Play professional online chess instantly. Challenge the powerful Stockfish engine as a guest with no login required, or log in to face players worldwide in multiplayer matchmaking, climb the ranks, and track your stats.",
