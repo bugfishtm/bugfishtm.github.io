@@ -20,6 +20,16 @@
     "cta": "Explore Suitefish"
   },
   {
+    "name": "Gaming",
+    "tag": "games",
+    "image": "",
+    "icon": "assets/img/gdb.png",
+    "accent": "#C60B16",
+    "description": "Play professional online chess instantly. Challenge the powerful Stockfish engine as a guest with no login required, or log in to face players worldwide in multiplayer matchmaking, climb the ranks, and track your stats.",
+    "url": "https://gaming.bugfish.eu",
+    "cta": "Join a Game"
+  },
+  {
     "name": "Bind9 Web Manager",
     "tag": "websoftware",
     "image": "",

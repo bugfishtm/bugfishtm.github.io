@@ -1,11 +1,5 @@
 [
   {
-    "name": "Bugfish",
-    "image": "assets/img/overview/bugfish.jpg",
-    "url": "https://bugfish.eu",
-    "description": "My personal website and workspace."
-  },
-  {
     "name": "Suitefish",
     "image": "assets/img/overview/suitefish.png",
     "url": "https://suitefish.com",
