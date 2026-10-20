@@ -1,0 +1,54 @@
+[
+  {
+    "name": "Gaming Database",
+    "image": "assets/img/gdb.png",
+    "description": "Unlock instant gaming directly in your browser. Our extensive digital catalog bridges the gap between solitary adventures and community-driven action.",
+    "license": "Public",
+    "documentation": "",
+    "website": "https://gaming.bugfish.eu",
+    "github": "",
+    "video": "",
+    "contact": "",
+    "ai": true,
+    "docker": ""
+  },
+  {
+    "name": "Browser Chess",
+    "image": "assets/img/ch.png",
+    "description": "Play professional online chess instantly. Challenge the powerful Stockfish engine as a guest with no login required, or log in to face players worldwide in multiplayer matchmaking, climb the ranks, and track your stats.",
+    "license": "Public",
+    "documentation": "",
+    "website": "https://chess.bugfish.eu",
+    "github": "",
+    "video": "",
+    "contact": "",
+    "ai": true,
+    "docker": ""
+  },
+  {
+    "name": "Terminal Snake",
+    "image": "assets/img/snake.png",
+    "description": "Classic snake in terminal style — keyboard, swipe or on-screen pad. Speeds up as you grow; your high score stays in your browser.",
+    "license": "Public",
+    "documentation": "",
+    "website": "https://bugfishtm.github.io/tools.html?cat=fun#snake",
+    "github": "",
+    "video": "",
+    "contact": "",
+    "ai": true,
+    "docker": ""
+  },
+  {
+    "name": "Breach Protocol",
+    "image": "assets/img/breach.png",
+    "description": "Hacking puzzle: pick codes along rows and columns to upload daemon sequences before your buffer runs out.",
+    "license": "Public",
+    "documentation": "",
+    "website": "https://bugfishtm.github.io/tools.html?cat=fun#breach",
+    "github": "",
+    "video": "",
+    "contact": "",
+    "ai": true,
+    "docker": ""
+  }
+]

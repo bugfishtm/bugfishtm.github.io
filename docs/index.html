@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bugfish - Home</title>
+  <meta name="description" content="Bugfish - software developer since 2008. Code, music, digital art and more. Central hub for all projects and channels.">
+  <meta name="author" content="Bugfish">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#0a0b0d">
+  <link rel="canonical" href="https://bugfishtm.github.io/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Bugfish">
+  <meta property="og:locale" content="en_US"><meta name="google-site-verification" content="eBIokABU5URHaTeLCvHI57QUaNq-QDOLibTsp9B_R1Y" />
+  <meta property="og:title" content="Bugfish - Home">
+  <meta property="og:description" content="Bugfish - software developer since 2008. Code, music, digital art and more. Central hub for all projects and channels.">
+  <meta property="og:url" content="https://bugfishtm.github.io/">
+  <meta property="og:image" content="https://bugfishtm.github.io/meta.jpg">
+  <meta property="og:image:alt" content="Bugfish - software developer since 2008">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Bugfish - Home">
+  <meta name="twitter:description" content="Bugfish - software developer since 2008. Code, music, digital art and more. Central hub for all projects and channels.">
+  <meta name="twitter:image" content="https://bugfishtm.github.io/meta.jpg">
+  <link rel="icon" type="image/x-icon" href="./favicon.ico">
+  <!-- The channels moved to their own page — keep old index.html#explore links working.
+       The "js" class lets the page hide reveal-on-scroll content only when scripts run. -->
+  <script>
+    if (location.hash === "#explore") location.replace("channels.html");
+    document.documentElement.classList.add("js");
+  </script>
+  <link rel="preload" as="image" href="./assets/img/head.jpg">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://bugfishtm.github.io/#website","name":"Bugfish","url":"https://bugfishtm.github.io/","potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://bugfishtm.github.io/projects.html?q={search_term_string}"},"query-input":"required name=search_term_string"}},{"@type":"Person","@id":"https://bugfishtm.github.io/#person","name":"Bugfish","alternateName":"bugfishtm","url":"https://bugfish.eu","image":"https://bugfishtm.github.io/logo.jpg","sameAs":["https://github.com/bugfishtm","https://bugfishtm.github.io/","https://youtube.com/bugfishtm","https://open.spotify.com/artist/22t8XUzb2rVqKywyCaS36k","https://bugfish.bandcamp.com","https://hub.docker.com/u/bugfishtm","https://deviantart.com/bxgfxsh"],"jobTitle":"Full-Stack Developer","knowsAbout":["PHP","JavaScript","C#","C++","Java","Python","DNS","Mail servers","Content management systems","Game development","Music production","Digital art"]},{"@type":"WebPage","url":"https://bugfishtm.github.io/","name":"Bugfish - Home","description":"Bugfish - software developer since 2008. Code, music, digital art and more. Central hub for all projects and channels.","isPartOf":{"@id":"https://bugfishtm.github.io/#website"},"author":{"@id":"https://bugfishtm.github.io/#person"}}]}
+  </script>
+</head>
+<body data-base="">
+
+  <header id="navbar">
+    <div class="nav-inner">
+      <a class="nav-brand" href="index.html">
+        <img src="./assets/img/logo.jpg" alt="Bugfish logo">
+        <span><span class="bracket">[</span>BUGFISH<span class="bracket">]</span></span>
+      </a>
+      <button id="nav-burger" aria-label="Toggle navigation" aria-controls="nav-menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav-menu" id="nav-menu" aria-label="Main navigation">
+        <div class="nav-item"><a class="nav-link active" href="index.html" aria-current="page">Home</a></div>
+        <div class="nav-item"><a class="nav-link" href="channels.html">Channels</a></div>
+        <div class="nav-item"><a class="nav-link" href="projects.html">Projects</a></div>
+        <div class="nav-item"><a class="nav-link" href="tools.html">Tools</a></div>
+        <div class="nav-item"><a class="nav-link" href="privacy.html">Privacy</a></div>
+        <div class="nav-item"><a class="nav-link" href="impressum.html">Impressum</a></div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="full-bleed hx">
+
+    <!-- HERO — key art (data/home.json → heroImage) blurred into the backdrop,
+         digital rain, a moving grid floor, the headline and the ops monitor -->
+    <section class="hx-hero" id="hero">
+      <div class="hx-hero-fx" aria-hidden="true">
+        <img class="hx-hero-img" id="hx-hero-img" src="./assets/img/head.jpg" alt="" fetchpriority="high" decoding="async">
+        <canvas id="matrix-canvas"></canvas>
+        <span class="hx-floor"></span>
+      </div>
+
+      <div class="hx-wrap hx-hero-grid">
+        <div class="hx-hero-copy rv">
+          <p class="hx-eyebrow"><span class="hx-pulse" aria-hidden="true"></span>bugfish<span class="hx-sep">//</span>since 2008<span class="hx-sep">//</span>signal online</p>
+          <h1 class="hx-title"><span class="sr-only">Bugfish — </span><span id="hx-headline">Code. Music.</span>
+            <span class="hx-accent" id="hx-accent" data-text="Digital Art.">Digital Art.</span></h1>
+          <p class="hx-lead" id="hero-desc"></p>
+          <p class="hx-status" id="hero-tagline"></p>
+          <div class="hx-ctas">
+            <a class="cy-btn" href="projects.html">Explore projects <span aria-hidden="true">→</span></a>
+            <a class="cy-btn ghost" href="tools.html">Browser tools</a>
+          </div>
+          <!-- Soundtrack (data/home.json → music). Nothing loads before play is pressed. -->
+          <div class="hx-sound" id="hx-sound" hidden>
+            <button class="hx-sound-play" type="button" data-sound-play aria-pressed="false" aria-label="Play the soundtrack"><span data-sound-ico aria-hidden="true">▶</span></button>
+            <span class="hx-sound-meta"><span>soundtrack</span><b data-sound-title aria-live="polite"></b></span>
+            <span class="hx-eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+            <button class="hx-sound-next" type="button" data-sound-next aria-label="Next track">⏭</button>
+          </div>
+        </div>
+
+        <!-- OPS MONITOR — every counter from data/home.json → counters, all
+             driven by one clock: countdowns ("until") and live day counters ("since") -->
+        <aside class="hx-ops rv" style="--d:2" aria-label="Live counters">
+          <div class="hx-ops-head"><span>// ops.monitor</span><span>sys <b id="hx-sys">--:--:--</b></span><b class="hx-ops-on">● online</b></div>
+          <div id="hx-ops-ops"></div>
+          <div class="hx-counters" id="hx-counters"></div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Skills ticker (data/home.json → aboutSkills) -->
+    <div class="hx-marquee" aria-hidden="true"><div class="hx-marquee-track" id="hx-marquee"></div></div>
+
+    <div class="hx-wrap">
+
+      <!-- FEATURED — data/featured.json -->
+      <section class="hx-sec" id="featured" aria-labelledby="featured-h">
+        <header class="hx-head">
+          <span class="hx-num" aria-hidden="true"></span>
+          <div>
+            <span class="hx-kicker">// featured.exe</span>
+            <h2 class="hx-h2" id="featured-h">Featured Projects</h2>
+          </div>
+          <a class="hx-more" href="projects.html">All projects <span aria-hidden="true">→</span></a>
+        </header>
+        <div class="hx-bento" id="hx-bento"><div class="news-empty">// loading featured projects...</div></div>
+      </section>
+
+      <!-- WHOAMI terminal (data/home.json → about*) + gateways into the site -->
+      <section class="hx-sec" id="about" aria-labelledby="about-h">
+        <header class="hx-head">
+          <span class="hx-num" aria-hidden="true"></span>
+          <div>
+            <span class="hx-kicker">// whoami</span>
+            <h2 class="hx-h2" id="about-h">Behind the Signal</h2>
+          </div>
+        </header>
+        <div class="hx-net">
+          <div class="hx-term rv" id="hx-term">
+            <div class="hx-term-bar" aria-hidden="true"><i></i><i></i><i></i><span>bugfish@net: ~</span></div>
+            <div class="hx-term-body" id="hx-term-body"></div>
+          </div>
+          <nav class="hx-gates rv" style="--d:1" aria-label="Explore the site">
+            <a class="hx-gate" href="projects.html" style="--acc:#ff6600">
+              <span class="hx-gate-n" aria-hidden="true">01</span>
+              <span class="hx-gate-body">
+                <span class="hx-gate-k">/projects</span>
+                <b>Projects</b>
+                <span class="hx-gate-d" id="hx-gate-projects">Software, games, web apps and plugins — all in one place.</span>
+              </span>
+              <span class="hx-gate-go" aria-hidden="true">→</span>
+            </a>
+            <a class="hx-gate" href="tools.html" style="--acc:#35c9f0">
+              <span class="hx-gate-n" aria-hidden="true">02</span>
+              <span class="hx-gate-body">
+                <span class="hx-gate-k">/tools</span>
+                <b>Tools</b>
+                <span class="hx-gate-d">Self-coded browser tools for devs and admins. They run 100% local.</span>
+              </span>
+              <span class="hx-gate-go" aria-hidden="true">→</span>
+            </a>
+            <a class="hx-gate" href="channels.html" style="--acc:#ff2a6d">
+              <span class="hx-gate-n" aria-hidden="true">03</span>
+              <span class="hx-gate-body">
+                <span class="hx-gate-k">/channels</span>
+                <b>Channels</b>
+                <span class="hx-gate-d" id="hx-gate-channels">Code, video, music, art and community — every place to find me.</span>
+              </span>
+              <span class="hx-gate-go" aria-hidden="true">→</span>
+            </a>
+          </nav>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- OUTRO — the key art in full + channel dock (data/explore.json) -->
+    <section class="hx-outro" aria-labelledby="outro-h">
+      <div class="hx-outro-art" aria-hidden="true"><img id="hx-outro-img" src="./assets/img/head.jpg" alt="" loading="lazy" decoding="async"></div>
+      <div class="hx-wrap hx-outro-body">
+        <span class="hx-kicker">// signal.out</span>
+        <h2 class="hx-outro-title" id="outro-h">Find me <em>across the net</em></h2>
+        <div class="hx-dock" id="hx-dock"></div>
+        <a class="cy-btn ghost small" href="channels.html">All channels <span aria-hidden="true">→</span></a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="footer">
+    <div class="footer-inner">
+      <span id="footer-year"></span>
+    </div>
+  </footer>
+
+  <script src="./assets/js/main.js"></script>
+  <script src="./assets/js/projects.js"></script>
+  <script src="./assets/js/home.js"></script>
+</body>
+</html>

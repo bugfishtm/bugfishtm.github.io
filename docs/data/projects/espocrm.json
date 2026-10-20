@@ -1,0 +1,41 @@
+[
+  {
+    "name": "EspoCRM Finances",
+    "image": "assets/img/overview/ext1.png",
+    "description": "EspoCRM Finance is a personal finance manager packaged as an EspoCRM extension. It adds two record types — Payments and Debts — plus a Finance dashboard that projects your cash flow, breaks spending down by category, tracks debt repayment progress, and lists what is due in the next 30 days.",
+    "license": "GPLv3",
+    "documentation": "",
+    "website": "",
+    "github": "https://github.com/bugfishtm/espocrm-finances",
+    "video": "",
+    "contact": "",
+    "ai": true,
+    "docker": ""
+  },
+  {
+    "name": "EspoCRM API Lab",
+    "image": "assets/img/overview/ext1.png",
+    "description": "API Lab is a full API testing workbench built as an EspoCRM extension. It is a complete HTTP, GraphQL, SOAP, WebSocket and Server-Sent Events client that lives inside the CRM — build a request, sign it with any of twelve auth schemes, send it either from your browser or from the CRM server.",
+    "license": "GPLv3",
+    "documentation": "",
+    "website": "",
+    "github": "https://github.com/bugfishtm/espocrm-apilab",
+    "video": "",
+    "contact": "",
+    "ai": true,
+    "docker": ""
+  },
+  {
+    "name": "EspoCRM Login Links",
+    "image": "assets/img/overview/ext1.png",
+    "description": "EspoCRM Login Links is a small extension that adds an imprint (Impressum) and a privacy policy link to the EspoCRM login screen. Both URLs are configured from the Administration area — no template editing, no theme patching, and no core files touched.",
+    "license": "GPLv3",
+    "documentation": "",
+    "website": "",
+    "github": "https://github.com/bugfishtm/espocrm-login-links",
+    "video": "",
+    "contact": "",
+    "ai": true,
+    "docker": ""
+  }
+]

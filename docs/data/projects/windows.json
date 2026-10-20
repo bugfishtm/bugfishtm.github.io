@@ -1,0 +1,54 @@
+[
+  {
+    "name": "Proxmox VMA2RAW",
+    "image": "assets/img/software/proxmox.png",
+    "description": "Docker image to convert Proxmox VMA backup files to raw disk images mountable on Windows and Linux.",
+    "license": "MIT",
+    "documentation": "https://bugfishtm.github.io/proxmox-vma2raw",
+    "website": "",
+    "github": "https://github.com/bugfishtm/proxmox-vma2raw",
+    "video": "https://www.youtube.com/playlist?list=PL6npOHuBGrpBXBihxDfefq2O6X-1TpMWP",
+    "contact": "",
+    "ai": false,
+    "docker": "https://hub.docker.com/r/bugfishtm/proxmox-vma2raw/"
+  },
+  {
+    "name": "Hash Cracker",
+    "image": "assets/img/software/hashcracker.png",
+    "description": "A fast and flexible Windows tool for encoding and brute-forcing password hashes across multiple algorithms.",
+    "license": "GPLv3",
+    "documentation": "https://bugfishtm.github.io/windows-hash-cracker",
+    "website": "",
+    "github": "https://github.com/bugfishtm/windows-hash-cracker",
+    "video": "https://www.youtube.com/playlist?list=PL6npOHuBGrpDlS6CCHIUDz5O9mOnH7-7E",
+    "contact": "",
+    "ai": false,
+    "docker": ""
+  },
+  {
+    "name": "Bugfish Nuke",
+    "image": "assets/img/software/nuke.png",
+    "description": "Emergency data deletion tool for Windows to quickly and securely erase sensitive files and system traces.",
+    "license": "GPLv3",
+    "documentation": "https://bugfishtm.github.io/bugfish-nuke",
+    "website": "",
+    "github": "https://github.com/bugfishtm/bugfish-nuke",
+    "video": "https://www.youtube.com/playlist?list=PL6npOHuBGrpBMogf3Fy78H9JaiwaRWyd7",
+    "contact": "",
+    "ai": false,
+    "docker": ""
+  },
+  {
+    "name": "Image Downloader",
+    "image": "assets/img/software/imgdl.png",
+    "description": "Input a URL and retrieve all images found on that website automatically.",
+    "license": "GPLv3",
+    "documentation": "https://bugfishtm.github.io/bugfish-image-downloader",
+    "website": "",
+    "github": "https://github.com/bugfishtm/bugfish-image-downloader",
+    "video": "",
+    "contact": "",
+    "ai": false,
+    "docker": ""
+  }
+]
