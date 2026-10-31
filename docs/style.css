@@ -1,0 +1,358 @@
+/* ============================================================
+   BUGFISH — forwarder + legal pages — style.css
+   Dark graphite + orange. System fonts only; nothing is loaded
+   from other servers.
+   ============================================================ */
+
+:root {
+  color-scheme: dark;
+
+  --bg:           #0a0b0d;   /* page background   */
+  --bg2:          #101115;   /* surface / cards   */
+  --border:       #23252c;   /* default border    */
+  --border2:      #33353f;   /* strong border     */
+
+  --orange:       #ff6600;
+  --orange-soft:  #ff8533;
+  --orange-dim:   #b34700;
+  --orange-glow:  rgba(255, 102, 0, 0.35);
+
+  --text:         #b9bac0;
+  --text-mid:     #94969e;
+  --text-dim:     #6b6d76;
+  --text-bright:  #e8e9ea;
+
+  --display: "Bahnschrift", "Avenir Next Condensed", "Roboto Condensed", "Arial Narrow", "Segoe UI", system-ui, sans-serif;
+  --font:    "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+  --mono:    "Cascadia Code", ui-monospace, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+
+  --glow-at: 50% 42%;        /* where the backdrop glow sits */
+}
+
+/* ---- Base ---- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+  color: var(--text);
+  font: 15px/1.7 var(--font);
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+/* Backdrop: an orange glow over a faint grid that fades out to the edges */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(55% 45% at var(--glow-at), rgba(255, 102, 0, 0.15), transparent 70%),
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px) 0 0 / 44px 44px,
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px) 0 0 / 44px 44px;
+  -webkit-mask-image: radial-gradient(80% 75% at var(--glow-at), #000 30%, transparent 100%);
+          mask-image: radial-gradient(80% 75% at var(--glow-at), #000 30%, transparent 100%);
+}
+
+a { color: var(--orange-soft); text-decoration: none; transition: color 0.2s, border-color 0.2s; }
+a:hover { color: var(--orange); }
+:focus-visible { outline: 2px solid var(--orange); outline-offset: 4px; border-radius: 2px; }
+::selection { background: var(--orange); color: var(--bg); }
+
+.wrap { width: min(100% - 32px, 1120px); margin-inline: auto; }
+
+/* ---- Top bar ---- */
+.top { padding: 24px 0; }
+.brand {
+  font: 600 13px/1 var(--mono);
+  letter-spacing: 0.3em;
+  color: var(--text-bright);
+}
+.brand b { font-weight: inherit; color: var(--orange); }
+
+.kicker {
+  font: 500 11px/1.4 var(--mono);
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--orange);
+}
+
+/* ---- Footer: the only navigation ---- */
+.foot { border-top: 1px solid var(--border); background: rgba(10, 11, 13, 0.7); }
+.foot-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 32px;
+  padding: 18px 0;
+  font: 11px/1.4 var(--mono);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+.foot-nav { display: flex; flex-wrap: wrap; gap: 8px 28px; }
+.foot-nav a { position: relative; padding: 4px 0; color: var(--text-mid); }
+.foot-nav a:hover { color: var(--orange); }
+.foot-nav a[aria-current="page"] { color: var(--orange); }
+.foot-nav a[aria-current="page"]::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -13px;
+  width: 5px;
+  height: 5px;
+  margin-top: -3px;
+  border-radius: 50%;
+  background: var(--orange);
+  box-shadow: 0 0 8px var(--orange);
+}
+
+/* ============================================================
+   FORWARDER — index.html
+   ============================================================ */
+
+/* Faint scanlines over the backdrop */
+.relay::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: repeating-linear-gradient(to bottom, rgba(0, 0, 0, 0.28) 0 1px, transparent 1px 3px);
+}
+
+.relay-main {
+  flex: 1;
+  display: grid;
+  place-items: center;
+  padding: 16px 16px 56px;
+}
+
+/* HUD frame: four corner brackets drawn with gradients */
+.hud {
+  --c: rgba(255, 102, 0, 0.6);
+  --l: 22px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: min(100%, 640px);
+  padding: 64px 24px 60px;
+  text-align: center;
+  background:
+    linear-gradient(var(--c), var(--c)) left top / var(--l) 1px,
+    linear-gradient(var(--c), var(--c)) left top / 1px var(--l),
+    linear-gradient(var(--c), var(--c)) right top / var(--l) 1px,
+    linear-gradient(var(--c), var(--c)) right top / 1px var(--l),
+    linear-gradient(var(--c), var(--c)) left bottom / var(--l) 1px,
+    linear-gradient(var(--c), var(--c)) left bottom / 1px var(--l),
+    linear-gradient(var(--c), var(--c)) right bottom / var(--l) 1px,
+    linear-gradient(var(--c), var(--c)) right bottom / 1px var(--l);
+  background-repeat: no-repeat;
+  animation: rise 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.hud-label {
+  position: absolute;
+  font: 10px/1 var(--mono);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  white-space: nowrap;
+}
+.hud-tl { top: 20px; left: 34px; color: var(--orange); }
+.hud-tr { top: 20px; right: 34px; }
+.hud-bl { bottom: 20px; left: 34px; }
+.hud-br { bottom: 20px; right: 34px; }
+
+.pulse {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin-right: 8px;
+  vertical-align: 1px;
+  border-radius: 50%;
+  background: var(--orange);
+  animation: pulse 1.6s ease-out infinite;
+}
+
+/* Countdown dial: ticking bezel, track and the draining arc */
+.dial {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: clamp(176px, 50vw, 232px);
+  aspect-ratio: 1;
+  margin-bottom: 36px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 102, 0, 0.13), transparent 62%);
+}
+.dial svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.dial-bezel { transform-box: fill-box; transform-origin: center; animation: spin 40s linear infinite; }
+.dial-ticks { fill: none; stroke: var(--border2); stroke-width: 4; }
+.dial-ticks-major { fill: none; stroke: var(--orange-dim); stroke-width: 6; }
+.dial-track { fill: none; stroke: var(--border); stroke-width: 2; }
+.dial-arc {
+  fill: none;
+  stroke: var(--orange);
+  stroke-width: 3;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.1s linear;   /* matches the 100 ms countdown step */
+}
+
+.dial-core { position: relative; display: flex; flex-direction: column; align-items: center; gap: 4px; }
+.dial-num {
+  font: 600 clamp(64px, 19vw, 92px)/0.9 var(--display);
+  color: var(--text-bright);
+  text-shadow: 0 0 28px var(--orange-glow);
+}
+.dial-num.tick { animation: tick 0.45s cubic-bezier(0.2, 0.8, 0.2, 1); }
+.dial-unit {
+  font: 10px/1 var(--mono);
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+.relay-title { font: inherit; }
+.relay-err {                                    /* 404.html only */
+  display: block;
+  margin-bottom: 10px;
+  font: 600 12px/1.4 var(--mono);
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--orange);
+}
+.relay-pre {
+  display: block;
+  margin-bottom: 12px;
+  font: 500 12px/1 var(--mono);
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--text-mid);
+}
+.relay-target {
+  display: inline-flex;
+  align-items: baseline;
+  font: 600 clamp(46px, 13vw, 88px)/1 var(--display);
+  letter-spacing: 0.005em;
+  color: var(--text-bright);
+  transition: color 0.2s, text-shadow 0.2s;
+}
+.relay-target .tld { color: var(--orange); }
+.relay-target .arrow {
+  margin-left: 0.18em;
+  font-size: 0.48em;
+  color: var(--orange);
+  transition: transform 0.25s;
+}
+.relay-target:hover { color: #fff; text-shadow: 0 0 32px var(--orange-glow); }
+.relay-target:hover .arrow { transform: translateX(6px); }
+
+/* ============================================================
+   LEGAL PAGES — impressum.html, privacy.html
+   ============================================================ */
+.doc { --glow-at: 50% 0%; }
+.doc .wrap { width: min(100% - 32px, 820px); }
+
+.doc-main { flex: 1; padding: 28px 0 80px; }
+.doc-head { margin-bottom: 34px; }
+.doc-title {
+  margin-top: 14px;
+  font: 600 clamp(42px, 9vw, 72px)/1 var(--display);
+  letter-spacing: 0.005em;
+  color: var(--text-bright);
+  text-wrap: balance;
+}
+.cursor { color: var(--orange); animation: blink 1.1s steps(1) infinite; }
+.doc-sub { margin-top: 16px; max-width: 62ch; color: var(--text-mid); }
+
+.prose {
+  padding: clamp(24px, 5vw, 44px);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: rgba(16, 17, 21, 0.92);
+  box-shadow: 0 30px 80px -40px rgba(0, 0, 0, 0.8);
+  overflow-wrap: break-word;
+}
+.prose h2 {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 40px 0 14px;
+  font: 600 12px/1.5 var(--mono);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--orange);
+}
+.prose h2::after {
+  content: "";
+  flex: 1 0 24px;
+  height: 1px;
+  background: linear-gradient(90deg, var(--border2), transparent);
+}
+.prose h2:first-child { margin-top: 0; }
+.prose h3 { margin: 26px 0 8px; font-size: 15px; color: var(--text-bright); }
+.prose p, .prose li { color: var(--text-mid); }
+.prose p { margin-bottom: 12px; text-wrap: pretty; }
+.prose ul { margin: 0 0 14px; padding-left: 20px; }
+.prose li { margin-bottom: 4px; }
+.prose li::marker { color: var(--orange); }
+.prose strong { font-weight: 600; color: var(--text-bright); }
+.prose address {
+  margin-bottom: 14px;
+  padding: 2px 0 2px 16px;
+  border-left: 2px solid var(--orange);
+  font-style: normal;
+  line-height: 1.85;
+  color: var(--text-bright);
+}
+.prose a { border-bottom: 1px solid rgba(255, 133, 51, 0.35); }
+.prose a:hover { border-bottom-color: var(--orange); }
+.prose .updated {
+  margin: 34px 0 0;
+  font: 11px/1 var(--mono);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+/* ---- Motion ---- */
+@keyframes rise  { from { opacity: 0; transform: translateY(10px); } }
+@keyframes spin  { to { transform: rotate(360deg); } }
+@keyframes tick  { from { opacity: 0.3; transform: scale(1.2); } }
+@keyframes blink { 50% { opacity: 0; } }
+@keyframes pulse {
+  from { box-shadow: 0 0 0 0 rgba(255, 102, 0, 0.6); }
+  to   { box-shadow: 0 0 0 8px rgba(255, 102, 0, 0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+
+/* ---- Small screens ---- */
+@media (max-width: 560px) {
+  .hud { --l: 16px; padding: 52px 12px 40px; }
+  .hud-tl, .hud-tr { top: 16px; }
+  .hud-tl { left: 26px; }
+  .hud-tr { right: 26px; }
+  .hud-bl, .hud-br { display: none; }
+  .foot-inner { flex-direction: column-reverse; text-align: center; }
+}
+
+/* ---- Print (legal pages) ---- */
+@media print {
+  body { background: #fff; color: #000; }
+  body::before, .relay::after, .top, .foot, .cursor { display: none; }
+  .prose { padding: 0; border: 0; background: none; box-shadow: none; }
+  .kicker, .doc-title, .doc-sub, .prose h2, .prose p, .prose li,
+  .prose address, .prose strong, .prose a { color: #000; }
+}

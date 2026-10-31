@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bugfish - Forwarding to bugfish.eu</title>
+  <meta name="description" content="Bugfish - software developer since 2008. This page forwards you to bugfish.eu.">
+  <meta name="author" content="Bugfish">
+  <meta name="theme-color" content="#0a0b0d">
+  <meta name="google-site-verification" content="eBIokABU5URHaTeLCvHI57QUaNq-QDOLibTsp9B_R1Y">
+  <link rel="canonical" href="https://bugfish.eu/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Bugfish">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="Bugfish - Forwarding to bugfish.eu">
+  <meta property="og:description" content="Bugfish - software developer since 2008. This page forwards you to bugfish.eu.">
+  <meta property="og:url" content="https://bugfish.eu/">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="style.css">
+  <!-- Without JavaScript the browser forwards on its own after the same 5 seconds. -->
+  <noscript><meta http-equiv="refresh" content="5;url=https://bugfish.eu/"></noscript>
+</head>
+<body class="relay">
+
+  <header class="wrap top">
+    <span class="brand"><b>[</b>BUGFISH<b>]</b></span>
+  </header>
+
+  <main class="relay-main">
+    <div class="hud">
+      <span class="hud-label hud-tl" aria-hidden="true">// signal.relay</span>
+      <span class="hud-label hud-tr" aria-hidden="true"><i class="pulse"></i>link active</span>
+
+      <div class="dial" role="timer" aria-label="Seconds until forwarding">
+        <svg viewBox="0 0 120 120" aria-hidden="true">
+          <defs>
+            <filter id="glow" x="-25%" y="-25%" width="150%" height="150%">
+              <feGaussianBlur stdDeviation="2.4" result="blur"/>
+              <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+          <!-- 60 minor + 12 major ticks on r=57 (circumference 358.14) -->
+          <g class="dial-bezel">
+            <circle class="dial-ticks" cx="60" cy="60" r="57" stroke-dasharray="0.7 5.269"/>
+            <circle class="dial-ticks-major" cx="60" cy="60" r="57" stroke-dasharray="1.2 28.645" stroke-dashoffset="0.25"/>
+          </g>
+          <circle class="dial-track" cx="60" cy="60" r="50"/>
+          <circle class="dial-arc" id="arc" cx="60" cy="60" r="50" stroke-dasharray="314.16" transform="rotate(-90 60 60)" filter="url(#glow)"/>
+        </svg>
+        <span class="dial-core">
+          <span class="dial-num" id="count">5</span>
+          <span class="dial-unit">sec</span>
+        </span>
+      </div>
+
+      <h1 class="relay-title">
+        <span class="relay-pre">Forwarding to</span>
+        <a class="relay-target" href="https://bugfish.eu/">bugfish<span class="tld">.eu</span><span class="arrow" aria-hidden="true">→</span></a>
+      </h1>
+
+      <span class="hud-label hud-bl" aria-hidden="true">src bugfishtm.github.io</span>
+      <span class="hud-label hud-br" aria-hidden="true">dst bugfish.eu</span>
+    </div>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap foot-inner">
+      <span>© 2026 Bugfish</span>
+      <nav class="foot-nav" aria-label="Site">
+        <a href="index.html" aria-current="page">Forwarder</a>
+        <a href="impressum.html">Impressum</a>
+        <a href="privacy.html">Privacy</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="forward.js"></script>
+</body>
+</html>
